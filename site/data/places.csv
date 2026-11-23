@@ -720,7 +720,6 @@ osm-n3337394621,Topec pekáreň,bakery,,,Topoľčany,Topoľčany,Nitriansky,,,,4
 osm-n3370670320,BudBakery,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.152202,17.117357,,pecivo,Mo-Fr 07:30-17:00,,,,,exact,osm
 osm-n3413873196,Ventos,bakery,,,Piešťany,Piešťany,Trnavský,,,,48.594828,17.830085,,pecivo,,,,,,exact,osm
 osm-n3415130906,Pekáreň Premium,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,Obchodná 523/38,,,48.147558,17.110641,,pecivo,Mo-Sa 07:00-22:00; Su 07:00-18:00,+421 950 489 704,,,,exact,osm
-osm-n3415130907,Farma Tuška,farm,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.148115,17.112555,,,,,,,,exact,osm
 osm-n3436569351,Pekáreň Dalmacija,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.884406,18.032938,,pecivo,Mo-Fr 06:00-18:00; Sa 07:00-13:00,,,,,exact,osm
 osm-n3484700476,automat na mlieko,vending,Mliečny automat,,Banská Bystrica,Banská Bystrica,Banskobystrický,,,,48.737872,19.1619,,mlieko,,,,,,exact,osm
 osm-n3577590486,Bio-obchodik,organic_shop,Zdravá výživa,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.154576,17.123196,,mlieko;med;pecivo,Mo-Fr 10:00-18:00,,https://www.bio-obchodik.sk/,,,exact,osm
@@ -804,7 +803,6 @@ osm-n4986532510,Dobré jablká,greengrocer,,,Bratislava-Záhorská Bystrica,Brat
 osm-n5002659326,starý mlyn,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.158534,17.106641,,pecivo,"Mo-Fr 06:00-20:00; Sa,Su 06:00-13:00",,,,,exact,osm
 osm-n5011237941,Mestská tržnica Turzovka,market,,,Turzovka,Čadca,Žilinský,,,,49.402802,18.625227,,,,,https://www.facebook.com/mestskatrznicaturzovka/,,,exact,osm
 osm-n5039187409,Pekáreň Střelná,bakery,,,Púchov,Púchov,Trenčiansky,,,,49.125805,18.326656,,pecivo,Mo-Sa 05:00-17:00; Sa 06:00-11:00,,,,,exact,osm
-osm-n5057256802,Edeny,bakery,,,Dunajská Streda,Dunajská Streda,Trnavský,,,,47.993078,17.616965,,pecivo,Mo-Sa 07:00-17:00; Su 08:00-12:00,,,,,exact,osm
 osm-n5084788735,Včela Lippek,bakery,,,Ružomberok,Ružomberok,Žilinský,,,,49.083354,19.297324,,pecivo,,,,,,exact,osm
 osm-n5089609721,Varipek,bakery,,,Šaľa,Šaľa,Nitriansky,,,,48.146546,17.884537,,pecivo,Mo-Su 09:00-18:00,,,,,exact,osm
 osm-n5097751693,Barush,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,Mierová 125,,,48.148289,17.17867,,pecivo,,,,,,exact,osm

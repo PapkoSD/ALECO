@@ -148,8 +148,17 @@ def metres(a, b):
     return math.hypot((a[0] - b[0]) * 73_000, (a[1] - b[1]) * 111_000)  # good enough at Slovak latitudes
 
 
+def osm_people_dates():
+    """Per element, what scripts/osm_meta.py found in the OSM API: the last edit made by a person (bot runs and mass
+    edits do not count, so a shop surveyed in 2015 keeps its 2015 date), and whether it was deleted or retagged since
+    the extract. Empty when the script has not been run: then the extract's own timestamp is used."""
+    path = ROOT / "data/raw/osm_meta.json"
+    return json.loads(path.read_text()).get("current", {}) if path.exists() else {}
+
+
 def osm_features(stats):
     raw = json.load(open(ROOT / "data/raw/osm_sk.json", encoding="utf-8"))["elements"]
+    meta = osm_people_dates()
     # chain detection: how many distinct places (more than ~1 km apart) of a food-selling kind share a name
     names, seen_at = collections.Counter(), collections.defaultdict(list)
     for e in raw:
@@ -174,6 +183,14 @@ def osm_features(stats):
         if not cat:
             stats["osm_skipped"][label] += 1
             continue
+        m = meta.get(f"{e['type'][0]}{e['id']}", {})
+        if m.get("deleted") or (m.get("v", 0) > e.get("version", 0) and not osm_category(m.get("tags", {}))[0]):
+            stats["osm_skipped"]["deleted or retagged in OSM since the extract"] += 1
+            continue
+        # a person's last edit, or a survey date someone recorded on the spot (StreetComplete sets check_date)
+        surveyed = [v[:10] for k, v in t.items() if k in ("check_date", "survey:date", "survey_date")
+                    and re.fullmatch(r"\d{4}-\d{2}(-\d{2})?", v[:10])]
+        edited = max([m.get("human") or e.get("timestamp", "")] + surveyed)
         name = t.get("name", "").strip()
         key = norm(name)
         # a brand tag on a farm or winery is usually the producer's own brand ("Dobrý ježko"), not a chain
@@ -206,7 +223,7 @@ def osm_features(stats):
                 "website": t.get("website") or t.get("contact:website") or t.get("url", ""),
                 "products": products[:300], "precision": "exact", "source": "osm",
                 "_operator": t.get("operator", ""),
-                "osm_edited": e.get("timestamp", ""),
+                "osm_edited": edited,
             }})
         stats["osm_kept"][cat] += 1
     # the same place mapped twice: a point inside its building, the same salaš or winery drawn twice nearby,

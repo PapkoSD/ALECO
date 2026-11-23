@@ -226,9 +226,9 @@
         about4: "Individual farmers (sole traders) from the certificate register are only published with their consent.",
         about5: `The data is open (ODbL): you can reuse it freely with attribution, as a <a href="data/places.csv" download>CSV table</a> or <a href="data/places.geojson" download>GeoJSON</a>.`,
         privacyTitle: "Privacy and terms", opLabel: "Operator:", opNote: "ALECO is a non-commercial project.",
-        priv1: "<strong>Data about places.</strong> We publish the name, location, address, contact details, opening hours and offer of places that sell food straight from the producer. It comes from public sources: OpenStreetMap, the EU register of organic certificates and the sellers' own websites. Where a place is run by an individual, this is personal data. We process it on the basis of a legitimate interest in informing the public about direct food sales (Art. 6(1)(f) GDPR), and only to the extent the seller has published it. Individual farmers from the certificate register are not published.",
+        priv1: "<strong>Data about places.</strong> We publish the name, location, address, contact details, opening hours and offer of places that sell food straight from the producer. It comes from public sources: OpenStreetMap, the EU register of organic certificates and the sellers' own websites. Where a place is run by an individual, this is personal data. We process it on the basis of a legitimate interest in informing the public about direct food sales (Art. 6(1)(f) GDPR), and only to the extent the seller has published it. Individual farmers (sole traders) from the certificate register are only published with their consent.",
         priv2: `<strong>Your rights.</strong> You can ask for access to the data, for it to be corrected or erased, and object to its publication: just write to the e-mail above. We will correct or remove the data from the map and the open data without undue delay. You can also complain to the <a href="https://dataprotection.gov.sk/" target="_blank" rel="noopener">Slovak Data Protection Authority</a>.`,
-        priv3: `<strong>Visitors.</strong> The site uses no cookies. Visits and what people search for (towns, products, opened places) are counted anonymously with <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>, which does not store IP addresses. If you type an address or a place that isn't a town, the text is sent to the <a href="https://photon.komoot.io/" target="_blank" rel="noopener">Photon</a> service (komoot, Germany), which looks it up in OpenStreetMap. The site is hosted by GitHub Pages and the base map comes from OpenFreeMap; these services technically process your IP address when the page loads. Your location, if you allow it, is only used in your browser to sort the list.`,
+        priv3: `<strong>Visitors.</strong> The site uses no cookies. Visits and what people do on the site (which towns and products they look for, which places they open, clicks on Navigate, Call, Website and Share) are counted anonymously with <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>, which does not store IP addresses. If you switch the language, your browser remembers the choice (localStorage); it is not sent anywhere. If you type an address or a place that isn't a town, the text is sent to the <a href="https://photon.komoot.io/" target="_blank" rel="noopener">Photon</a> service (komoot, Germany), which looks it up in OpenStreetMap. The site is hosted by GitHub Pages (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub, USA</a>) and the base map comes from OpenFreeMap; these services technically process your IP address when the page loads. Your location, if you allow it, is only used in your browser to sort the list, and never goes into links.`,
         priv4: "<strong>Disclaimer.</strong> The data comes from public sources and may be incomplete or out of date. Check opening hours and what's on offer with the seller before you go. The BIO stamp means the producer holds a valid certificate in the EU register; ALECO does not certify anything.",
         priv5: `<strong>Licences.</strong> Code: AGPL-3.0, <a href="https://github.com/PapkoSD/ALECO" target="_blank" rel="noopener">GitHub</a>. Data: ODbL (© OpenStreetMap contributors), the European Commission's register of organic certificates, GeoNames (CC BY 4.0).`,
       },
@@ -315,18 +315,27 @@
   };
 
   /* ---------- map ---------- */
-  const linkHadMapView = location.hash.includes("mapa=");  // read before MapLibre writes its own #mapa=
+  // the map view sits in the address bar (#mapa=zoom/lat/lon), so a reload or a copied link keeps it; not while the
+  // map is centred on the visitor's own position or a typed address, which never go into a link
+  const hashView = location.hash.match(/mapa=([\d.]+)\/(-?[\d.]+)\/(-?[\d.]+)/);
+  const linkHadMapView = !!hashView;
   const map = new maplibregl.Map({
     container: "map",
     style: "https://tiles.openfreemap.org/styles/positron",
-    bounds: SK_BOUNDS,
-    fitBoundsOptions: { padding: 16 },
-    hash: "mapa",
+    ...(hashView ? { zoom: +hashView[1], center: [+hashView[3], +hashView[2]] }
+      : { bounds: SK_BOUNDS, fitBoundsOptions: { padding: 16 } }),
     attributionControl: { compact: true },
     dragRotate: false,
     pitchWithRotate: false,
   });
   map.touchZoomRotate.disableRotation();
+  map.on("moveend", () => {
+    const url = new URL(location.href);
+    const c = map.getCenter();
+    url.hash = state.loc && (state.loc.me || state.loc.addr) ? ""
+      : `mapa=${map.getZoom().toFixed(2)}/${c.lat.toFixed(4)}/${c.lng.toFixed(4)}`;
+    history.replaceState(history.state, "", url);
+  });
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
 
   const colorExpr = ["match", ["get", "group"], ...Object.entries(GROUP_COLOR).flat(), "#17322a"];
@@ -567,20 +576,26 @@
     $("#share").addEventListener("click", () => share(p));
   }
 
-  async function share(p) {
-    const url = new URL(location.href);
-    url.hash = "";
-    url.searchParams.set("miesto", p.id);
-    const btn = $("#share");
-    track("zdielat-miesto", p._n);
+  // the phone's share sheet where there is one, otherwise the link is copied
+  async function shareLink(btn, data, label) {
     try {
-      if (navigator.share) { await navigator.share({ title: p._n, url: url.href }); return; }
-      await navigator.clipboard.writeText(url.href);
+      if (navigator.share && (!navigator.canShare || navigator.canShare(data))) {
+        try { await navigator.share(data); return; } catch (e) { if (e.name === "AbortError") return; }  // closed it
+      }
+      await navigator.clipboard.writeText(data.url);
       btn.textContent = T.copied;
     } catch {
       btn.textContent = T.copyFailed;
     }
-    setTimeout(() => { if (btn.isConnected) btn.textContent = T.share; }, 2500);
+    setTimeout(() => { if (btn.isConnected) btn.textContent = label; }, 2500);
+  }
+
+  function share(p) {
+    const url = new URL(location.href);
+    url.hash = "";
+    url.searchParams.set("miesto", p.id);
+    track("zdielat-miesto", p._n);
+    shareLink($("#share"), { title: p._n, url: url.href }, T.share);
   }
 
   // the address bar always holds the current search, so it can be copied and shared: ?kde=Pezinok&co=syr&km=10
@@ -599,20 +614,12 @@
     history.replaceState(null, "", url);
   }
 
-  async function shareSearch() {
-    const btn = $("#shareSearch");
+  function shareSearch() {
     const url = new URL(location.href);
     url.hash = "";  // the link sets the area itself
     url.searchParams.delete("miesto");
     track("zdielat-vyber");
-    try {
-      if (navigator.share) { await navigator.share({ title: "ALECO", text: $("#count").textContent.trim(), url: url.href }); return; }
-      await navigator.clipboard.writeText(url.href);
-      btn.textContent = T.copied;
-    } catch {
-      btn.textContent = T.copyFailed;
-    }
-    setTimeout(() => { btn.textContent = T.shareSearch; }, 2500);
+    shareLink($("#shareSearch"), { title: "ALECO", text: $("#count").textContent.trim(), url: url.href }, T.shareSearch);
   }
 
   function select(id, fly = true) {

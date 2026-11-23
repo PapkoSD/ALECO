@@ -65,6 +65,8 @@ uv run --no-project --with pypdf python scripts/traces_details.py --parse-only
 python3 scripts/rpo_extract.py                       # company register (needs the RPO snapshot in ../gastro-leads/data/raw)
 python3 scripts/build_inventory.py                   # merge sources
 python3 scripts/build_seed.py                        # map data, private outreach list and report
+python3 scripts/osm_meta.py --notes                  # who last edited each OSM place, open "closed" notes (OSM API, cached)
+python3 scripts/build_seed.py                        # again, with those dates applied
 ```
 
 `build_seed.py` writes `data/out/report.md` with counts per region and category and every filtering decision.
@@ -82,7 +84,9 @@ python3 scripts/call_list.py              # who still needs a phone call (privat
 python3 scripts/build_seed.py             # rebuild the map with everything applied
 ```
 
-Any place on the map can be checked, OSM shops and markets too: `checks.py set` adds the row when the id is not in the file yet. The product words in `how` ("mlieko, syry, vajcia") also decide what the place is listed under in "Čo chcete kúpiť?". On the map, "sells" adds a "Predaj" line with the date it was verified and an "overené" mark in the list. `wholesale`, `closed`, `duplicate` and `not_local` take the place off the map. OSM places last edited five or more years ago say so in their detail card.
+Any place on the map can be checked, OSM shops and markets too: `checks.py set` adds the row when the id is not in the file yet. The product words in `how` ("mlieko, syry, vajcia") also decide what the place is listed under in "Čo chcete kúpiť?". On the map, "sells" adds a "Predaj" line with the date it was verified and an "overené" mark in the list. `wholesale`, `closed`, `duplicate` and `not_local` take the place off the map. OSM places last edited by a person five or more years ago say so in their detail card. The date ignores bots and mass edits (`scripts/osm_meta.py`): in May 2026 a bot changed every http:// website to https://, which made Farma Tuška (surveyed in 2015, closed since) look freshly checked. `osm_meta.py` also drops places deleted or retagged in OSM since the extract and lists open OSM notes that say a place closed; those notes are hints to check by hand, since many are about a neighbouring shop.
+
+Google Maps is a good place to see whether a shop has closed, but only by hand: Google's terms forbid scraping it, and its data must not be copied into this open (ODbL) data. Record what you find as `closed` with `checks.py set`.
 
 ## Publish
 
