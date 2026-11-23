@@ -1,0 +1,253 @@
+:root {
+  --ink: #17322a;        /* spruce: text, primary */
+  --muted: #56665e;
+  --line: #d6dcd4;
+  --field: #eef1ea;      /* panel wash */
+  --paper: #ffffff;
+  --stamp: #2e6b45;      /* BIO certificate stamp */
+  --rye: #b8862b;
+  --beet: #9a2f4e;
+  --milk: #2f6db5;
+  --focus: #2f6db5;
+  --display: "Vollkorn", Georgia, serif;
+  --ui: "Alegreya Sans", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.45 var(--ui);
+}
+a { color: var(--ink); text-underline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+.app {
+  display: grid;
+  grid-template-columns: minmax(340px, 400px) 1fr;
+  height: 100dvh;
+}
+
+/* ---------- panel ---------- */
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+  background: var(--field);
+  border-right: 1px solid var(--line);
+}
+.intro { padding: 28px 24px 8px; }
+.intro h1 {
+  margin: 0;
+  font: 700 2.9rem/1 var(--display);
+  letter-spacing: -0.01em;
+}
+.intro p { margin: 10px 0 0; color: var(--muted); max-width: 34ch; }
+.intro .tagline { display: none; }  /* phones only: the name alone doesn't say what the site is */
+.intro .stats { margin-top: 6px; font-size: 0.93rem; }
+.intro .stats:empty { display: none; }
+
+.controls { padding: 16px 24px 8px; display: grid; gap: 18px; }
+/* two questions in order: where, then what to buy */
+.step { display: grid; gap: 8px; }
+.step-label { margin: 0; font-weight: 700; }
+.where { display: flex; gap: 8px; }
+.where input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 14px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.where .btn { flex: none; padding: 9px 12px; font-weight: 500; }
+.near-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.near-row[hidden] { display: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  padding: 5px 12px;
+  font: 500 0.95rem var(--ui);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.chip .n { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.chip[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.chip[aria-pressed="true"] .n { color: rgba(255, 255, 255, 0.8); }
+.chip:disabled { opacity: 0.45; cursor: default; }
+
+.select select {
+  padding: 7px 30px 7px 10px;
+  font: 500 0.98rem var(--ui);
+  color: var(--ink);
+  background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2317322a' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 10px center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  appearance: none;
+  cursor: pointer;
+}
+.toggle { display: inline-flex; gap: 8px; align-items: center; cursor: pointer; }
+.toggle input { width: 18px; height: 18px; accent-color: var(--stamp); }
+.link-btn {
+  padding: 0; border: 0; background: none;
+  font: inherit; color: var(--ink);
+  text-decoration: underline; text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.suggest { display: grid; gap: 4px; }
+.suggest[hidden], .hint[hidden] { display: none; }
+.suggest-item {
+  display: grid; grid-template-columns: 14px 1fr auto; align-items: center; gap: 10px;
+  width: 100%; padding: 9px 12px;
+  text-align: left; font: inherit; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--line); border-radius: 6px;
+  cursor: pointer;
+}
+.suggest-item:hover, .suggest-item:focus-visible { border-color: var(--ink); }
+.suggest-item .main { min-width: 0; overflow-wrap: anywhere; }
+/* village: a map pin; product: a small basket; place: its map colour */
+.suggest-item .pin {
+  width: 11px; height: 11px; margin-left: 1px;
+  border: 2.5px solid var(--ink); border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
+}
+.suggest-item .basket { width: 13px; height: 9px; border: 2.5px solid var(--ink); border-top: 0; border-radius: 0 0 5px 5px; }
+.suggest-item .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--c); }
+.suggest-item .go { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+.suggest-none { margin: 0; color: var(--muted); font-size: 0.93rem; }
+.hint { margin: 10px 24px 0; padding-left: 10px; border-left: 3px solid var(--line); color: var(--muted); font-size: 0.93rem; }
+.count-row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 14px; margin: 8px 24px 6px; }
+.count-row[hidden] { display: none; }
+.count { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.count strong { color: var(--ink); }
+.share-search { font-size: 0.93rem; white-space: nowrap; }
+/* "Pekárne a trhy": the second part of a list around a town */
+.group-head { margin: 18px 12px 2px; color: var(--muted); font-size: 0.88rem; font-weight: 700; }
+/* what a place is listed under in "Čo chcete kúpiť?" */
+.buys { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: -8px 0 18px; color: var(--muted); font-size: 0.93rem; }
+.buys .tag { padding: 1px 9px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 999px; font-size: 0.88rem; }
+.list .more { padding: 14px 12px 4px; }
+
+.list { list-style: none; margin: 0; padding: 0 12px 12px; }
+.item {
+  display: grid;
+  grid-template-columns: 12px 1fr auto;
+  gap: 4px 12px;
+  align-items: baseline;
+  width: 100%;
+  padding: 11px 12px;
+  text-align: left;
+  font: inherit; color: inherit;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+.item:hover { background: rgba(255, 255, 255, 0.7); }
+.item .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--c); align-self: center; }
+.item .name { font-weight: 700; line-height: 1.25; }
+.item .km { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+.item .meta { grid-column: 2 / 4; color: var(--muted); font-size: 0.93rem; }
+.bio-mini {
+  display: inline-block; margin-left: 6px; padding: 0 5px;
+  font: 700 0.72rem/1.5 var(--ui); letter-spacing: 0.04em;
+  color: var(--stamp); border: 1.5px solid var(--stamp); border-radius: 3px;
+  vertical-align: 2px;
+}
+
+.ok-mini {
+  display: inline-block; margin-left: 6px; padding: 0 5px;
+  font: 500 0.78rem/1.5 var(--ui);
+  color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 3px;
+  vertical-align: 2px;
+}
+
+.empty { padding: 24px; color: var(--muted); }
+
+/* ---------- detail ---------- */
+.detail { padding: 8px 24px 24px; }
+.back { margin: 8px 0 16px; }
+.detail h2 { margin: 0 0 4px; font: 700 1.9rem/1.1 var(--display); }
+.detail .kind { margin: 0 0 18px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.detail .kind .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--c); }
+.facts { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; overflow-wrap: anywhere; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+.btn {
+  display: inline-block;
+  padding: 9px 16px;
+  font: 700 1rem var(--ui);
+  color: #fff; background: var(--ink);
+  border: 0; border-radius: 6px;
+  text-decoration: none; cursor: pointer;
+}
+.btn.ghost { color: var(--ink); background: var(--paper); border: 1px solid var(--line); }
+.source, .note { color: var(--muted); font-size: 0.92rem; }
+.note { padding-left: 10px; border-left: 3px solid var(--line); }
+
+/* The one loud element: the certificate stamp */
+.stamp-wrap { display: flex; gap: 18px; align-items: center; margin: 4px 0 22px; }
+.stamp { width: 112px; height: 112px; flex: none; color: var(--stamp); transform: rotate(-8deg); }
+.stamp text { fill: currentColor; font-family: var(--ui); }
+.stamp .big { font: 700 34px var(--display); }
+.stamp-wrap p { margin: 0; font-size: 0.95rem; }
+
+/* ---------- map ---------- */
+.map-wrap { position: relative; min-height: 0; }
+#map { position: absolute; inset: 0; }
+.maplibregl-popup-content { font: 1rem var(--ui); color: var(--ink); padding: 8px 12px; border-radius: 6px; }
+.legend {
+  position: absolute; top: 10px; left: 10px; z-index: 1;
+  display: flex; flex-wrap: wrap; gap: 3px 12px; max-width: calc(100% - 70px);
+  margin: 0; padding: 6px 10px; list-style: none;
+  font-size: 0.8rem; color: var(--ink);
+  background: rgba(255, 255, 255, 0.9); border-radius: 6px;
+}
+.legend li { display: inline-flex; align-items: center; gap: 5px; }
+.legend .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+.legend .dot.bio { background: #fff; box-shadow: inset 0 0 0 2.5px var(--stamp); }
+
+/* ---------- dialog ---------- */
+dialog { max-width: 32rem; border: 1px solid var(--line); border-radius: 8px; padding: 24px; color: var(--ink); }
+dialog p { max-width: 62ch; }
+dialog h2 { margin: 0 0 8px; font: 700 1.5rem var(--display); }
+dialog::backdrop { background: rgba(23, 50, 42, 0.4); }
+.mail-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+
+.foot { margin-top: auto; padding: 16px 24px 24px; border-top: 1px solid var(--line); }
+.foot p { margin: 0 0 8px; }
+.small { font-size: 0.88rem; color: var(--muted); }
+
+/* ---------- mobile: map on top, list below ---------- */
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .app { grid-template-columns: 1fr; grid-template-rows: 42dvh 1fr; }
+  .map-wrap { grid-row: 1; }
+  .panel { grid-row: 2; border-right: 0; border-top: 1px solid var(--line); }
+  .intro { padding: 16px 16px 0; display: flex; align-items: baseline; gap: 12px; }
+  .intro h1 { font-size: 1.9rem; }
+  .intro .lede, .intro .stats { display: none; }
+  .intro .tagline { display: block; margin: 0; font-size: 0.95rem; line-height: 1.3; }
+  .controls { padding: 12px 16px 4px; }
+  .count-row { margin: 6px 16px; }
+  .hint { margin: 10px 16px 0; }
+  .legend { top: 8px; left: 8px; gap: 2px 9px; padding: 4px 8px; font-size: 0.74rem; }
+  .list { padding: 0 4px 8px; }
+  .detail { padding: 4px 16px 20px; }
+  .stamp-wrap { gap: 14px; margin: 0 0 18px; }
+  .stamp { width: 84px; height: 84px; }
+  .foot { padding: 14px 16px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}
