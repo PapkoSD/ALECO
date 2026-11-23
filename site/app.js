@@ -125,6 +125,7 @@
       certExpired: (link, date) => `${link} platil do ${date}. Novší sme zatiaľ nenačítali.`,
       noContactOsm: "Kontakt ani otváracie hodiny zatiaľ nepoznáme.", noContact: "Kontakt zatiaľ nepoznáme.",
       certNoSale: "Z certifikátu nevieme, či predávajú aj priamo, preto si to pred návštevou overte.",
+      webDead: "Ich webová stránka už nefunguje, miesto mohlo zaniknúť. Pred cestou si to overte.",
       stale: (y) => `Údaje v OpenStreetMap sú naposledy upravené v roku ${y}, pred cestou si overte, či miesto ešte funguje.`,
       source: "Zdroj", and: "a", register: "EÚ register ekologických certifikátov", registerTraces: "EÚ register ekologických certifikátov (TRACES)",
       editOsm: "Mapujete v OpenStreetMap?", editOsmLink: "Upravte miesto tam",
@@ -181,6 +182,7 @@
       certExpired: (link, date) => `${link} was valid until ${date}. We haven't loaded a newer one yet.`,
       noContactOsm: "We don't know their contact details or opening hours yet.", noContact: "We don't know their contact details yet.",
       certNoSale: "The certificate doesn't say whether they also sell directly, so check before you go.",
+      webDead: "Their website no longer works, so the place may have closed. Check before you go.",
       stale: (y) => `The OpenStreetMap data was last edited in ${y}; check that the place is still open before you go.`,
       source: "Source", and: "and", register: "the EU register of organic certificates", registerTraces: "EU register of organic certificates (TRACES)",
       editOsm: "Do you map in OpenStreetMap?", editOsmLink: "Edit the place there",
@@ -518,6 +520,7 @@
     const note = [
       noContact && (p.source === "osm" ? T.noContactOsm : T.noContact),
       p.cert && !p.checked && p.source !== "osm" && T.certNoSale,
+      p.web_dead && T.webDead,
       stale && T.stale(edited),
     ].filter(Boolean).join(" ");
     const osm = p.id.startsWith("osm-") ? p.id.slice(4) : "";
@@ -535,6 +538,13 @@
     // "Nahlásiť chybu": an e-mail with the place filled in, which anyone can send (the OSM editor needs an account)
     const link = `${location.origin}${location.pathname}?miesto=${encodeURIComponent(p.id)}`;
     const report = mailto(`ALECO: ${p._n}`, T.reportBody(p._n, p.obec, link));
+    // "Navigovať": places from OpenStreetMap were mapped where they are, so Google gets that point. Certified producers
+    // are placed from their certificate address, often only at the village centre, so Google gets the address itself
+    // ("Páleničné 815/20, 976 52 Čierny Balog") and finds the house.
+    const navTo = p.source !== "osm" && p.address
+      ? [p.address, [p.postcode, p.city || p.obec].filter(Boolean).join(" "), "Slovensko"].filter(Boolean).join(", ")
+      : `${lat},${lon}`;
+    const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(navTo)}`;
 
     // the buttons come right after the name, so on a phone "Navigovať" is visible without scrolling
     $("#detail").innerHTML = `
@@ -543,7 +553,7 @@
       <p class="kind" style="--c:${GROUP_COLOR[p.group] || "#17322a"}"><span class="dot" aria-hidden="true"></span>${esc(labelOf(p))}</p>
       ${buyLine}
       <div class="actions">
-        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=${lat}%2C${lon}" target="_blank" rel="noopener" data-track="navigovat">${T.navigate}</a>
+        <a class="btn" href="${esc(navUrl)}" target="_blank" rel="noopener" data-track="navigovat">${T.navigate}</a>
         ${tel ? `<a class="btn ghost" href="tel:${esc(tel)}" data-track="zavolat">${T.call}</a>` : ""}
         <button type="button" class="btn ghost" id="share">${T.share}</button>
         <a class="btn ghost" href="${esc(report)}" data-track="nahlasit-chybu">${T.report}</a>

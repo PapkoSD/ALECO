@@ -21,6 +21,8 @@ A free, open-source map of farms, salaše, bakeries, milk vending machines, mark
 
 Every place gets its kraj, okres and obec from OSM boundary polygons, offline.
 
+**Navigovať** sends Google Maps the map point for places from OpenStreetMap (mapped where they are), and the full certificate address ("Páleničné 815/20, 976 52 Čierny Balog") for certified producers, whose pins are often only the village centre. The geocoder only accepts a street hit inside the town the certificate names. Places whose website stopped working carry `web_dead` and their card warns that they may have closed.
+
 ## How people search
 
 1. **Kde hľadáte?** Type a village or town and pick it (or press Enter), or press *Moja poloha*. The list then shows the places within 10, 25 (default) or 50 km, nearest first, with a dashed circle on the map; *celé Slovensko* lists everything by distance. Addresses, streets and landmarks ("Obchodná 5, Bratislava", "Eurovea") come from OpenStreetMap through [Photon](https://photon.komoot.io/) (komoot), asked only when the text looks like an address or nothing of ours matches; addresses never go into links or counts. The same box also offers product words ("bryndza" → Syry), a product and a town together ("vajcia v Bratislave", "syr pri Pezinku"; the usual Slovak endings are understood) and places by their own name.

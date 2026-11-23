@@ -120,6 +120,14 @@ class Geocoder:
         hit = self.admin.lookup(lon, lat)
         return hit["in_sk"] and (not kraj or hit["kraj"] == kraj)
 
+    def _in_town(self, lat, lon, town):
+        """A street hit must lie in the town the address names: "Okružná 11, Veľký Krtíš" is not the Okružná street
+        in Dolná Strehová. Bratislava and Košice match their boroughs ("Bratislava" ~ "Bratislava-Ružinov")."""
+        if not (self.admin and town and self.gaz.is_village(town)):
+            return True
+        obec, t = fold(self.admin.lookup(lon, lat)["obec"] or ""), fold(town)
+        return obec == t or obec.startswith(t + "-") or t.startswith(obec + "-")
+
     def locate(self, street, postal, city, kraj=""):
         """Return (lat, lon, precision) or (None, None, None). kraj (e.g. 'Prešovský') rejects wrong-region hits."""
         street = " ".join((street or "").replace(" ", " ").split()).strip(" ,-")
@@ -146,6 +154,8 @@ class Geocoder:
                 continue
             road_ok = (r["class"] == "highway" and has_street
                        and r["type"] not in ("motorway", "trunk", "motorway_link", "trunk_link", "primary"))
+            if not self._in_town(r["lat"], r["lon"], town):
+                continue  # the same street name in another village
             if r["house"] or (r["class"] in ("building", "place") and r["type"] in ("house", "building")) or road_ok:
                 return r["lat"], r["lon"], "street"
             if r["addresstype"] in ("village", "town", "city", "municipality", "hamlet", "suburb", "neighbourhood"):

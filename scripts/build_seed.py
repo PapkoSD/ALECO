@@ -459,7 +459,7 @@ def organic_features(geo, admin, outreach, review, stats, only_with_details=Fals
             "properties": {
                 "id": f"bio-{o['operator_id']}", "name": r["name"], "category": cat,
                 **({"label": label} if label else {}), "bio": True,
-                "address": street,
+                "address": street, "postcode": f"{postal_[:3]} {postal_[3:5]}" if re.fullmatch(r"\d{5}", postal_ or "") else "",
                 "addr_city": city_clean, "hours": "", "phone": "", "website": "",
                 "products": product_text, "premises": premise_text,
                 "cert": o["certificate"], "cert_expires": o["expires"], "precision": precision, "source": "traces",
@@ -533,6 +533,7 @@ def apply_checks(feats, stats):
             if r and r["ok"] == "0":
                 stats["checks"]["dead website removed"] += 1
                 del p["website"]
+                p["web_dead"] = True  # the card warns that the place may have closed
             elif r and r["reason"].startswith("page gone"):
                 p["website"] = r["final_url"]
                 stats["checks"]["broken deep link replaced by home page"] += 1
@@ -737,7 +738,9 @@ def main():
             del p[k]
         if not p.get("address") and p.get("addr_city"):
             p["address"] = ""
-        p.pop("addr_city", None)
+        city = p.pop("addr_city", None)
+        if p["source"] == "traces" and city:
+            p["city"] = city  # the certificate's town: "Navigovať" sends Google "street, postcode town"
         p["approx"] = p["precision"] in ("village", "postcode")
         for k in [k for k, v in p.items() if v in ("", None) and k not in ("name",)]:
             del p[k]
@@ -750,7 +753,8 @@ def main():
     (ROOT / "site/data/places.geojson").write_text(json.dumps(
         {"type": "FeatureCollection", "metadata": meta, "features": feats}, ensure_ascii=False, separators=(",", ":")))
     with open(ROOT / "site/data/places.csv", "w", newline="", encoding="utf-8") as fh:
-        cols = ["id", "name", "category", "label", "bio", "obec", "okres", "kraj", "address", "lat", "lon", "products",
+        cols = ["id", "name", "category", "label", "bio", "obec", "okres", "kraj", "address", "postcode", "city", "lat", "lon",
+                "products",
                 "buy", "hours", "phone", "website", "cert", "cert_expires", "precision", "source"]
         w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
         w.writeheader()
