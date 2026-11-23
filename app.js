@@ -35,6 +35,18 @@
   // so simple address harvesters miss it
   const CONTACT = ["patrikmihal.dev", "gmail.com"].join("@");
   const mailto = (subject, body) => `mailto:${CONTACT}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // anonymous counts of what people use, so we can tell whether the map helps (GoatCounter: no cookies, no IP
+  // addresses stored). Never the visitor's own position. count.js loads after this script, so early counts wait for it.
+  const pendingCounts = [];
+  function track(path, title) {
+    const gc = window.goatcounter;
+    if (gc && gc.count) {
+      try { gc.count({ path, title: title || path, event: true }); } catch { /* counting must never break the map */ }
+    } else if (pendingCounts.length < 20) {
+      pendingCounts.push([path, title]);
+    }
+  }
+  window.addEventListener("load", () => { if (window.goatcounter?.count) pendingCounts.splice(0).forEach(([p, t]) => track(p, t)); });
 
   const $ = (s) => document.querySelector(s);
   const fc = (feats) => ({ type: "FeatureCollection", features: feats });
@@ -316,8 +328,8 @@
       p.products && [p.bio ? "Certifikované produkty" : p.bioExpired ? "Produkty podľa certifikátu" : "Ponuka", esc(p.products)],
       p.premises && ["Prevádzky", esc(p.premises).replace(/; /g, "<br>")],
       p.hours && ["Otvorené", esc(fmtHours(p.hours)).replace(/\n/g, "<br>")],
-      tel && ["Telefón", `<a href="tel:${esc(tel)}">${esc(p.phone)}</a>`],
-      web && ["Web", `<a href="${esc(web)}" target="_blank" rel="noopener">${esc(web.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>`],
+      tel && ["Telefón", `<a href="tel:${esc(tel)}" data-track="zavolat">${esc(p.phone)}</a>`],
+      web && ["Web", `<a href="${esc(web)}" target="_blank" rel="noopener" data-track="web">${esc(web.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>`],
     ].filter(Boolean);
     const edited = p.osm_edited ? +p.osm_edited.slice(0, 4) : 0;
     const stale = edited && edited <= new Date().getFullYear() - 5;
@@ -351,10 +363,10 @@
       <p class="kind" style="--c:${GROUP_COLOR[p.group] || "#17322a"}"><span class="dot" aria-hidden="true"></span>${esc(labelOf(p))}</p>
       ${buyLine}
       <div class="actions">
-        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=${lat}%2C${lon}" target="_blank" rel="noopener">Navigovať</a>
-        ${tel ? `<a class="btn ghost" href="tel:${esc(tel)}">Zavolať</a>` : ""}
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=${lat}%2C${lon}" target="_blank" rel="noopener" data-track="navigovat">Navigovať</a>
+        ${tel ? `<a class="btn ghost" href="tel:${esc(tel)}" data-track="zavolat">Zavolať</a>` : ""}
         <button type="button" class="btn ghost" id="share">Zdieľať</button>
-        <a class="btn ghost" href="${esc(report)}">Nahlásiť chybu</a>
+        <a class="btn ghost" href="${esc(report)}" data-track="nahlasit-chybu">Nahlásiť chybu</a>
       </div>
       ${p.bio ? `<div class="stamp-wrap">${stampSvg(p)}
         <p>Certifikát ${certLink}${p.cert_expires ? `<br>platí do ${fmtDate(p.cert_expires)}` : ""}</p></div>` : ""}
@@ -370,6 +382,7 @@
     url.hash = "";
     url.searchParams.set("miesto", p.id);
     const btn = $("#share");
+    track("zdielat-miesto", p._n);
     try {
       if (navigator.share) { await navigator.share({ title: p._n, url: url.href }); return; }
       await navigator.clipboard.writeText(url.href);
@@ -400,6 +413,7 @@
     const url = new URL(location.href);
     url.hash = "";  // the link sets the area itself
     url.searchParams.delete("miesto");
+    track("zdielat-vyber");
     try {
       if (navigator.share) { await navigator.share({ title: "ALECO", text: $("#count").textContent.trim(), url: url.href }); return; }
       await navigator.clipboard.writeText(url.href);
@@ -424,6 +438,7 @@
     if (map.getSource("sel")) map.getSource("sel").setData(fc([f]));
     if (fly) map.flyTo({ center: f.geometry.coordinates, zoom: Math.max(map.getZoom(), 13), essential: true });
     syncUrl();
+    track(`miesto/${id}`, f.properties._n);
     document.title = `${f.properties._n}: ALECO`;
     $("#back").focus({ preventScroll: true });
   }
@@ -485,6 +500,7 @@
     drawArea();
     fitArea();
     syncUrl();
+    if (loc && !loc.me) track(`obec/${loc.name}`, loc.name);  // which villages and towns people look for
   }
 
   function setRadius(r) {
@@ -502,6 +518,7 @@
     if (state.selected) deselect();
     render();
     syncUrl();
+    if (id !== "all") track(`produkt/${id}`, BUY_BY_ID[id].label);
   }
 
   /* ---------- search box: villages and towns first, then products and places by name ---------- */
@@ -703,6 +720,7 @@
         hideSuggest();
         q.value = "Vaša poloha";  // the box speaks to the visitor, like "do 25 km od vás"
         setLoc({ name: "Vaša poloha", c: [pos.coords.longitude, pos.coords.latitude], me: true });
+        track("moja-poloha");  // only that the button was used, never where
       },
       () => reset("Poloha nedostupná"),
       { timeout: 10000, maximumAge: 300000 });
@@ -727,6 +745,12 @@
   $("#mailAbout").href = `mailto:${CONTACT}`;
   $("#mailAbout").textContent = CONTACT;
   $("#addBtn").addEventListener("click", () => $("#addDialog").showModal());
+  $("#mailAdd").addEventListener("click", () => track("napisat-email"));
+  // directions, calls, websites and error reports from a place card: the clearest sign the map was useful
+  $("#detail").addEventListener("click", (e) => {
+    const a = e.target.closest("[data-track]");
+    if (a && state.selected) track(a.dataset.track, state.byId.get(state.selected)?.properties._n);
+  });
   $("#aboutBtn").addEventListener("click", () => $("#aboutDialog").showModal());
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && state.selected && !document.querySelector("dialog[open]")) deselect(); });
 
@@ -759,6 +783,8 @@
     $("#stats").textContent = `${fmtNum(d.features.length)} miest, z toho ${fmtNum(bio)} s certifikátom BIO.`;
     // a shared search: ?kde=Pezinok&okres=Pezinok&km=10&co=syr&bio=1&miesto=<id>
     const co = START.get("co"), radius = START.get("km"), kde = START.get("kde"), id = START.get("miesto");
+    if (kde || co || radius !== null || START.get("bio")) track("odkaz/hladanie");  // arrived through a shared search
+    if (id) track("odkaz/miesto");
     if (BUY_BY_ID[co]) state.buy = co;
     if (START.get("bio") === "1") { state.bioOnly = true; $("#bioOnly").checked = true; }
     if (radius !== null && RADII.includes(+radius)) { state.radius = +radius; $("#radius").value = String(+radius); }
