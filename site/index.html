@@ -21,7 +21,8 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta name="theme-color" content="#17322a">
-  <!-- fonts and the map library are served from this site; the only outside requests are the map tiles -->
+  <!-- fonts and the map library are served from this site; the only outside requests are the map tiles (OpenFreeMap)
+       and anonymous visit counts (GoatCounter) -->
   <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
   <link href="fonts/fonts.css" rel="stylesheet">
   <link href="vendor/maplibre-gl-4.7.1/maplibre-gl.css" rel="stylesheet">
@@ -77,7 +78,7 @@
       <footer class="foot">
         <p><button type="button" class="link-btn" id="addBtn">Chýba tu miesto alebo je niečo zle?</button></p>
         <p><button type="button" class="link-btn" id="aboutBtn">Odkiaľ sú údaje</button></p>
-        <p class="small">Otvorený projekt bez reklám, provízií a sledovania. Údaje: <a href="https://www.openstreetmap.org/copyright">© prispievatelia OpenStreetMap</a> (ODbL), <a href="https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index">register ekologických certifikátov EÚ</a> a <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). <span id="generated"></span></p>
+        <p class="small">Otvorený projekt bez reklám, provízií a cookies. Údaje: <a href="https://www.openstreetmap.org/copyright">© prispievatelia OpenStreetMap</a> (ODbL), <a href="https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index">register ekologických certifikátov EÚ</a> a <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). <span id="generated"></span></p>
       </footer>
     </aside>
 
@@ -103,12 +104,14 @@
     <p><strong>Poloha</strong> certifikovaných výrobcov je adresa z certifikátu: prevádzka, ak je uvedená, inak sídlo firmy. Ak je sídlo v kancelárii vo veľkom meste, výrobcu na mapu nedávame, kým nezistíme, kde naozaj hospodári.</p>
     <p>Súkromne hospodáriacich roľníkov zverejníme až s ich súhlasom.</p>
     <p>Údaje sú otvorené (ODbL), môžete ich voľne použiť s uvedením zdroja: <a href="data/places.csv" download>tabuľka CSV</a> alebo <a href="data/places.geojson" download>GeoJSON</a>.</p>
-    <p><strong>Súkromie:</strong> stránka nepoužíva cookies ani analytiku. Mapové podklady sa načítavajú z <a href="https://openfreemap.org/" target="_blank" rel="noopener">OpenFreeMap</a>. Vašu polohu, ak ju povolíte, používame len na zoradenie zoznamu priamo vo vašom prehliadači.</p>
+    <p><strong>Súkromie:</strong> stránka nepoužíva cookies. Návštevy a to, čo sa na mape hľadá (obce, produkty, otvorené miesta), počítame anonymne cez <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>, ktorý neukladá IP adresy ani nič vo vašom prehliadači. Mapové podklady sa načítavajú z <a href="https://openfreemap.org/" target="_blank" rel="noopener">OpenFreeMap</a>. Vašu polohu, ak ju povolíte, používame len na zoradenie zoznamu priamo vo vašom prehliadači a do počítadla sa nedostane.</p>
     <p><strong>Kontakt:</strong> <a id="mailAbout" href="#"></a>. Ak ste na mape a nechcete tu byť, napíšte nám a údaje odstránime.</p>
     <form method="dialog"><button class="btn">Zavrieť</button></form>
   </dialog>
 
+  <!-- anonymous visit counts: no cookies, no IP addresses stored; localhost is not counted -->
+  <script data-goatcounter="https://aleco-sk.goatcounter.com/count" async src="vendor/goatcounter/count.js"></script>
   <script src="vendor/maplibre-gl-4.7.1/maplibre-gl.js"></script>
-  <script src="app.js?v=23"></script>
+  <script src="app.js?v=24"></script>
 </body>
 </html>
