@@ -10,6 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ALECO">
   <meta property="og:locale" content="sk_SK">
+  <meta property="og:locale:alternate" content="en_GB">
   <meta property="og:title" content="ALECO: lokálne jedlo na Slovensku">
   <meta property="og:description" content="Mapa fariem, salašov, mliečnych automatov, trhov a ďalších miest, kde kúpite jedlo priamo od tých, čo ho vyrábajú. Zadarmo, bez reklám.">
   <meta property="og:url" content="https://papkosd.github.io/ALECO/">
@@ -26,92 +27,107 @@
   <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
   <link href="fonts/fonts.css" rel="stylesheet">
   <link href="vendor/maplibre-gl-4.7.1/maplibre-gl.css" rel="stylesheet">
-  <link href="style.css?v=9" rel="stylesheet">
+  <link href="style.css?v=10" rel="stylesheet">
 </head>
 <body>
+  <!-- Slovak is written here; app.js swaps in English (data-t keys) for English visitors or after "EN" -->
   <div class="app">
-    <aside class="panel" aria-label="Zoznam miest">
+    <aside class="panel" data-t-aria="panel" aria-label="Zoznam miest">
       <header class="intro">
         <h1>ALECO</h1>
-        <p class="tagline">Farmy a lokálne jedlo na Slovensku</p>
-        <p class="lede">Farmy, salaše, pekárne, mliečne automaty a trhy na celom Slovensku. Kupujte priamo od tých, čo jedlo vyrábajú.</p>
+        <p class="tagline" data-t="tagline">Farmy a lokálne jedlo na Slovensku</p>
+        <p class="lede" data-t="lede">Farmy, salaše, pekárne, mliečne automaty a trhy na celom Slovensku. Kupujte priamo od tých, čo jedlo vyrábajú.</p>
         <p class="stats" id="stats"></p>
+        <div class="lang" role="group" aria-label="Jazyk / Language">
+          <button type="button" data-lang="sk" aria-pressed="true" lang="sk">SK</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+        </div>
       </header>
 
       <div class="controls">
         <div class="step">
-          <label class="step-label" for="q">Kde hľadáte?</label>
+          <label class="step-label" for="q" data-t="where">Kde hľadáte?</label>
           <div class="where">
-            <input id="q" type="search" placeholder="Obec alebo názov miesta" autocomplete="off" enterkeyhint="search">
-            <button type="button" class="btn ghost" id="locate">Moja poloha</button>
+            <input id="q" type="search" data-t-placeholder="placeholder" placeholder="Obec alebo názov miesta" autocomplete="off" enterkeyhint="search">
+            <button type="button" class="btn ghost" id="locate" data-t="myLocation">Moja poloha</button>
           </div>
           <div class="suggest" id="suggest" hidden></div>
           <div class="near-row" id="nearRow" hidden>
             <label class="select">
-              <span class="visually-hidden">Ako ďaleko</span>
+              <span class="visually-hidden" data-t="howFar">Ako ďaleko</span>
               <select id="radius">
-                <option value="10">do 10 km</option>
-                <option value="25" selected>do 25 km</option>
-                <option value="50">do 50 km</option>
-                <option value="0">celé Slovensko</option>
+                <option value="10" data-t="r10">do 10 km</option>
+                <option value="25" selected data-t="r25">do 25 km</option>
+                <option value="50" data-t="r50">do 50 km</option>
+                <option value="0" data-t="r0">celé Slovensko</option>
               </select>
             </label>
-            <button type="button" class="link-btn" id="clearLoc">Zrušiť miesto</button>
+            <button type="button" class="link-btn" id="clearLoc" data-t="clearLoc">Zrušiť miesto</button>
           </div>
         </div>
         <div class="step">
-          <p class="step-label" id="buyLabel">Čo chcete kúpiť?</p>
+          <p class="step-label" id="buyLabel" data-t="what">Čo chcete kúpiť?</p>
           <div class="chips" role="group" aria-labelledby="buyLabel" id="chips"></div>
         </div>
-        <label class="toggle"><input type="checkbox" id="bioOnly"> Len s certifikátom BIO</label>
+        <label class="toggle"><input type="checkbox" id="bioOnly"> <span data-t="bioOnly">Len s certifikátom BIO</span></label>
       </div>
 
       <p class="hint" id="hint" hidden></p>
       <div class="count-row" id="countRow">
         <p class="count" id="count" aria-live="polite"></p>
-        <button type="button" class="link-btn share-search" id="shareSearch" hidden>Zdieľať výber</button>
+        <button type="button" class="link-btn share-search" id="shareSearch" hidden data-t="shareSearch">Zdieľať výber</button>
       </div>
       <ol class="list" id="list"></ol>
 
       <section class="detail" id="detail" hidden aria-live="polite"></section>
 
       <footer class="foot">
-        <p><button type="button" class="link-btn" id="addBtn">Chýba tu miesto alebo je niečo zle?</button></p>
-        <p><button type="button" class="link-btn" id="aboutBtn">Odkiaľ sú údaje</button></p>
-        <p class="small">Otvorený projekt bez reklám, provízií a cookies. Údaje: <a href="https://www.openstreetmap.org/copyright">© prispievatelia OpenStreetMap</a> (ODbL), <a href="https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index">register ekologických certifikátov EÚ</a> a <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). <span id="generated"></span></p>
+        <p><button type="button" class="link-btn" id="addBtn" data-t="addBtn">Chýba tu miesto alebo je niečo zle?</button></p>
+        <p><button type="button" class="link-btn" id="aboutBtn" data-t="aboutBtn">Odkiaľ sú údaje</button></p>
+        <p><button type="button" class="link-btn" id="privacyBtn" data-t="privacyBtn">Súkromie a podmienky</button></p>
+        <p class="small"><span data-t-html="footSmall">Otvorený projekt bez reklám, provízií a cookies. Údaje: <a href="https://www.openstreetmap.org/copyright">© prispievatelia OpenStreetMap</a> (ODbL), <a href="https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index">register ekologických certifikátov EÚ</a> a <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0).</span> <span id="generated"></span></p>
       </footer>
     </aside>
 
     <main class="map-wrap">
-      <div id="map" role="region" aria-label="Mapa"></div>
-      <ul class="legend" id="legend" aria-label="Farby bodov na mape"></ul>
+      <div id="map" role="region" data-t-aria="map" aria-label="Mapa"></div>
+      <ul class="legend" id="legend" data-t-aria="legend" aria-label="Farby bodov na mape"></ul>
     </main>
   </div>
 
   <dialog id="addDialog" aria-labelledby="addTitle">
-    <h2 id="addTitle">Pridať, opraviť alebo odstrániť miesto</h2>
-    <p>Predávate jedlo, ktoré sami vyrábate, alebo tu chýba miesto, ktoré poznáte? Napíšte nám názov, obec, čo predávate a kedy. Skontrolujeme to a pridáme na mapu.</p>
-    <p>Ak je pri mieste niečo zle alebo ste na mape a nechcete tu byť, napíšte nám. Opravíme to alebo údaje odstránime.</p>
-    <p class="mail-row"><a class="btn" id="mailAdd" href="#">Napísať e-mail</a> <span class="small" id="mailText"></span></p>
-    <p class="small">Mapujete v OpenStreetMap? Miesto môžete pridať aj tam, na ALECO sa objaví pri ďalšej aktualizácii.</p>
-    <form method="dialog"><button class="btn ghost">Zavrieť</button></form>
+    <h2 id="addTitle" data-t="addTitle">Pridať, opraviť alebo odstrániť miesto</h2>
+    <p data-t="add1">Predávate jedlo, ktoré sami vyrábate, alebo tu chýba miesto, ktoré poznáte? Napíšte nám názov, obec, čo predávate a kedy. Skontrolujeme to a pridáme na mapu.</p>
+    <p data-t="add2">Ak je pri mieste niečo zle alebo ste na mape a nechcete tu byť, napíšte nám. Opravíme to alebo údaje odstránime.</p>
+    <p class="mail-row"><a class="btn" id="mailAdd" href="#" data-t="mailAdd">Napísať e-mail</a> <span class="small" id="mailText"></span></p>
+    <p class="small" data-t="add3">Mapujete v OpenStreetMap? Miesto môžete pridať aj tam, na ALECO sa objaví pri ďalšej aktualizácii.</p>
+    <form method="dialog"><button class="btn ghost" data-t="close">Zavrieť</button></form>
   </dialog>
 
   <dialog id="aboutDialog" aria-labelledby="aboutTitle">
-    <h2 id="aboutTitle">Odkiaľ sú údaje</h2>
-    <p><strong>Obchody, trhy, automaty, pekárne a vinárstva</strong> pochádzajú z OpenStreetMap, otvorenej mapy, ktorú môže upravovať ktokoľvek. Reťazce a supermarkety vynechávame.</p>
-    <p><strong>Pečiatka BIO</strong> znamená platný certifikát ekologickej výroby z registra Európskej komisie (TRACES). Produkty vypisujeme z certifikátu. Ukazujeme len výrobcov, ktorých certifikát uvádza jedlo pre ľudí, napríklad med, syr, ovocie alebo zeleninu. Farmy, ktoré pestujú len obilie či krmivo pre spracovateľov, na mape nie sú. Z certifikátu nevieme, či výrobca predáva aj priamo, preto si to pred cestou overte.</p>
-    <p><strong>Poloha</strong> certifikovaných výrobcov je adresa z certifikátu: prevádzka, ak je uvedená, inak sídlo firmy. Ak je sídlo v kancelárii vo veľkom meste, výrobcu na mapu nedávame, kým nezistíme, kde naozaj hospodári.</p>
-    <p>Súkromne hospodáriacich roľníkov zverejníme až s ich súhlasom.</p>
-    <p>Údaje sú otvorené (ODbL), môžete ich voľne použiť s uvedením zdroja: <a href="data/places.csv" download>tabuľka CSV</a> alebo <a href="data/places.geojson" download>GeoJSON</a>.</p>
-    <p><strong>Súkromie:</strong> stránka nepoužíva cookies. Návštevy a to, čo sa na mape hľadá (obce, produkty, otvorené miesta), počítame anonymne cez <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>, ktorý neukladá IP adresy ani nič vo vašom prehliadači. Mapové podklady sa načítavajú z <a href="https://openfreemap.org/" target="_blank" rel="noopener">OpenFreeMap</a>. Vašu polohu, ak ju povolíte, používame len na zoradenie zoznamu priamo vo vašom prehliadači a do počítadla sa nedostane.</p>
-    <p><strong>Kontakt:</strong> <a id="mailAbout" href="#"></a>. Ak ste na mape a nechcete tu byť, napíšte nám a údaje odstránime.</p>
-    <form method="dialog"><button class="btn">Zavrieť</button></form>
+    <h2 id="aboutTitle" data-t="aboutTitle">Odkiaľ sú údaje</h2>
+    <p data-t-html="about1"><strong>Obchody, trhy, automaty, pekárne a vinárstva</strong> pochádzajú z OpenStreetMap, otvorenej mapy, ktorú môže upravovať ktokoľvek. Reťazce a supermarkety vynechávame.</p>
+    <p data-t-html="about2"><strong>Pečiatka BIO</strong> znamená platný certifikát ekologickej výroby v registri Európskej komisie (TRACES). Produkty vypisujeme z certifikátu. Ukazujeme len výrobcov, ktorých certifikát uvádza jedlo pre ľudí, napríklad med, syr, ovocie alebo zeleninu. Farmy, ktoré pestujú len obilie či krmivo pre spracovateľov, na mape nie sú. Z certifikátu nevieme, či výrobca predáva aj priamo, preto si to pred cestou overte.</p>
+    <p data-t-html="about3"><strong>Poloha</strong> certifikovaných výrobcov je adresa z certifikátu: prevádzka, ak je uvedená, inak sídlo firmy. Ak je sídlo v kancelárii vo veľkom meste, výrobcu na mapu nedávame, kým nezistíme, kde naozaj hospodári.</p>
+    <p data-t="about4">Súkromne hospodáriacich roľníkov z registra certifikátov zverejníme až s ich súhlasom.</p>
+    <p data-t-html="about5">Údaje sú otvorené (ODbL), môžete ich voľne použiť s uvedením zdroja: <a href="data/places.csv" download>tabuľka CSV</a> alebo <a href="data/places.geojson" download>GeoJSON</a>.</p>
+    <form method="dialog"><button class="btn" data-t="close">Zavrieť</button></form>
+  </dialog>
+
+  <dialog id="privacyDialog" aria-labelledby="privacyTitle">
+    <h2 id="privacyTitle" data-t="privacyTitle">Súkromie a podmienky</h2>
+    <p><strong data-t="opLabel">Prevádzkovateľ:</strong> <span class="operator"></span><a class="mail" href="#"></a>. <span data-t="opNote">ALECO je nekomerčný projekt.</span></p>
+    <p data-t-html="priv1"><strong>Údaje o miestach.</strong> Zverejňujeme názov, polohu, adresu, kontakt, otváracie hodiny a ponuku miest, kde sa predáva jedlo priamo od výrobcov. Pochádzajú z verejných zdrojov: z OpenStreetMap, z registra ekologických certifikátov EÚ a z webov samotných predajcov. Ak miesto prevádzkuje fyzická osoba, ide o osobné údaje. Spracúvame ich na základe oprávneného záujmu informovať verejnosť o priamom predaji potravín (čl. 6 ods. 1 písm. f) GDPR) a len v rozsahu, v akom ich predajca sám zverejnil. Súkromne hospodáriacich roľníkov z registra certifikátov nezverejňujeme.</p>
+    <p data-t-html="priv2"><strong>Vaše práva.</strong> Môžete požiadať o prístup k údajom, ich opravu alebo vymazanie a namietať proti ich zverejneniu. Stačí napísať na e-mail vyššie. Údaje bez zbytočného odkladu opravíme alebo odstránime z mapy aj z otvorených dát. Máte aj právo podať sťažnosť <a href="https://dataprotection.gov.sk/" target="_blank" rel="noopener">Úradu na ochranu osobných údajov SR</a>.</p>
+    <p data-t-html="priv3"><strong>Návštevníci.</strong> Stránka nepoužíva cookies. Návštevnosť a to, čo sa hľadá (obce, produkty, otvorené miesta), meriame anonymne cez <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>, ktorý neukladá IP adresy. Stránku hostí GitHub Pages a mapové podklady poskytuje OpenFreeMap; tieto služby pri načítaní stránky technicky spracúvajú vašu IP adresu. Vašu polohu, ak ju povolíte, používame len vo vašom prehliadači na zoradenie zoznamu.</p>
+    <p data-t-html="priv4"><strong>Upozornenie.</strong> Údaje pochádzajú z verejných zdrojov a môžu byť neúplné alebo neaktuálne. Pred cestou si otváracie hodiny a ponuku overte priamo u predajcu. Pečiatka BIO znamená, že výrobca má platný certifikát v registri EÚ; ALECO nič necertifikuje.</p>
+    <p data-t-html="priv5"><strong>Licencie.</strong> Kód: AGPL-3.0, <a href="https://github.com/PapkoSD/ALECO" target="_blank" rel="noopener">GitHub</a>. Údaje: ODbL (© prispievatelia OpenStreetMap), register ekologických certifikátov Európskej komisie, GeoNames (CC BY 4.0).</p>
+    <form method="dialog"><button class="btn" data-t="close">Zavrieť</button></form>
   </dialog>
 
   <!-- anonymous visit counts: no cookies, no IP addresses stored; localhost is not counted -->
   <script data-goatcounter="https://aleco-sk.goatcounter.com/count" async src="vendor/goatcounter/count.js"></script>
   <script src="vendor/maplibre-gl-4.7.1/maplibre-gl.js"></script>
-  <script src="app.js?v=24"></script>
+  <script src="app.js?v=25"></script>
 </body>
 </html>

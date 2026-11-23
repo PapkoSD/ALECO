@@ -1,38 +1,30 @@
-/* ALECO: open map of local food in Slovakia. No build step, no tracking, no cookies. */
+/* ALECO: open map of local food in Slovakia, in Slovak and English. No build step and no cookies; visits are counted
+   anonymously with GoatCounter. */
 (() => {
   "use strict";
 
   /* Colours belong to place groups, so the map stays readable with a dozen place types. The legend sits on the map. */
   const GROUPS = [
-    { id: "farms",    label: "Farmy",     color: "#2e6b45" },
-    { id: "wine",     label: "Vinárstva", color: "#7a2343" },
-    { id: "bakeries", label: "Pekárne",   color: "#b8862b" },
-    { id: "vending",  label: "Automaty",  color: "#2f6db5" },
-    { id: "markets",  label: "Trhy",      color: "#b24a2c" },
-    { id: "shops",    label: "Obchody",   color: "#3e8e86" },
+    { id: "farms",    color: "#2e6b45" },
+    { id: "wine",     color: "#7a2343" },
+    { id: "bakeries", color: "#b8862b" },
+    { id: "vending",  color: "#2f6db5" },
+    { id: "markets",  color: "#b24a2c" },
+    { id: "shops",    color: "#3e8e86" },
   ];
-  const CATS = {
-    farm:         { label: "Farma",                  group: "farms" },
-    producer:     { label: "Výrobca potravín",       group: "farms" },
-    honey:        { label: "Včelár",                 group: "farms" },
-    salas:        { label: "Salaš",                  group: "farms" },
-    winery:       { label: "Vinárstvo",              group: "wine" },
-    bakery:       { label: "Pekáreň",                group: "bakeries" },
-    vending:      { label: "Mliečny automat",        group: "vending" },
-    market:       { label: "Trh",                    group: "markets" },
-    organic_shop: { label: "Bio obchod",             group: "shops" },
-    dairy:        { label: "Mliečne výrobky a syry", group: "shops" },
-    deli:         { label: "Lahôdky",                group: "shops" },
-    butcher:      { label: "Mäsiarstvo",             group: "shops" },
-    greengrocer:  { label: "Ovocie a zelenina",      group: "shops" },
+  const CAT_GROUP = {
+    farm: "farms", producer: "farms", honey: "farms", salas: "farms", winery: "wine", bakery: "bakeries",
+    vending: "vending", market: "markets", organic_shop: "shops", dairy: "shops", deli: "shops", butcher: "shops",
+    greengrocer: "shops",
   };
   const GROUP_COLOR = Object.fromEntries(GROUPS.map((g) => [g.id, g.color]));
   const SK_BOUNDS = [[16.83, 47.73], [22.57, 49.62]];
   const PAGE = 40;
   const RADII = [10, 25, 50, 0];  // km around the chosen place, as in the select; 0 = all of Slovakia, nearest first
   const CERT_PDF = (ref) => `https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/${encodeURIComponent(ref)}.pdf`;
-  // where people ask to add, fix or remove a place; put together here rather than written into the page,
-  // so simple address harvesters miss it
+  // who runs the site and where people ask to add, fix or remove a place; the address is put together here rather
+  // than written into the page, so simple address harvesters miss it
+  const OPERATOR = "";
   const CONTACT = ["patrikmihal.dev", "gmail.com"].join("@");
   const mailto = (subject, body) => `mailto:${CONTACT}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   // anonymous counts of what people use, so we can tell whether the map helps (GoatCounter: no cookies, no IP
@@ -62,18 +54,213 @@
     const h = Math.sin(dLa / 2) ** 2 + Math.cos(la1 * r) * Math.cos(la2 * r) * Math.sin(dLo / 2) ** 2;
     return 12742 * Math.asin(Math.sqrt(h));
   };
-  const fmtKm = (d) => (d < 10 ? d.toFixed(1).replace(".", ",") : Math.round(d)) + " km";
-  const fmtNum = (n) => n.toLocaleString("sk-SK");
-  const fmtDate = (iso) => { const [y, m, d] = iso.split("-"); return `${+d}. ${+m}. ${y}`; };
-  const plural = (n, one, few, many) => (n === 1 ? one : n > 1 && n < 5 ? few : many);
-  const DAYS = { Mo: "Po", Tu: "Ut", We: "St", Th: "Št", Fr: "Pi", Sa: "So", Su: "Ne", PH: "sviatky", off: "zatvorené" };
-  const fmtHours = (h) => h.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH|off)\b/g, (m) => DAYS[m]).replace(/;\s*/g, "\n");
   const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
-  const catOf = (p) => CATS[p.category] || { label: p.category, group: "shops" };
-  const labelOf = (p) => p.label || catOf(p).label;
+
+  /* ---------- language: Slovak for Slovak and Czech browsers, English for everyone else; "SK | EN" switches ---------- */
+  const START = new URL(location.href).searchParams;  // what the visitor arrived with, read before it is rewritten
+  const LANG = (() => {
+    const asked = START.get("lang");
+    if (asked === "sk" || asked === "en") return asked;
+    try { const saved = localStorage.getItem("aleco-lang"); if (saved === "sk" || saved === "en") return saved; } catch { /* storage blocked */ }
+    const prefs = (navigator.languages || [navigator.language || ""]).map((l) => String(l).slice(0, 2).toLowerCase());
+    return !prefs[0] || prefs.some((l) => l === "sk" || l === "cs") ? "sk" : "en";
+  })();
+  const EN = LANG === "en";
+  const plural = (n, one, few, many) => (n === 1 ? one : n > 1 && n < 5 ? few : many);
+  const fmtNum = (n) => n.toLocaleString(EN ? "en-GB" : "sk-SK");
+  const fmtKm = (d) => (d < 10 ? (EN ? d.toFixed(1) : d.toFixed(1).replace(".", ",")) : Math.round(d)) + " km";
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const fmtDate = (iso) => { const [y, m, d] = iso.slice(0, 10).split("-"); return EN ? `${+d} ${MONTHS[+m - 1]} ${y}` : `${+d}. ${+m}. ${y}`; };
+  const DAYS_SK = { Mo: "Po", Tu: "Ut", We: "St", Th: "Št", Fr: "Pi", Sa: "So", Su: "Ne", PH: "sviatky", off: "zatvorené" };
+  const DAYS_EN = { PH: "public holidays", off: "closed" };
+  const fmtHours = (h) => h.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH|off)\b/g, (m) => (EN ? DAYS_EN[m] || m : DAYS_SK[m])).replace(/;\s*/g, "\n");
+  const KRAJ_EN = { "Bratislavský": "Bratislava", "Trnavský": "Trnava", "Trenčiansky": "Trenčín", "Nitriansky": "Nitra",
+    "Žilinský": "Žilina", "Banskobystrický": "Banská Bystrica", "Prešovský": "Prešov", "Košický": "Košice" };
+  // type labels that come with the data (from the build), in English
+  const LABELS_EN = {
+    "Farmársky obchod": "Farm shop", "Mliečny automat": "Milk vending machine", "Mliečna farma": "Dairy farm",
+    "Zdravá výživa": "Health food shop", "Syry a mliečne výrobky": "Cheese and dairy", "Samozber": "Pick your own",
+    "Mäso a údeniny": "Meat and smoked meats", "Automat na mliečne výrobky": "Dairy vending machine",
+    "Automat na med": "Honey vending machine", "Automat na mäso": "Meat vending machine", "Rybárstvo": "Fish farm",
+    "Automat na vajcia": "Egg vending machine", "Olejáreň": "Oil mill", "Automat na ovocie a zeleninu": "Fruit and veg vending machine",
+    "Automat na mlieko a vajcia": "Milk and egg vending machine", "Automat na zemiaky": "Potato vending machine",
+    "Automat na pečivo": "Bread vending machine", "Automat na potraviny": "Food vending machine", "Syráreň": "Cheese dairy",
+    "Muštáreň": "Juice and cider press",
+  };
+
+  const STR = {
+    sk: {
+      title: "ALECO: lokálne jedlo na Slovensku",
+      groups: { farms: "Farmy", wine: "Vinárstva", bakeries: "Pekárne", vending: "Automaty", markets: "Trhy", shops: "Obchody" },
+      cats: { farm: "Farma", producer: "Výrobca potravín", honey: "Včelár", salas: "Salaš", winery: "Vinárstvo", bakery: "Pekáreň",
+        vending: "Mliečny automat", market: "Trh", organic_shop: "Bio obchod", dairy: "Mliečne výrobky a syry", deli: "Lahôdky",
+        butcher: "Mäsiarstvo", greengrocer: "Ovocie a zelenina" },
+      buy: { mlieko: ["Mlieko", "s mliekom"], syr: ["Syry", "so syrmi"], vajcia: ["Vajcia", "s vajciami"], maso: ["Mäso", "s mäsom"],
+        med: ["Med", "s medom"], ovocie: ["Ovocie", "s ovocím"], zelenina: ["Zelenina", "so zeleninou"], pecivo: ["Pečivo", "s pečivom"],
+        vino: ["Víno", "s vínom"] },
+      all: "Všetko", bioLegend: "BIO",
+      places: (n) => plural(n, "miesto", "miesta", "miest"),
+      from: (loc) => (loc.me ? "vás" : `obce ${esc(loc.name)}`),
+      to: (loc) => (loc.me ? "vám" : `obci ${esc(loc.name)}`),
+      within: (r, loc) => ` do ${r} km od ${STR.sk.from(loc)}`,
+      nearest: (loc) => `, najbližšie k ${STR.sk.to(loc)}`,
+      overview: " na celom Slovensku, najprv overené a tie, kde poznáme kontakt",
+      mapCentre: ", najbližšie k stredu mapy",
+      hint: (n, N, more, near) => (n === 1
+        ? `Pri jednom${more ? " ďalšom" : ""} mieste${near ? " v okolí" : ""} nevieme, čo presne predáva. Nájdete ho pod`
+        : `Pri${more ? " ďalších" : ""} ${N} miestach${near ? " v okolí" : ""} nevieme, čo presne predávajú, napríklad pri trhoch. Nájdete ich pod`),
+      nothingNear: (r, loc, what) => `Do ${r} km od ${STR.sk.from(loc)} sme nenašli nič${what}.`,
+      searchWithin: (r) => `Hľadať do ${r} km`, searchAll: "Hľadať na celom Slovensku",
+      nothing: "Takému výberu nič nezodpovedá. Skúste iný produkt alebo vypnite filter BIO.",
+      laterHead: "Pekárne a trhy",
+      bioTitle: "Certifikovaná ekologická výroba", verified: "overené", verifiedTitle: "Overili sme, že predávajú priamo",
+      more: (a, b) => `Zobraziť ďalšie (${a} z ${b})`,
+      stampRing: "EKOLOGICKÁ VÝROBA · REGISTER EÚ ·", stampAria: (c) => `Certifikát ekologickej výroby ${c} v registri EÚ`,
+      approxVillage: "poloha na mape je stred obce, nie presná adresa", approxPostcode: "poloha na mape je len približná (podľa PSČ)",
+      region: (k) => `${k} kraj`, okres: (o) => `okres ${o}`,
+      fWhere: "Kde", fDistance: "Vzdialenosť", fSales: "Predaj", fCert: "Certifikát BIO", fCertProducts: "Certifikované produkty",
+      fOldCertProducts: "Produkty podľa certifikátu", fOffer: "Ponuka", fPremises: "Prevádzky", fHours: "Otvorené", fPhone: "Telefón", fWeb: "Web",
+      distance: (d, loc) => `${d} od ${STR.sk.from(loc)}`,
+      checkedOn: (date) => `Overené ${date} na ich stránke`,
+      certExpired: (link, date) => `${link} platil do ${date}. Novší sme zatiaľ nenačítali.`,
+      noContactOsm: "Kontakt ani otváracie hodiny zatiaľ nepoznáme.", noContact: "Kontakt zatiaľ nepoznáme.",
+      certNoSale: "Z certifikátu nevieme, či predávajú aj priamo, preto si to pred návštevou overte.",
+      stale: (y) => `Údaje v OpenStreetMap sú naposledy upravené v roku ${y}, pred cestou si overte, či miesto ešte funguje.`,
+      source: "Zdroj", and: "a", register: "EÚ register ekologických certifikátov", registerTraces: "EÚ register ekologických certifikátov (TRACES)",
+      editOsm: "Mapujete v OpenStreetMap?", editOsmLink: "Upravte miesto tam",
+      produce: "Vyrábajú", canBuy: "Kúpite tu",
+      reportBody: (name, obec, link) => `Dobrý deň,\n\nmiesto: ${name}${obec ? `, ${obec}` : ""}\n${link}\n\nČo treba opraviť alebo odstrániť:\n`,
+      back: "Späť na zoznam", navigate: "Navigovať", call: "Zavolať", share: "Zdieľať", report: "Nahlásiť chybu",
+      certificate: (link, until) => `Certifikát ${link}${until ? `<br>platí do ${until}` : ""}`,
+      copied: "Odkaz skopírovaný", copyFailed: "Odkaz sa nepodarilo skopírovať", shareSearch: "Zdieľať výber",
+      town: "obec", product: "produkt", nearby: "okolie",
+      combo: (label, name) => `<strong>${label}</strong> v okolí obce <strong>${name}</strong>`,
+      okresSmall: (o) => `, okres ${o}`,
+      noneFound: (q) => `Nenašli sme obec, produkt ani miesto „${q}“.`,
+      myLocation: "Moja poloha", locating: "Zisťujem…", noGeo: "Nedá sa zistiť", geoFailed: "Poloha nedostupná", yourLocation: "Vaša poloha",
+      mailAddSubject: "ALECO: pridať alebo opraviť miesto",
+      mailAddBody: "Dobrý deň,\n\nchcem pridať / opraviť / odstrániť miesto.\n\nNázov:\nObec:\nČo predávate a kedy:\nTelefón alebo web:\n",
+      mailOr: (c) => `alebo na adresu ${c}`,
+      updated: (date) => `Aktualizované ${date}.`,
+      stats: (n, b) => `${n} miest, z toho ${b} s certifikátom BIO.`,
+      loadFailed: "Údaje sa nepodarilo načítať. Skontrolujte pripojenie a obnovte stránku.",
+    },
+    en: {
+      title: "ALECO: local food in Slovakia",
+      groups: { farms: "Farms", wine: "Wineries", bakeries: "Bakeries", vending: "Vending machines", markets: "Markets", shops: "Shops" },
+      cats: { farm: "Farm", producer: "Food producer", honey: "Beekeeper", salas: "Salaš (sheep farm)", winery: "Winery", bakery: "Bakery",
+        vending: "Milk vending machine", market: "Market", organic_shop: "Organic shop", dairy: "Cheese and dairy shop", deli: "Deli",
+        butcher: "Butcher", greengrocer: "Greengrocer" },
+      buy: { mlieko: ["Milk", "selling milk"], syr: ["Cheese", "selling cheese"], vajcia: ["Eggs", "selling eggs"], maso: ["Meat", "selling meat"],
+        med: ["Honey", "selling honey"], ovocie: ["Fruit", "selling fruit"], zelenina: ["Vegetables", "selling vegetables"],
+        pecivo: ["Bread", "selling bread"], vino: ["Wine", "selling wine"] },
+      all: "All", bioLegend: "Organic",
+      places: (n) => (n === 1 ? "place" : "places"),
+      from: (loc) => (loc.me ? "you" : esc(loc.name)),
+      to: (loc) => (loc.me ? "you" : esc(loc.name)),
+      within: (r, loc) => ` within ${r} km of ${STR.en.from(loc)}`,
+      nearest: (loc) => `, nearest to ${STR.en.to(loc)}`,
+      overview: " in all of Slovakia, verified places and those with contact details first",
+      mapCentre: ", nearest to the map centre",
+      hint: (n, N, more, near) => (n === 1
+        ? `For one${more ? " more" : ""} place${near ? " nearby" : ""} we don't know exactly what it sells. You'll find it under`
+        : `For ${N}${more ? " more" : ""} places${near ? " nearby" : ""} we don't know exactly what they sell, for example markets. You'll find them under`),
+      nothingNear: (r, loc, what) => `No places${what} within ${r} km of ${STR.en.from(loc)}.`,
+      searchWithin: (r) => `Search within ${r} km`, searchAll: "Search all of Slovakia",
+      nothing: "Nothing matches. Try another product or turn off the organic filter.",
+      laterHead: "Bakeries and markets",
+      bioTitle: "Certified organic", verified: "verified", verifiedTitle: "We checked that they sell directly",
+      more: (a, b) => `Show more (${a} of ${b})`,
+      stampRing: "CERTIFIED ORGANIC · EU REGISTER ·", stampAria: (c) => `Organic certificate ${c} in the EU register`,
+      approxVillage: "the pin is the village centre, not the exact address", approxPostcode: "the pin is only approximate (by postcode)",
+      region: (k) => `${KRAJ_EN[k] || k} region`, okres: (o) => `${o} district`,
+      fWhere: "Where", fDistance: "Distance", fSales: "How they sell", fCert: "Organic certificate", fCertProducts: "Certified products",
+      fOldCertProducts: "Products on the certificate", fOffer: "Offer", fPremises: "Premises", fHours: "Opening hours", fPhone: "Phone", fWeb: "Website",
+      distance: (d, loc) => `${d} from ${STR.en.from(loc)}`,
+      checkedOn: (date) => `Checked ${date} on their website`,
+      certExpired: (link, date) => `${link} was valid until ${date}. We haven't loaded a newer one yet.`,
+      noContactOsm: "We don't know their contact details or opening hours yet.", noContact: "We don't know their contact details yet.",
+      certNoSale: "The certificate doesn't say whether they also sell directly, so check before you go.",
+      stale: (y) => `The OpenStreetMap data was last edited in ${y}; check that the place is still open before you go.`,
+      source: "Source", and: "and", register: "the EU register of organic certificates", registerTraces: "EU register of organic certificates (TRACES)",
+      editOsm: "Do you map in OpenStreetMap?", editOsmLink: "Edit the place there",
+      produce: "They produce", canBuy: "You can buy",
+      reportBody: (name, obec, link) => `Hello,\n\nplace: ${name}${obec ? `, ${obec}` : ""}\n${link}\n\nWhat should be fixed or removed:\n`,
+      back: "Back to the list", navigate: "Directions", call: "Call", share: "Share", report: "Report a problem",
+      certificate: (link, until) => `Certificate ${link}${until ? `<br>valid until ${until}` : ""}`,
+      copied: "Link copied", copyFailed: "Couldn't copy the link", shareSearch: "Share this search",
+      town: "town", product: "product", nearby: "nearby",
+      combo: (label, name) => `<strong>${label}</strong> around <strong>${name}</strong>`,
+      okresSmall: (o) => `, ${o} district`,
+      noneFound: (q) => `No town, product or place called “${q}”.`,
+      myLocation: "My location", locating: "Locating…", noGeo: "Not available", geoFailed: "Location unavailable", yourLocation: "Your location",
+      mailAddSubject: "ALECO: add or fix a place",
+      mailAddBody: "Hello,\n\nI'd like to add / fix / remove a place.\n\nName:\nVillage or town:\nWhat is sold and when:\nPhone or website:\n",
+      mailOr: (c) => `or write to ${c}`,
+      updated: (date) => `Updated ${date}.`,
+      stats: (n, b) => `${n} places, ${b} of them certified organic.`,
+      loadFailed: "Couldn't load the data. Check your connection and reload the page.",
+      // the page's own texts (Slovak is written in index.html)
+      page: {
+        panel: "List of places",
+        tagline: "Farms and local food in Slovakia",
+        lede: "Farms, salaše (sheep farms), bakeries, milk vending machines and markets all over Slovakia. Buy straight from the people who make the food.",
+        where: "Where are you looking?", placeholder: "Village, town or place name", myLocation: "My location", howFar: "How far",
+        r10: "within 10 km", r25: "within 25 km", r50: "within 50 km", r0: "all of Slovakia", clearLoc: "Clear place",
+        what: "What do you want to buy?", bioOnly: "Certified organic only", shareSearch: "Share this search",
+        addBtn: "Missing a place, or something wrong?", aboutBtn: "Where the data comes from", privacyBtn: "Privacy and terms",
+        footSmall: `An open project with no ads, no commission and no cookies. Data: <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a> (ODbL), the <a href="https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index">EU register of organic certificates</a> and <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0).`,
+        map: "Map", legend: "Colours of the points on the map",
+        addTitle: "Add, fix or remove a place",
+        add1: "Do you sell food you make yourself, or is a place you know missing? Send us its name, village or town, what is sold and when. We'll check it and add it to the map.",
+        add2: "If something about a place is wrong, or you're on the map and don't want to be, write to us. We'll fix it or remove the data.",
+        mailAdd: "Write an e-mail",
+        add3: "Do you map in OpenStreetMap? You can add the place there too; it will appear on ALECO with the next update.",
+        close: "Close",
+        aboutTitle: "Where the data comes from",
+        about1: "<strong>Shops, markets, vending machines, bakeries and wineries</strong> come from OpenStreetMap, the open map anyone can edit. We leave out chains and supermarkets.",
+        about2: "<strong>The BIO stamp</strong> means a valid organic certificate in the European Commission's register (TRACES). Products are listed from the certificate. We only show producers whose certificate lists food for people, such as honey, cheese, fruit or vegetables; farms that only grow grain or feed for processors are not on the map. A certificate doesn't say whether the producer also sells directly, so check before you go.",
+        about3: "<strong>The location</strong> of certified producers is the address on the certificate: the premises if listed, otherwise the registered office. If the office is in a big city, we leave the producer off the map until we know where they actually farm.",
+        about4: "Individual farmers (sole traders) from the certificate register are only published with their consent.",
+        about5: `The data is open (ODbL): you can reuse it freely with attribution, as a <a href="data/places.csv" download>CSV table</a> or <a href="data/places.geojson" download>GeoJSON</a>.`,
+        privacyTitle: "Privacy and terms", opLabel: "Operator:", opNote: "ALECO is a non-commercial project.",
+        priv1: "<strong>Data about places.</strong> We publish the name, location, address, contact details, opening hours and offer of places that sell food straight from the producer. It comes from public sources: OpenStreetMap, the EU register of organic certificates and the sellers' own websites. Where a place is run by an individual, this is personal data. We process it on the basis of a legitimate interest in informing the public about direct food sales (Art. 6(1)(f) GDPR), and only to the extent the seller has published it. Individual farmers from the certificate register are not published.",
+        priv2: `<strong>Your rights.</strong> You can ask for access to the data, for it to be corrected or erased, and object to its publication: just write to the e-mail above. We will correct or remove the data from the map and the open data without undue delay. You can also complain to the <a href="https://dataprotection.gov.sk/" target="_blank" rel="noopener">Slovak Data Protection Authority</a>.`,
+        priv3: `<strong>Visitors.</strong> The site uses no cookies. Visits and what people search for (towns, products, opened places) are counted anonymously with <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>, which does not store IP addresses. The site is hosted by GitHub Pages and the base map comes from OpenFreeMap; these services technically process your IP address when the page loads. Your location, if you allow it, is only used in your browser to sort the list.`,
+        priv4: "<strong>Disclaimer.</strong> The data comes from public sources and may be incomplete or out of date. Check opening hours and what's on offer with the seller before you go. The BIO stamp means the producer holds a valid certificate in the EU register; ALECO does not certify anything.",
+        priv5: `<strong>Licences.</strong> Code: AGPL-3.0, <a href="https://github.com/PapkoSD/ALECO" target="_blank" rel="noopener">GitHub</a>. Data: ODbL (© OpenStreetMap contributors), the European Commission's register of organic certificates, GeoNames (CC BY 4.0).`,
+      },
+    },
+  };
+  const T = STR[LANG];
+
+  // the page is written in Slovak; English replaces its texts before anything else reads them (the title too)
+  if (EN) {
+    document.documentElement.lang = "en";
+    document.title = T.title;
+    for (const el of document.querySelectorAll("[data-t]")) if (T.page[el.dataset.t] !== undefined) el.textContent = T.page[el.dataset.t];
+    for (const el of document.querySelectorAll("[data-t-html]")) if (T.page[el.dataset.tHtml] !== undefined) el.innerHTML = T.page[el.dataset.tHtml];
+    for (const el of document.querySelectorAll("[data-t-placeholder]")) el.placeholder = T.page[el.dataset.tPlaceholder];
+    for (const el of document.querySelectorAll("[data-t-aria]")) el.setAttribute("aria-label", T.page[el.dataset.tAria]);
+  }
+  for (const b of document.querySelectorAll(".lang [data-lang]")) {
+    b.setAttribute("aria-pressed", b.dataset.lang === LANG);
+    b.addEventListener("click", () => {
+      if (b.dataset.lang === LANG) return;
+      try { localStorage.setItem("aleco-lang", b.dataset.lang); } catch { /* the link below carries the choice anyway */ }
+      track(`jazyk/${b.dataset.lang}`);
+      const url = new URL(location.href);  // same search and map view, other language
+      url.searchParams.set("lang", b.dataset.lang);
+      location.href = url.href;
+    });
+  }
+
+  const catOf = (p) => ({ label: T.cats[p.category] || p.category, group: CAT_GROUP[p.category] || "shops" });
+  const labelOf = (p) => (p.label ? (EN ? LABELS_EN[p.label] || p.label : p.label) : catOf(p).label);
+  const labelSk = (p) => p.label || STR.sk.cats[p.category] || p.category;  // for spotting generic names, whatever the language
   // "Šamorín, okres Dunajská Streda"; no okres when it only repeats the town ("Bratislava-Petržalka", "Nitra")
   const sameTown = (obec, okres) => obec === okres || (/^(Bratislava|Košice) [IV]+$/.test(okres) && obec.startsWith(okres.split(" ")[0]));
-  const okresOf = (p) => (p.okres && p.obec && !sameTown(p.obec, p.okres) ? `okres ${p.okres}` : "");
+  const okresOf = (p) => (p.okres && p.obec && !sameTown(p.obec, p.okres) ? T.okres(p.okres) : "");
   const place = (p) => [p.obec, okresOf(p)].filter(Boolean).join(", ");
   // today in the visitor's time zone ("2026-11-28"); a certificate is valid through its end date
   const TODAY = (() => { const d = new Date(); return [d.getFullYear(), d.getMonth() + 1, d.getDate()].map((n) => String(n).padStart(2, "0")).join("-"); })();
@@ -90,7 +277,7 @@
     const junk = n.replace(/[^\p{L}]/gu, "").length < 2;  // "M" is a mapping mistake, not a name
     if (junk) n = labelOf(p);
     else if (n[0] !== n[0].toUpperCase() && PLAIN_START.has(fold(n.split(/\s+/)[0]))) n = n[0].toUpperCase() + n.slice(1);
-    const generic = junk || GENERIC.has(fold(n)) || fold(n) === fold(labelOf(p));
+    const generic = junk || GENERIC.has(fold(n)) || fold(n) === fold(labelSk(p));
     return { name: generic && p.obec ? `${n} ${p.obec}` : n, generic };
   }
 
@@ -101,18 +288,18 @@
     + (GROUP_RANK[p.group] ?? 6);
 
   /* What you can buy. The ids match BUY in scripts/build_seed.py, which tags every place with them ("buy");
-     `words` let people type a product into the search box: "bryndza" offers Syry. */
+     `words` (Slovak and English) let people type a product into the search box: "bryndza" or "cheese" offers Syry. */
   const BUY = [
-    { id: "mlieko",   label: "Mlieko",   with: "s mliekom",    words: "mlieko mlieka mliečne mliekomat jogurt tvaroh maslo kefír smotana" },
-    { id: "syr",      label: "Syry",     with: "so syrmi",     words: "syr syry syra syrov bryndza bryndze oštiepok parenica korbáčiky žinčica" },
-    { id: "vajcia",   label: "Vajcia",   with: "s vajciami",   words: "vajcia vajec vajíčka vajíčok vajce" },
-    { id: "maso",     label: "Mäso",     with: "s mäsom",      words: "mäso mäsa údeniny klobása klobásy slanina šunka ryby rýb pstruh hovädzie bravčové jahňacie" },
-    { id: "med",      label: "Med",      with: "s medom",      words: "med medu medovina propolis" },
-    { id: "ovocie",   label: "Ovocie",   with: "s ovocím",     words: "ovocie ovocia jablká jabĺk hrušky slivky marhule čerešne jahody maliny ríbezle čučoriedky orechy samozber" },
-    { id: "zelenina", label: "Zelenina", with: "so zeleninou", words: "zelenina zeleniny zemiaky zemiakov mrkva cibuľa cesnak kapusta paradajky paprika uhorky špargľa huby" },
-    { id: "pecivo",   label: "Pečivo",   with: "s pečivom",    words: "pečivo pečiva chlieb chleba rožky koláče pekáreň kváskový" },
-    { id: "vino",     label: "Víno",     with: "s vínom",      words: "víno vína vínom vinárstvo vinár" },
-  ].map((b) => ({ ...b, fw: fold(b.words).split(" ") }));
+    { id: "mlieko",   words: "mlieko mlieka mliečne mliekomat jogurt tvaroh maslo kefír smotana milk dairy yogurt butter cream" },
+    { id: "syr",      words: "syr syry syra syrov bryndza bryndze oštiepok parenica korbáčiky žinčica cheese cheeses" },
+    { id: "vajcia",   words: "vajcia vajec vajíčka vajíčok vajce eggs egg" },
+    { id: "maso",     words: "mäso mäsa údeniny klobása klobásy slanina šunka ryby rýb pstruh hovädzie bravčové jahňacie meat sausages bacon ham fish trout beef pork lamb" },
+    { id: "med",      words: "med medu medovina propolis honey mead" },
+    { id: "ovocie",   words: "ovocie ovocia jablká jabĺk hrušky slivky marhule čerešne jahody maliny ríbezle čučoriedky orechy samozber fruit apples pears plums apricots cherries strawberries raspberries berries nuts" },
+    { id: "zelenina", words: "zelenina zeleniny zemiaky zemiakov mrkva cibuľa cesnak kapusta paradajky paprika uhorky špargľa huby vegetables veg potatoes carrots onions garlic tomatoes peppers asparagus mushrooms" },
+    { id: "pecivo",   words: "pečivo pečiva chlieb chleba rožky koláče pekáreň kváskový bread bakery pastry" },
+    { id: "vino",     words: "víno vína vínom vinárstvo vinár wine winery" },
+  ].map((b) => ({ ...b, label: T.buy[b.id][0], with: T.buy[b.id][1], fw: fold(b.words).split(" ") }));
   // around towns the many bakeries and plain markets ("Trh Brezno") would fill the first page: they come after the rest
   const laterTier = (p) => p.group === "bakeries" || (p.group === "markets" && p._generic);
   const BUY_BY_ID = Object.fromEntries(BUY.map((b) => [b.id, b]));
@@ -142,18 +329,18 @@
 
   const colorExpr = ["match", ["get", "group"], ...Object.entries(GROUP_COLOR).flat(), "#17322a"];
 
-  function slovakLabels() {
-    // base map labels in Slovak where OSM has a Slovak name ("Maďarsko", "Viedeň"), otherwise the local name
+  function localLabels() {
+    // base map labels in the page's language where OSM has them ("Maďarsko" / "Hungary"), otherwise the local name
     for (const l of map.getStyle().layers) {
       const tf = l.type === "symbol" && l.layout && l.layout["text-field"];
       if (tf && /name/.test(JSON.stringify(tf))) {
-        map.setLayoutProperty(l.id, "text-field", ["coalesce", ["get", "name:sk"], ["get", "name"]]);
+        map.setLayoutProperty(l.id, "text-field", ["coalesce", ["get", EN ? "name:en" : "name:sk"], ["get", "name"]]);
       }
     }
   }
 
   function addLayers() {
-    slovakLabels();
+    localLabels();
     // the search area: a faint disc around the chosen place
     map.addSource("area", { type: "geojson", data: fc([]) });
     map.addLayer({ id: "area-fill", type: "fill", source: "area", paint: { "fill-color": "#17322a", "fill-opacity": 0.05 } });
@@ -230,24 +417,19 @@
   // with a product chosen, say how many places nearby may sell it too but do not tell us what they sell
   function renderHint() {
     const n = state.unknown;
-    const near = state.loc && state.radius ? " v okolí" : "";
-    const more = state.matches.length ? (n === 1 ? " ďalšom" : " ďalších") : "";  // "more" only when the list shows some
-    $("#hint").innerHTML = !n ? "" : (n === 1
-      ? `Pri jednom${more} mieste${near} nevieme, čo presne predáva. Nájdete ho pod`
-      : `Pri${more} ${fmtNum(n)} miestach${near} nevieme, čo presne predávajú, napríklad pri trhoch. Nájdete ich pod`)
-      + ` <button type="button" class="link-btn" data-buy="all">Všetko</button>.`;
+    // "more" only when the list shows some places already
+    $("#hint").innerHTML = !n ? "" : T.hint(n, fmtNum(n), state.matches.length > 0, !!(state.loc && state.radius))
+      + ` <button type="button" class="link-btn" data-buy="all">${T.all}</button>.`;
     $("#hint").hidden = !n || !!state.selected;
   }
-
-  const fromLoc = (to) => (state.loc.me ? (to ? "vám" : "vás") : `${to ? "obci" : "obce"} ${esc(state.loc.name)}`);
 
   function emptyMessage(what) {
     if (state.loc && state.radius) {
       const next = RADII[RADII.indexOf(state.radius) + 1];
-      return `<li class="empty">Do ${state.radius} km od ${fromLoc(false)} sme nenašli nič${what}.
-        <button type="button" class="link-btn" data-radius="${next}">${next ? `Hľadať do ${next} km` : "Hľadať na celom Slovensku"}</button></li>`;
+      return `<li class="empty">${T.nothingNear(state.radius, state.loc, what)}
+        <button type="button" class="link-btn" data-radius="${next}">${next ? T.searchWithin(next) : T.searchAll}</button></li>`;
     }
-    return `<li class="empty">Takému výberu nič nezodpovedá. Skúste iný produkt alebo vypnite filter BIO.</li>`;
+    return `<li class="empty">${T.nothing}</li>`;
   }
 
   function renderList() {
@@ -256,10 +438,8 @@
     const loc = state.loc;
     const overview = !loc && map.getZoom() < OVERVIEW_ZOOM;
     const what = state.buy === "all" ? "" : ` ${BUY_BY_ID[state.buy].with}`;
-    const where = loc
-      ? (state.radius ? ` do ${state.radius} km od ${fromLoc(false)}` : `, najbližšie k ${fromLoc(true)}`)
-      : overview ? " na celom Slovensku, najprv overené a tie, kde poznáme kontakt" : ", najbližšie k stredu mapy";
-    $("#count").innerHTML = n ? `<strong>${fmtNum(n)}</strong> ${plural(n, "miesto", "miesta", "miest")}${what}${where}` : "";
+    const where = loc ? (state.radius ? T.within(state.radius, loc) : T.nearest(loc)) : overview ? T.overview : T.mapCentre;
+    $("#count").innerHTML = n ? `<strong>${fmtNum(n)}</strong> ${T.places(n)}${what}${where}` : "";
     $("#shareSearch").hidden = !n || !((state.loc && !state.loc.me) || state.buy !== "all" || state.bioOnly);
     const list = $("#list");
     if (!n) {
@@ -278,15 +458,15 @@
       // "Trh Brezno" already names the town and "Farma Beckov" already says it is a farm
       const label = fold(p._n).startsWith(fold(labelOf(p))) ? "" : labelOf(p);
       const where = p._generic ? p.address || okresOf(p) : place(p) || p.address;
-      const head = tiered && r === 1 && !headed && (headed = true) && i > 0 ? `<li class="group-head">Pekárne a trhy</li>` : "";
+      const head = tiered && r === 1 && !headed && (headed = true) && i > 0 ? `<li class="group-head">${T.laterHead}</li>` : "";
       return `${head}<li><button class="item" data-id="${esc(p.id)}" style="--c:${GROUP_COLOR[p.group] || "#17322a"}">
         <span class="dot" aria-hidden="true"></span>
-        <span class="name">${esc(p._n)}${p.bio ? '<span class="bio-mini" title="Certifikovaná ekologická výroba">BIO</span>' : ""}${p.checked ? '<span class="ok-mini" title="Overili sme, že predávajú priamo">overené</span>' : ""}</span>
+        <span class="name">${esc(p._n)}${p.bio ? `<span class="bio-mini" title="${T.bioTitle}">BIO</span>` : ""}${p.checked ? `<span class="ok-mini" title="${T.verifiedTitle}">${T.verified}</span>` : ""}</span>
         ${loc ? `<span class="km">${fmtKm(d)}</span>` : "<span></span>"}
         <span class="meta">${esc([label, where].filter(Boolean).join(", "))}</span>
       </button></li>`;
     }).join("") + (n > state.shown
-      ? `<li class="more"><button type="button" class="btn ghost" id="more">Zobraziť ďalšie (${fmtNum(Math.min(PAGE, n - state.shown))} z ${fmtNum(n - state.shown)})</button></li>`
+      ? `<li class="more"><button type="button" class="btn ghost" id="more">${T.more(fmtNum(Math.min(PAGE, n - state.shown)), fmtNum(n - state.shown))}</button></li>`
       : "");
   }
 
@@ -299,12 +479,14 @@
   }
 
   /* ---------- detail ---------- */
+  // our own sign for "holds a certificate in the EU register"; deliberately not the EU organic logo, which only
+  // certified products may carry
   function stampSvg(p) {
-    return `<svg class="stamp" viewBox="0 0 120 120" role="img" aria-label="Certifikovaná ekologická výroba, certifikát ${esc(p.cert)}">
+    return `<svg class="stamp" viewBox="0 0 120 120" role="img" aria-label="${esc(T.stampAria(p.cert))}">
       <defs><path id="ring" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
       <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3"/>
       <circle cx="60" cy="60" r="33" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <text font-size="10.5" font-weight="700" letter-spacing="1.2"><textPath href="#ring" startOffset="0">EKOLOGICKÁ POĽNOHOSPODÁRSKA VÝROBA · EÚ ·</textPath></text>
+      <text font-size="10.5" font-weight="700"><textPath href="#ring" startOffset="0" textLength="268" lengthAdjust="spacing">${T.stampRing}</textPath></text>
       <text class="big" x="60" y="72" text-anchor="middle">BIO</text>
     </svg>`;
   }
@@ -313,66 +495,64 @@
     const p = f.properties;
     const [lon, lat] = f.geometry.coordinates;
     const web = safeUrl(p.website);
-    const approx = p.precision === "village" ? "poloha na mape je stred obce, nie presná adresa"
-      : p.precision === "postcode" ? "poloha na mape je len približná (podľa PSČ)" : "";
+    const approx = p.precision === "village" ? T.approxVillage : p.precision === "postcode" ? T.approxPostcode : "";
     const area = p.address && p.obec && fold(p.address).includes(fold(p.obec))
-      ? (p.okres && !sameTown(p.obec, p.okres) ? `okres ${p.okres}` : "") : place(p);
+      ? (p.okres && !sameTown(p.obec, p.okres) ? T.okres(p.okres) : "") : place(p);
     const where = [p.address, area].filter(Boolean).join(", ");
     const tel = p.phone ? p.phone.replace(/[^\d+]/g, "") : "";
     const certLink = p.cert ? `<a href="${CERT_PDF(p.cert)}" target="_blank" rel="noopener">${esc(p.cert)}</a>` : "";
     const facts = [
-      where && ["Kde", esc(where) + (p.kraj ? `<br><span class="small">${esc(p.kraj)} kraj</span>` : "") + (approx ? `<br><span class="small">${approx}</span>` : "")],
-      state.loc && ["Vzdialenosť", `${fmtKm(state.dist.get(p.id) ?? km(state.loc.c, f.geometry.coordinates))} od ${fromLoc(false)}`],
-      p.how && ["Predaj", esc(p.how) + `<br><span class="small">Overené ${fmtDate(p.checked)} na ich stránke</span>`],
-      p.bioExpired && ["Certifikát BIO", `${certLink} platil do ${fmtDate(p.cert_expires)}. Novší sme zatiaľ nenačítali.`],
-      p.products && [p.bio ? "Certifikované produkty" : p.bioExpired ? "Produkty podľa certifikátu" : "Ponuka", esc(p.products)],
-      p.premises && ["Prevádzky", esc(p.premises).replace(/; /g, "<br>")],
-      p.hours && ["Otvorené", esc(fmtHours(p.hours)).replace(/\n/g, "<br>")],
-      tel && ["Telefón", `<a href="tel:${esc(tel)}" data-track="zavolat">${esc(p.phone)}</a>`],
-      web && ["Web", `<a href="${esc(web)}" target="_blank" rel="noopener" data-track="web">${esc(web.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>`],
+      where && [T.fWhere, esc(where) + (p.kraj ? `<br><span class="small">${esc(T.region(p.kraj))}</span>` : "") + (approx ? `<br><span class="small">${approx}</span>` : "")],
+      state.loc && [T.fDistance, T.distance(fmtKm(state.dist.get(p.id) ?? km(state.loc.c, f.geometry.coordinates)), state.loc)],
+      p.how && [T.fSales, esc(p.how) + `<br><span class="small">${T.checkedOn(fmtDate(p.checked))}</span>`],
+      p.bioExpired && [T.fCert, T.certExpired(certLink, fmtDate(p.cert_expires))],
+      p.products && [p.bio ? T.fCertProducts : p.bioExpired ? T.fOldCertProducts : T.fOffer, esc(p.products)],
+      p.premises && [T.fPremises, esc(p.premises).replace(/; /g, "<br>")],
+      p.hours && [T.fHours, esc(fmtHours(p.hours)).replace(/\n/g, "<br>")],
+      tel && [T.fPhone, `<a href="tel:${esc(tel)}" data-track="zavolat">${esc(p.phone)}</a>`],
+      web && [T.fWeb, `<a href="${esc(web)}" target="_blank" rel="noopener" data-track="web">${esc(web.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>`],
     ].filter(Boolean);
     const edited = p.osm_edited ? +p.osm_edited.slice(0, 4) : 0;
     const stale = edited && edited <= new Date().getFullYear() - 5;
     const noContact = !p.phone && !web && !p.hours;
     const note = [
-      noContact && (p.source === "osm" ? "Kontakt ani otváracie hodiny zatiaľ nepoznáme." : "Kontakt zatiaľ nepoznáme."),
-      p.cert && !p.checked && p.source !== "osm" && "Z certifikátu nevieme, či predávajú aj priamo, preto si to pred návštevou overte.",
-      stale && `Údaje v OpenStreetMap sú naposledy upravené v roku ${edited}, pred cestou si overte, či miesto ešte funguje.`,
+      noContact && (p.source === "osm" ? T.noContactOsm : T.noContact),
+      p.cert && !p.checked && p.source !== "osm" && T.certNoSale,
+      stale && T.stale(edited),
     ].filter(Boolean).join(" ");
     const osm = p.id.startsWith("osm-") ? p.id.slice(4) : "";
     const osmType = { n: "node", w: "way", r: "relation" }[osm[0]];
     const osmUrl = osm ? `https://www.openstreetmap.org/${osmType}/${osm.slice(1)}` : "";
     const editUrl = osm ? `https://www.openstreetmap.org/edit?${osmType}=${osm.slice(1)}` : "";
     const source = p.source === "osm"
-      ? `<a href="${osmUrl}" target="_blank" rel="noopener">OpenStreetMap</a>${p.cert ? ' a <a href="' + CERT_PDF(p.cert) + '" target="_blank" rel="noopener">EÚ register ekologických certifikátov</a>' : ""}`
-      : `<a href="${CERT_PDF(p.cert)}" target="_blank" rel="noopener">EÚ register ekologických certifikátov (TRACES)</a>`;
+      ? `<a href="${osmUrl}" target="_blank" rel="noopener">OpenStreetMap</a>${p.cert ? ` ${T.and} <a href="${CERT_PDF(p.cert)}" target="_blank" rel="noopener">${T.register}</a>` : ""}`
+      : `<a href="${CERT_PDF(p.cert)}" target="_blank" rel="noopener">${T.registerTraces}</a>`;
 
     // what the place is listed under in "Čo chcete kúpiť?"; a certificate only says what they make, not that they sell it
     const buys = (p.buy || []).map((k) => BUY_BY_ID[k]?.label).filter(Boolean);
-    const buyLine = buys.length ? `<p class="buys">${p.cert && !p.checked && p.source !== "osm" ? "Vyrábajú" : "Kúpite tu"}: `
+    const buyLine = buys.length ? `<p class="buys">${p.cert && !p.checked && p.source !== "osm" ? T.produce : T.canBuy}: `
       + buys.map((l) => `<span class="tag">${l}</span>`).join(" ") + "</p>" : "";
     // "Nahlásiť chybu": an e-mail with the place filled in, which anyone can send (the OSM editor needs an account)
     const link = `${location.origin}${location.pathname}?miesto=${encodeURIComponent(p.id)}`;
-    const report = mailto(`ALECO: ${p._n}`,
-      `Dobrý deň,\n\nmiesto: ${p._n}${p.obec ? `, ${p.obec}` : ""}\n${link}\n\nČo treba opraviť alebo odstrániť:\n`);
+    const report = mailto(`ALECO: ${p._n}`, T.reportBody(p._n, p.obec, link));
 
     // the buttons come right after the name, so on a phone "Navigovať" is visible without scrolling
     $("#detail").innerHTML = `
-      <p class="back"><button type="button" class="link-btn" id="back">Späť na zoznam</button></p>
+      <p class="back"><button type="button" class="link-btn" id="back">${T.back}</button></p>
       <h2>${esc(p._n)}</h2>
       <p class="kind" style="--c:${GROUP_COLOR[p.group] || "#17322a"}"><span class="dot" aria-hidden="true"></span>${esc(labelOf(p))}</p>
       ${buyLine}
       <div class="actions">
-        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=${lat}%2C${lon}" target="_blank" rel="noopener" data-track="navigovat">Navigovať</a>
-        ${tel ? `<a class="btn ghost" href="tel:${esc(tel)}" data-track="zavolat">Zavolať</a>` : ""}
-        <button type="button" class="btn ghost" id="share">Zdieľať</button>
-        <a class="btn ghost" href="${esc(report)}" data-track="nahlasit-chybu">Nahlásiť chybu</a>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=${lat}%2C${lon}" target="_blank" rel="noopener" data-track="navigovat">${T.navigate}</a>
+        ${tel ? `<a class="btn ghost" href="tel:${esc(tel)}" data-track="zavolat">${T.call}</a>` : ""}
+        <button type="button" class="btn ghost" id="share">${T.share}</button>
+        <a class="btn ghost" href="${esc(report)}" data-track="nahlasit-chybu">${T.report}</a>
       </div>
       ${p.bio ? `<div class="stamp-wrap">${stampSvg(p)}
-        <p>Certifikát ${certLink}${p.cert_expires ? `<br>platí do ${fmtDate(p.cert_expires)}` : ""}</p></div>` : ""}
+        <p>${T.certificate(certLink, p.cert_expires ? fmtDate(p.cert_expires) : "")}</p></div>` : ""}
       <dl class="facts">${facts.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>
       ${note ? `<p class="note">${note}</p>` : ""}
-      <p class="source">Zdroj: ${source}${editUrl ? `. Mapujete v OpenStreetMap? <a href="${editUrl}" target="_blank" rel="noopener">Upravte miesto tam</a>` : ""}</p>`;
+      <p class="source">${T.source}: ${source}${editUrl ? `. ${T.editOsm} <a href="${editUrl}" target="_blank" rel="noopener">${T.editOsmLink}</a>` : ""}</p>`;
     $("#back").addEventListener("click", deselect);
     $("#share").addEventListener("click", () => share(p));
   }
@@ -386,15 +566,15 @@
     try {
       if (navigator.share) { await navigator.share({ title: p._n, url: url.href }); return; }
       await navigator.clipboard.writeText(url.href);
-      btn.textContent = "Odkaz skopírovaný";
+      btn.textContent = T.copied;
     } catch {
-      btn.textContent = "Odkaz sa nepodarilo skopírovať";
+      btn.textContent = T.copyFailed;
     }
-    setTimeout(() => { if (btn.isConnected) btn.textContent = "Zdieľať"; }, 2500);
+    setTimeout(() => { if (btn.isConnected) btn.textContent = T.share; }, 2500);
   }
 
   // the address bar always holds the current search, so it can be copied and shared: ?kde=Pezinok&co=syr&km=10
-  const START = new URL(location.href).searchParams;  // what the visitor arrived with, read before it is rewritten
+  // (a chosen language stays in it as ?lang=en)
   function syncUrl() {
     const url = new URL(location.href);
     const set = (k, v) => (v ? url.searchParams.set(k, v) : url.searchParams.delete(k));
@@ -417,11 +597,11 @@
     try {
       if (navigator.share) { await navigator.share({ title: "ALECO", text: $("#count").textContent.trim(), url: url.href }); return; }
       await navigator.clipboard.writeText(url.href);
-      btn.textContent = "Odkaz skopírovaný";
+      btn.textContent = T.copied;
     } catch {
-      btn.textContent = "Odkaz sa nepodarilo skopírovať";
+      btn.textContent = T.copyFailed;
     }
-    setTimeout(() => { btn.textContent = "Zdieľať výber"; }, 2500);
+    setTimeout(() => { btn.textContent = T.shareSearch; }, 2500);
   }
 
   function select(id, fly = true) {
@@ -551,7 +731,7 @@
   const TOWN_ENDINGS = [[/e$/, "a"], [/ku$/, "ok"], [/ka$/, "ok"], [/ci$/, "ec"], [/ca$/, "ec"], [/iach$/, "e"], [/ic$/, "ice"],
     [/ach$/, "y"], [/ove$/, "ov"], [/y$/, "a"], [/e$/, ""], [/a$/, ""], [/i$/, "a"]];
   const FILLER = new Set(["v", "vo", "pri", "okolo", "okolie", "blizko", "z", "zo", "na", "do", "pre", "a", "kde", "kupit",
-    "predaj", "cerstve", "domace", "bio"]);
+    "predaj", "cerstve", "domace", "bio", "in", "near", "around", "at", "buy", "fresh", "local", "the", "of", "from"]);
   function findTown(text) {
     const words = text.split(" ").filter((w) => w && !FILLER.has(w));
     if (!words.length) return null;
@@ -571,7 +751,7 @@
     const words = fq.split(" ").filter((w) => w.length >= 3);
     const isProductWord = (b, w) => w.length >= 3 && b.fw.some((x) => x.startsWith(w));
     const products = BUY.filter((b) => words.some((w) => isProductWord(b, w)));
-    // a product and a town in one go: "vajcia bratislava", "syr pri pezinku"
+    // a product and a town in one go: "vajcia bratislava", "syr pri pezinku", "cheese pezinok"
     const combos = [];
     if (state.obce && products.length) {
       const b = products[0];
@@ -600,15 +780,15 @@
     const q = $("#q").value.trim();
     const html = state.suggest.map((x, i) => {
       if (x.kind === "obec") {
-        const okres = x.v.okres && x.v.okres !== x.v.name ? `<span class="small">, okres ${esc(x.v.okres)}</span>` : "";
-        return suggestItem(i, "pin", "", `<strong>${esc(x.v.name)}</strong>${okres}`, "obec");
+        const okres = x.v.okres && x.v.okres !== x.v.name ? `<span class="small">${esc(T.okresSmall(x.v.okres))}</span>` : "";
+        return suggestItem(i, "pin", "", `<strong>${esc(x.v.name)}</strong>${okres}`, T.town);
       }
-      if (x.kind === "buy") return suggestItem(i, "basket", "", `<strong>${x.b.label}</strong>`, "produkt");
-      if (x.kind === "combo") return suggestItem(i, "basket", "", `<strong>${x.b.label}</strong> v okolí obce <strong>${esc(x.v.name)}</strong>`, "okolie");
+      if (x.kind === "buy") return suggestItem(i, "basket", "", `<strong>${x.b.label}</strong>`, T.product);
+      if (x.kind === "combo") return suggestItem(i, "basket", "", T.combo(x.b.label, esc(x.v.name)), T.nearby);
       const p = x.f.properties;
       return suggestItem(i, "dot", `--c:${GROUP_COLOR[p.group] || "#17322a"}`,
         `<strong>${esc(p._n)}</strong>${p.obec && !p._generic ? `<span class="small">, ${esc(p.obec)}</span>` : ""}`, esc(labelOf(p)));
-    }).join("") || (state.obce && fold(q).length >= 3 ? `<p class="suggest-none">Nenašli sme obec, produkt ani miesto „${esc(q)}“.</p>` : "");
+    }).join("") || (state.obce && fold(q).length >= 3 ? `<p class="suggest-none">${T.noneFound(esc(q))}</p>` : "");
     $("#suggest").innerHTML = html;
     $("#suggest").hidden = !html;
   }
@@ -641,10 +821,10 @@
   }
 
   /* ---------- controls ---------- */
-  $("#chips").innerHTML = [{ id: "all", label: "Všetko" }, ...BUY].map((b) =>
+  $("#chips").innerHTML = [{ id: "all", label: T.all }, ...BUY].map((b) =>
     `<button type="button" class="chip" data-buy="${b.id}" aria-pressed="${b.id === "all"}">${b.label} <span class="n"></span></button>`).join("");
-  $("#legend").innerHTML = GROUPS.map((g) => `<li><span class="dot" style="--c:${g.color}" aria-hidden="true"></span>${g.label}</li>`).join("")
-    + `<li><span class="dot bio" aria-hidden="true"></span>BIO</li>`;
+  $("#legend").innerHTML = GROUPS.map((g) => `<li><span class="dot" style="--c:${g.color}" aria-hidden="true"></span>${T.groups[g.id]}</li>`).join("")
+    + `<li><span class="dot bio" aria-hidden="true"></span>${T.bioLegend}</li>`;
 
   $("#chips").addEventListener("click", (e) => {
     const b = e.target.closest(".chip");
@@ -711,18 +891,18 @@
 
   $("#locate").addEventListener("click", () => {
     const btn = $("#locate");
-    const reset = (text) => { btn.textContent = text; setTimeout(() => (btn.textContent = "Moja poloha"), 3000); };
-    if (!navigator.geolocation) { reset("Nedá sa zistiť"); return; }
-    btn.textContent = "Zisťujem…";
+    const reset = (text) => { btn.textContent = text; setTimeout(() => (btn.textContent = T.myLocation), 3000); };
+    if (!navigator.geolocation) { reset(T.noGeo); return; }
+    btn.textContent = T.locating;
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        btn.textContent = "Moja poloha";
+        btn.textContent = T.myLocation;
         hideSuggest();
-        q.value = "Vaša poloha";  // the box speaks to the visitor, like "do 25 km od vás"
-        setLoc({ name: "Vaša poloha", c: [pos.coords.longitude, pos.coords.latitude], me: true });
+        q.value = T.yourLocation;  // the box speaks to the visitor, like "do 25 km od vás"
+        setLoc({ name: T.yourLocation, c: [pos.coords.longitude, pos.coords.latitude], me: true });
         track("moja-poloha");  // only that the button was used, never where
       },
-      () => reset("Poloha nedostupná"),
+      () => reset(T.geoFailed),
       { timeout: 10000, maximumAge: 300000 });
   });
 
@@ -739,11 +919,10 @@
     const b = e.target.closest(".item");
     if (b) select(b.dataset.id);
   });
-  $("#mailAdd").href = mailto("ALECO: pridať alebo opraviť miesto",
-    "Dobrý deň,\n\nchcem pridať / opraviť / odstrániť miesto.\n\nNázov:\nObec:\nČo predávate a kedy:\nTelefón alebo web:\n");
-  $("#mailText").textContent = `alebo na adresu ${CONTACT}`;
-  $("#mailAbout").href = `mailto:${CONTACT}`;
-  $("#mailAbout").textContent = CONTACT;
+  $("#mailAdd").href = mailto(T.mailAddSubject, T.mailAddBody);
+  $("#mailText").textContent = T.mailOr(CONTACT);
+  for (const a of document.querySelectorAll("#privacyDialog .mail")) { a.href = `mailto:${CONTACT}`; a.textContent = CONTACT; }
+  for (const s of document.querySelectorAll("#privacyDialog .operator")) s.textContent = OPERATOR ? `${OPERATOR}, ` : "";
   $("#addBtn").addEventListener("click", () => $("#addDialog").showModal());
   $("#mailAdd").addEventListener("click", () => track("napisat-email"));
   // directions, calls, websites and error reports from a place card: the clearest sign the map was useful
@@ -752,6 +931,7 @@
     if (a && state.selected) track(a.dataset.track, state.byId.get(state.selected)?.properties._n);
   });
   $("#aboutBtn").addEventListener("click", () => $("#aboutDialog").showModal());
+  $("#privacyBtn").addEventListener("click", () => $("#privacyDialog").showModal());
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && state.selected && !document.querySelector("dialog[open]")) deselect(); });
 
   /* ---------- load ---------- */
@@ -778,9 +958,9 @@
     }
     state.all = d.features;
     const m = d.metadata || {};
-    if (m.generated) $("#generated").textContent = `Aktualizované ${fmtDate(m.generated)}.`;
+    if (m.generated) $("#generated").textContent = T.updated(fmtDate(m.generated));
     const bio = d.features.filter((f) => f.properties.bio).length;
-    $("#stats").textContent = `${fmtNum(d.features.length)} miest, z toho ${fmtNum(bio)} s certifikátom BIO.`;
+    $("#stats").textContent = T.stats(fmtNum(d.features.length), fmtNum(bio));
     // a shared search: ?kde=Pezinok&okres=Pezinok&km=10&co=syr&bio=1&miesto=<id>
     const co = START.get("co"), radius = START.get("km"), kde = START.get("kde"), id = START.get("miesto");
     if (kde || co || radius !== null || START.get("bio")) track("odkaz/hladanie");  // arrived through a shared search
@@ -798,7 +978,7 @@
       openPlace();
     });
   }).catch(() => {
-    $("#list").innerHTML = `<li class="empty">Údaje sa nepodarilo načítať. Skontrolujte pripojenie a obnovte stránku.</li>`;
+    $("#list").innerHTML = `<li class="empty">${T.loadFailed}</li>`;
   });
   Promise.all([dataReady, mapReady]).then(() => {
     addLayers();

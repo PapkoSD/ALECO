@@ -29,7 +29,13 @@ Every place gets its kraj, okres and obec from OSM boundary polygons, offline.
 Under *Všetko* around a town, bakeries and plain markets ("Trh Brezno") come after everything else, under the heading "Pekárne a trhy": around Bratislava they are more than half of all places. Without a chosen place, the list follows the map; zoomed out to all of Slovakia it shows verified places and places with contacts first.
 
 **Links.** The address always holds the current search, and *Zdieľať výber* copies it, e.g. `?kde=Pezinok&km=10&co=syr`:
-`kde` village or town (plus `okres` when two share the name), `km` 10 / 50 / 0 (25 is left out), `co` a product group from the `buy` field, `bio=1`, `miesto` an open place. The visitor's own position (*Moja poloha*) never goes into a link.
+`kde` village or town (plus `okres` when two share the name), `km` 10 / 50 / 0 (25 is left out), `co` a product group from the `buy` field, `bio=1`, `miesto` an open place. The visitor's own position (*Moja poloha*) never goes into a link. `lang=en` or `lang=sk` sets the language.
+
+## Languages and legal
+
+- **Slovak and English.** Slovak and Czech browsers get Slovak, everyone else English; the *SK | EN* switch (or `?lang=`) changes it and keeps the search. Slovak page texts are written in `index.html`; English ones and all texts built in code are in `STR` in `app.js`.
+- **Privacy notice** (*Súkromie a podmienky*): what is published and why (legitimate interest, Art. 6(1)(f) GDPR), the sources, how to ask for correction or removal, the complaint authority, and what GitHub Pages, OpenFreeMap and GoatCounter see. The operator line comes from `OPERATOR` in `app.js` (empty shows only the e-mail).
+- **Disclaimer:** data from public sources can be out of date; the BIO stamp means a certificate in the EU register, and ALECO certifies nothing. The stamp is our own sign, not the EU organic logo.
 
 ## Visit counts
 
