@@ -24,7 +24,7 @@
   const CERT_PDF = (ref) => `https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/${encodeURIComponent(ref)}.pdf`;
   // who runs the site and where people ask to add, fix or remove a place; the address is put together here rather
   // than written into the page, so simple address harvesters miss it
-  const OPERATOR = "";
+  const OPERATOR = "Patrik Mihal";
   const CONTACT = ["patrikmihal.dev", "gmail.com"].join("@");
   const mailto = (subject, body) => `mailto:${CONTACT}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   // anonymous counts of what people use, so we can tell whether the map helps (GoatCounter: no cookies, no IP
@@ -100,8 +100,8 @@
         vino: ["Víno", "s vínom"] },
       all: "Všetko", bioLegend: "BIO",
       places: (n) => plural(n, "miesto", "miesta", "miest"),
-      from: (loc) => (loc.me ? "vás" : `obce ${esc(loc.name)}`),
-      to: (loc) => (loc.me ? "vám" : `obci ${esc(loc.name)}`),
+      from: (loc) => (loc.me ? "vás" : loc.addr ? `miesta „${esc(loc.name)}“` : `obce ${esc(loc.name)}`),
+      to: (loc) => (loc.me ? "vám" : loc.addr ? `miestu „${esc(loc.name)}“` : `obci ${esc(loc.name)}`),
       within: (r, loc) => ` do ${r} km od ${STR.sk.from(loc)}`,
       nearest: (loc) => `, najbližšie k ${STR.sk.to(loc)}`,
       overview: " na celom Slovensku, najprv overené a tie, kde poznáme kontakt",
@@ -133,7 +133,7 @@
       back: "Späť na zoznam", navigate: "Navigovať", call: "Zavolať", share: "Zdieľať", report: "Nahlásiť chybu",
       certificate: (link, until) => `Certifikát ${link}${until ? `<br>platí do ${until}` : ""}`,
       copied: "Odkaz skopírovaný", copyFailed: "Odkaz sa nepodarilo skopírovať", shareSearch: "Zdieľať výber",
-      town: "obec", product: "produkt", nearby: "okolie",
+      town: "obec", product: "produkt", nearby: "okolie", address: "adresa", addrSearching: "Hľadám adresy…",
       combo: (label, name) => `<strong>${label}</strong> v okolí obce <strong>${name}</strong>`,
       okresSmall: (o) => `, okres ${o}`,
       noneFound: (q) => `Nenašli sme obec, produkt ani miesto „${q}“.`,
@@ -189,7 +189,7 @@
       back: "Back to the list", navigate: "Directions", call: "Call", share: "Share", report: "Report a problem",
       certificate: (link, until) => `Certificate ${link}${until ? `<br>valid until ${until}` : ""}`,
       copied: "Link copied", copyFailed: "Couldn't copy the link", shareSearch: "Share this search",
-      town: "town", product: "product", nearby: "nearby",
+      town: "town", product: "product", nearby: "nearby", address: "address", addrSearching: "Looking up addresses…",
       combo: (label, name) => `<strong>${label}</strong> around <strong>${name}</strong>`,
       okresSmall: (o) => `, ${o} district`,
       noneFound: (q) => `No town, product or place called “${q}”.`,
@@ -205,7 +205,7 @@
         panel: "List of places",
         tagline: "Farms and local food in Slovakia",
         lede: "Farms, salaše (sheep farms), bakeries, milk vending machines and markets all over Slovakia. Buy straight from the people who make the food.",
-        where: "Where are you looking?", placeholder: "Village, town or place name", myLocation: "My location", howFar: "How far",
+        where: "Where are you looking?", placeholder: "Village, town, address or place name", myLocation: "My location", howFar: "How far",
         r10: "within 10 km", r25: "within 25 km", r50: "within 50 km", r0: "all of Slovakia", clearLoc: "Clear place",
         what: "What do you want to buy?", bioOnly: "Certified organic only", shareSearch: "Share this search",
         addBtn: "Missing a place, or something wrong?", aboutBtn: "Where the data comes from", privacyBtn: "Privacy and terms",
@@ -226,7 +226,7 @@
         privacyTitle: "Privacy and terms", opLabel: "Operator:", opNote: "ALECO is a non-commercial project.",
         priv1: "<strong>Data about places.</strong> We publish the name, location, address, contact details, opening hours and offer of places that sell food straight from the producer. It comes from public sources: OpenStreetMap, the EU register of organic certificates and the sellers' own websites. Where a place is run by an individual, this is personal data. We process it on the basis of a legitimate interest in informing the public about direct food sales (Art. 6(1)(f) GDPR), and only to the extent the seller has published it. Individual farmers from the certificate register are not published.",
         priv2: `<strong>Your rights.</strong> You can ask for access to the data, for it to be corrected or erased, and object to its publication: just write to the e-mail above. We will correct or remove the data from the map and the open data without undue delay. You can also complain to the <a href="https://dataprotection.gov.sk/" target="_blank" rel="noopener">Slovak Data Protection Authority</a>.`,
-        priv3: `<strong>Visitors.</strong> The site uses no cookies. Visits and what people search for (towns, products, opened places) are counted anonymously with <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>, which does not store IP addresses. The site is hosted by GitHub Pages and the base map comes from OpenFreeMap; these services technically process your IP address when the page loads. Your location, if you allow it, is only used in your browser to sort the list.`,
+        priv3: `<strong>Visitors.</strong> The site uses no cookies. Visits and what people search for (towns, products, opened places) are counted anonymously with <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>, which does not store IP addresses. If you type an address or a place that isn't a town, the text is sent to the <a href="https://photon.komoot.io/" target="_blank" rel="noopener">Photon</a> service (komoot, Germany), which looks it up in OpenStreetMap. The site is hosted by GitHub Pages and the base map comes from OpenFreeMap; these services technically process your IP address when the page loads. Your location, if you allow it, is only used in your browser to sort the list.`,
         priv4: "<strong>Disclaimer.</strong> The data comes from public sources and may be incomplete or out of date. Check opening hours and what's on offer with the seller before you go. The BIO stamp means the producer holds a valid certificate in the EU register; ALECO does not certify anything.",
         priv5: `<strong>Licences.</strong> Code: AGPL-3.0, <a href="https://github.com/PapkoSD/ALECO" target="_blank" rel="noopener">GitHub</a>. Data: ODbL (© OpenStreetMap contributors), the European Commission's register of organic certificates, GeoNames (CC BY 4.0).`,
       },
@@ -309,7 +309,7 @@
     loc: null,                     // the chosen place: { name, okres, c: [lon, lat], me: true for "Moja poloha" }
     radius: 25, dist: new Map(),   // km from loc to every place, by id
     shown: PAGE, selected: null, matches: [], counts: {}, unknown: 0,
-    obce: null, suggest: [],
+    obce: null, suggest: [], addrPending: false,
   };
 
   /* ---------- map ---------- */
@@ -440,7 +440,7 @@
     const what = state.buy === "all" ? "" : ` ${BUY_BY_ID[state.buy].with}`;
     const where = loc ? (state.radius ? T.within(state.radius, loc) : T.nearest(loc)) : overview ? T.overview : T.mapCentre;
     $("#count").innerHTML = n ? `<strong>${fmtNum(n)}</strong> ${T.places(n)}${what}${where}` : "";
-    $("#shareSearch").hidden = !n || !((state.loc && !state.loc.me) || state.buy !== "all" || state.bioOnly);
+    $("#shareSearch").hidden = !n || !((state.loc && !state.loc.me && !state.loc.addr) || state.buy !== "all" || state.bioOnly);
     const list = $("#list");
     if (!n) {
       list.innerHTML = emptyMessage(what);
@@ -578,7 +578,8 @@
   function syncUrl() {
     const url = new URL(location.href);
     const set = (k, v) => (v ? url.searchParams.set(k, v) : url.searchParams.delete(k));
-    const loc = state.loc && !state.loc.me ? state.loc : null;  // never put the visitor's own position into a link
+    // never put the visitor's own position or a typed address into a link
+    const loc = state.loc && !state.loc.me && !state.loc.addr ? state.loc : null;
     set("kde", loc?.name);
     set("okres", loc && state.obce && state.obce.filter((o) => o.name === loc.name).length > 1 ? loc.okres : "");  // two Haniskas
     set("km", loc && state.radius !== 25 ? String(state.radius) : "");
@@ -680,7 +681,8 @@
     drawArea();
     fitArea();
     syncUrl();
-    if (loc && !loc.me) track(`obec/${loc.name}`, loc.name);  // which villages and towns people look for
+    if (loc && !loc.me && !loc.addr) track(`obec/${loc.name}`, loc.name);  // which villages and towns people look for
+    if (loc && loc.addr) track("adresa");  // that an address was used, never which one
   }
 
   function setRadius(r) {
@@ -744,7 +746,61 @@
     return findObce(head + last)[0] || null;  // still typing: "vajcia brat"
   }
 
-  function buildSuggest(q) {
+  /* Addresses, streets and landmarks ("Obchodná 5, Bratislava", "Eurovea") come from OpenStreetMap through Photon
+     (komoot). It is only asked when the text looks like an address or nothing of ours matches, so a plain town
+     search never leaves the site; never with the visitor's own position. */
+  const PHOTON = "https://photon.komoot.io/api/";
+  const looksLikeAddress = (fq) => /\d/.test(fq) || fq.includes(",") || /(^| )(ul|ulica|nam|namestie|cesta|trieda|nabrezie|street|square)( |\.|$)/.test(fq);
+  const addrCache = new Map();
+  let addrAbort = null;
+  // "Eurovea, Pribinova, Bratislava", "Obchodná 5, Bratislava": name, street and number, town, without repeats
+  function addrLabel(p) {
+    const town = p.city || p.town || p.village || p.district || p.county || "";
+    const street = p.street ? `${p.street}${p.housenumber ? ` ${p.housenumber}` : ""}` : "";
+    const parts = [p.name, street, town].filter(Boolean);
+    return parts.filter((x, i) => !parts.slice(0, i).some((y) => fold(y).includes(fold(x)))).join(", ");
+  }
+  async function findAddresses(q) {
+    const key = fold(q.trim());
+    if (addrCache.has(key)) return addrCache.get(key);
+    addrAbort?.abort();
+    addrAbort = new AbortController();
+    const bias = state.loc?.me ? null : state.loc ? state.loc.c : map.getCenter().toArray();
+    const url = `${PHOTON}?q=${encodeURIComponent(q.trim())}&limit=10&bbox=${SK_BOUNDS.flat().join(",")}`
+      + (bias ? `&lat=${bias[1].toFixed(1)}&lon=${bias[0].toFixed(1)}` : "") + (EN ? "&lang=en" : "");
+    try {
+      const r = await fetch(url, { signal: addrAbort.signal });
+      if (!r.ok) return [];
+      const out = [];
+      for (const f of (await r.json()).features || []) {
+        const p = f.properties || {};
+        if (p.countrycode !== "SK" || p.osm_key === "place" || p.osm_key === "boundary") continue;  // towns are ours
+        const label = addrLabel(p), head = p.name || label, c = f.geometry.coordinates;
+        // one landmark is often several map objects (building, entrance, bike racks): keep the first one nearby
+        if (!label || out.some((a) => a.label === label || (a.head === head && km(a.c, c) < 0.5))) continue;
+        out.push({ label, head, c });
+        if (out.length === 4) break;
+      }
+      addrCache.set(key, out);
+      return out;
+    } catch {
+      return [];  // offline, blocked or replaced by a newer search: just no addresses
+    }
+  }
+  const lookupAddresses = debounce(async (q) => {
+    const fq = fold(q.trim()).replace(/\s+/g, " ");
+    if ($("#q").value !== q || fq.length < 4) return;
+    if (!looksLikeAddress(fq) && state.suggest.length) return;  // a town, product or place of ours matched
+    state.addrPending = true;
+    renderSuggest();
+    const found = await findAddresses(q);
+    state.addrPending = false;
+    if ($("#q").value !== q) return;
+    state.suggest = buildSuggest(q, found);
+    renderSuggest();
+  }, 350);
+
+  function buildSuggest(q, addrs = []) {
     const fq = fold(q.trim()).replace(/\s+/g, " ");
     if (fq.length < 3) return [];
     const villages = findObce(q);
@@ -764,12 +820,16 @@
     const places = state.all.filter((f) => !f.properties._generic && f.properties._f.includes(fq))
       .map((f) => ({ f, s: f.properties._f.startsWith(fq) ? 0 : 1, d: km(o, f.geometry.coordinates) }))
       .sort((a, b) => a.s - b.s || a.d - b.d).slice(0, 4);
+    const addrFirst = looksLikeAddress(fq);  // "Hlavná 12": the addresses are what was meant
+    const addrItems = addrs.map((a) => ({ kind: "addr", a }));
     return [
       ...combos,
+      ...(addrFirst ? addrItems : []),
       ...villages.filter((v) => v.f === fq).map((v) => ({ kind: "obec", v })),
       ...products.map((b) => ({ kind: "buy", b })),
       ...villages.filter((v) => v.f !== fq).map((v) => ({ kind: "obec", v })),
       ...places.map(({ f }) => ({ kind: "place", f })),
+      ...(addrFirst ? [] : addrItems),
     ].slice(0, 8);
   }
 
@@ -785,10 +845,12 @@
       }
       if (x.kind === "buy") return suggestItem(i, "basket", "", `<strong>${x.b.label}</strong>`, T.product);
       if (x.kind === "combo") return suggestItem(i, "basket", "", T.combo(x.b.label, esc(x.v.name)), T.nearby);
+      if (x.kind === "addr") return suggestItem(i, "pin", "", `<strong>${esc(x.a.label)}</strong>`, T.address);
       const p = x.f.properties;
       return suggestItem(i, "dot", `--c:${GROUP_COLOR[p.group] || "#17322a"}`,
         `<strong>${esc(p._n)}</strong>${p.obec && !p._generic ? `<span class="small">, ${esc(p.obec)}</span>` : ""}`, esc(labelOf(p)));
-    }).join("") || (state.obce && fold(q).length >= 3 ? `<p class="suggest-none">${T.noneFound(esc(q))}</p>` : "");
+    }).join("") || (state.addrPending ? `<p class="suggest-none">${T.addrSearching}</p>`
+      : state.obce && fold(q).length >= 3 ? `<p class="suggest-none">${T.noneFound(esc(q))}</p>` : "");
     $("#suggest").innerHTML = html;
     $("#suggest").hidden = !html;
   }
@@ -796,7 +858,8 @@
   function showSuggestFor(q) {
     state.suggest = buildSuggest(q);
     renderSuggest();
-    if (!state.obce) loadObce().then(() => { if ($("#q").value === q) { state.suggest = buildSuggest(q); renderSuggest(); } });
+    if (!state.obce) loadObce().then(() => { if ($("#q").value === q) { state.suggest = buildSuggest(q); renderSuggest(); lookupAddresses(q); } });
+    else lookupAddresses(q);
   }
 
   function hideSuggest() {
@@ -806,6 +869,12 @@
 
   function pick(x) {
     hideSuggest();
+    if (x.kind === "addr") {
+      $("#q").value = x.a.label;
+      $("#q").blur();
+      setLoc({ name: x.a.label, c: x.a.c, addr: true });
+      return;
+    }
     if (x.kind === "obec" || x.kind === "combo") {
       if (x.kind === "combo") state.buy = x.b.id;  // setLoc below renders both
       $("#q").value = x.v.name;
