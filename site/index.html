@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ALECO: lokálne jedlo na Slovensku</title>
+  <meta name="description" content="Otvorená mapa fariem, salašov, pekární, mliečnych automatov a trhov na celom Slovensku. Kupujte priamo od tých, čo jedlo vyrábajú.">
+  <link rel="canonical" href="https://papkosd.github.io/ALECO/">
+  <!-- link previews on Facebook, LinkedIn, WhatsApp and Slack -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALECO">
+  <meta property="og:locale" content="sk_SK">
+  <meta property="og:title" content="ALECO: lokálne jedlo na Slovensku">
+  <meta property="og:description" content="Mapa fariem, salašov, mliečnych automatov, trhov a ďalších miest, kde kúpite jedlo priamo od tých, čo ho vyrábajú. Zadarmo, bez reklám.">
+  <meta property="og:url" content="https://papkosd.github.io/ALECO/">
+  <meta property="og:image" content="https://papkosd.github.io/ALECO/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ALECO, farmy a lokálne jedlo na Slovensku: mapa Slovenska s 1 313 bodmi">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#17322a">
+  <!-- fonts and the map library are served from this site; the only outside requests are the map tiles -->
+  <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
+  <link href="fonts/fonts.css" rel="stylesheet">
+  <link href="vendor/maplibre-gl-4.7.1/maplibre-gl.css" rel="stylesheet">
+  <link href="style.css?v=9" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <aside class="panel" aria-label="Zoznam miest">
+      <header class="intro">
+        <h1>ALECO</h1>
+        <p class="tagline">Farmy a lokálne jedlo na Slovensku</p>
+        <p class="lede">Farmy, salaše, pekárne, mliečne automaty a trhy na celom Slovensku. Kupujte priamo od tých, čo jedlo vyrábajú.</p>
+        <p class="stats" id="stats"></p>
+      </header>
+
+      <div class="controls">
+        <div class="step">
+          <label class="step-label" for="q">Kde hľadáte?</label>
+          <div class="where">
+            <input id="q" type="search" placeholder="Obec alebo názov miesta" autocomplete="off" enterkeyhint="search">
+            <button type="button" class="btn ghost" id="locate">Moja poloha</button>
+          </div>
+          <div class="suggest" id="suggest" hidden></div>
+          <div class="near-row" id="nearRow" hidden>
+            <label class="select">
+              <span class="visually-hidden">Ako ďaleko</span>
+              <select id="radius">
+                <option value="10">do 10 km</option>
+                <option value="25" selected>do 25 km</option>
+                <option value="50">do 50 km</option>
+                <option value="0">celé Slovensko</option>
+              </select>
+            </label>
+            <button type="button" class="link-btn" id="clearLoc">Zrušiť miesto</button>
+          </div>
+        </div>
+        <div class="step">
+          <p class="step-label" id="buyLabel">Čo chcete kúpiť?</p>
+          <div class="chips" role="group" aria-labelledby="buyLabel" id="chips"></div>
+        </div>
+        <label class="toggle"><input type="checkbox" id="bioOnly"> Len s certifikátom BIO</label>
+      </div>
+
+      <p class="hint" id="hint" hidden></p>
+      <div class="count-row" id="countRow">
+        <p class="count" id="count" aria-live="polite"></p>
+        <button type="button" class="link-btn share-search" id="shareSearch" hidden>Zdieľať výber</button>
+      </div>
+      <ol class="list" id="list"></ol>
+
+      <section class="detail" id="detail" hidden aria-live="polite"></section>
+
+      <footer class="foot">
+        <p><button type="button" class="link-btn" id="addBtn">Chýba tu miesto alebo je niečo zle?</button></p>
+        <p><button type="button" class="link-btn" id="aboutBtn">Odkiaľ sú údaje</button></p>
+        <p class="small">Otvorený projekt bez reklám, provízií a sledovania. Údaje: <a href="https://www.openstreetmap.org/copyright">© prispievatelia OpenStreetMap</a> (ODbL), <a href="https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index">register ekologických certifikátov EÚ</a> a <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). <span id="generated"></span></p>
+      </footer>
+    </aside>
+
+    <main class="map-wrap">
+      <div id="map" role="region" aria-label="Mapa"></div>
+      <ul class="legend" id="legend" aria-label="Farby bodov na mape"></ul>
+    </main>
+  </div>
+
+  <dialog id="addDialog" aria-labelledby="addTitle">
+    <h2 id="addTitle">Pridať, opraviť alebo odstrániť miesto</h2>
+    <p>Predávate jedlo, ktoré sami vyrábate, alebo tu chýba miesto, ktoré poznáte? Napíšte nám názov, obec, čo predávate a kedy. Skontrolujeme to a pridáme na mapu.</p>
+    <p>Ak je pri mieste niečo zle alebo ste na mape a nechcete tu byť, napíšte nám. Opravíme to alebo údaje odstránime.</p>
+    <p class="mail-row"><a class="btn" id="mailAdd" href="#">Napísať e-mail</a> <span class="small" id="mailText"></span></p>
+    <p class="small">Mapujete v OpenStreetMap? Miesto môžete pridať aj tam, na ALECO sa objaví pri ďalšej aktualizácii.</p>
+    <form method="dialog"><button class="btn ghost">Zavrieť</button></form>
+  </dialog>
+
+  <dialog id="aboutDialog" aria-labelledby="aboutTitle">
+    <h2 id="aboutTitle">Odkiaľ sú údaje</h2>
+    <p><strong>Obchody, trhy, automaty, pekárne a vinárstva</strong> pochádzajú z OpenStreetMap, otvorenej mapy, ktorú môže upravovať ktokoľvek. Reťazce a supermarkety vynechávame.</p>
+    <p><strong>Pečiatka BIO</strong> znamená platný certifikát ekologickej výroby z registra Európskej komisie (TRACES). Produkty vypisujeme z certifikátu. Ukazujeme len výrobcov, ktorých certifikát uvádza jedlo pre ľudí, napríklad med, syr, ovocie alebo zeleninu. Farmy, ktoré pestujú len obilie či krmivo pre spracovateľov, na mape nie sú. Z certifikátu nevieme, či výrobca predáva aj priamo, preto si to pred cestou overte.</p>
+    <p><strong>Poloha</strong> certifikovaných výrobcov je adresa z certifikátu: prevádzka, ak je uvedená, inak sídlo firmy. Ak je sídlo v kancelárii vo veľkom meste, výrobcu na mapu nedávame, kým nezistíme, kde naozaj hospodári.</p>
+    <p>Súkromne hospodáriacich roľníkov zverejníme až s ich súhlasom.</p>
+    <p>Údaje sú otvorené (ODbL), môžete ich voľne použiť s uvedením zdroja: <a href="data/places.csv" download>tabuľka CSV</a> alebo <a href="data/places.geojson" download>GeoJSON</a>.</p>
+    <p><strong>Súkromie:</strong> stránka nepoužíva cookies ani analytiku. Mapové podklady sa načítavajú z <a href="https://openfreemap.org/" target="_blank" rel="noopener">OpenFreeMap</a>. Vašu polohu, ak ju povolíte, používame len na zoradenie zoznamu priamo vo vašom prehliadači.</p>
+    <p><strong>Kontakt:</strong> <a id="mailAbout" href="#"></a>. Ak ste na mape a nechcete tu byť, napíšte nám a údaje odstránime.</p>
+    <form method="dialog"><button class="btn">Zavrieť</button></form>
+  </dialog>
+
+  <script src="vendor/maplibre-gl-4.7.1/maplibre-gl.js"></script>
+  <script src="app.js?v=23"></script>
+</body>
+</html>

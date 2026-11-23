@@ -1,0 +1,293 @@
+url,ok,status,final_url,title,reason,checked
+http://barush.sk/,0,,,,domain does not exist,2026-11-20
+http://bfztrio.sk/,1,200,https://www.bfztrio.sk/,O nás,,2026-11-20
+http://bioaspa.eu/,1,200,http://bioaspa.eu/,,ok in curl (timed out),2026-11-20
+http://ekoprodukt.sk/,1,200,https://ekoprodukt.sk/,Farma Ekoprodukt,,2026-11-20
+http://luspek.sk/,0,,,,Remote end closed connection without response,2026-11-20
+http://mileticka.com,0,,,,Remote end closed connection without response,2026-11-20
+http://obchod.salaspruzina.sk/,0,404,,,HTTP 404,2026-11-20
+http://tokajmacik.sk/,1,200,https://www.tokajmacik.sk/,Malé rodinné bio vinohradníctvo a vinárstvo z Tokaja.,,2026-11-20
+http://vecsey.eu/,1,200,http://vecsey.eu/,Chateau Vécsey - produkcia vín z úrodných tokajských viníc,,2026-11-20
+http://vimma-cucoriedky.sk/,0,,,,Remote end closed connection without response,2026-11-20
+http://www.adspectrum.sk/,0,,,,domain does not exist,2026-11-20
+http://www.bageta.eu/prev-centrum.html,1,200,http://www.bageta.eu/,,"page gone, home page works: use http://www.bageta.eu/",2026-11-20
+http://www.bageta.eu/prev-molo.html,1,200,http://www.bageta.eu/,,"page gone, home page works: use http://www.bageta.eu/",2026-11-20
+http://www.drevenesudy.sk/,1,200,http://www.drevenesudy.sk/,Sudy Pukanec,,2026-11-20
+http://www.etelka.sk/,0,,,,Remote end closed connection without response,2026-11-20
+http://www.farmarik.eu/salas-podhradie-predaj-ovcich-vyrobkov-a-velkonocnych-jahniat/,1,200,https://www.farmarik.eu/,"Motorest Farmárik - reštaurácia, ubytovanie",,2026-11-20
+http://www.farmarynk.sk/,0,,,,Remote end closed connection without response,2026-11-20
+http://www.freshmarket.sk/,1,200,https://www.freshmarket.sk/,,,2026-11-20
+http://www.gazdovskespeciality.sk/sk,0,,,,Remote end closed connection without response,2026-11-20
+http://www.mlsnapekaren.sk/,0,,,,domain does not exist,2026-11-20
+http://www.nanacelia.sk,1,200,https://www.nanacelia.sk/,NanaCelia.sk &#8211; Chutný a zdravý život bez lepku a bez mlieka,,2026-11-20
+http://www.olejhont.sk/,1,200,http://www.olejhont.sk/,Úvod | OlejHont.sk,,2026-11-20
+http://www.pekaren-halic.sk/,1,200,http://www.pekaren-halic.sk/,Pekáreň Halič,,2026-11-20
+http://www.pekaren.net/,0,,,,domain does not exist,2026-11-20
+http://www.pekarenskoluda.sk,1,200,http://www.pekarenskoluda.sk,Mlyn a pekáreň ŠKOLUDA — Trstín | Rodinná tradícia od roku 1882,,2026-11-20
+http://www.praclik.eu/,1,200,https://shop.tcm.net.pl/,Kasyno bonus bez depozytu 2026 - darmowa kasa na start,,2026-11-20
+http://www.rudla.sk,0,,,,domain does not exist,2026-11-20
+http://www.rudla.sk/,0,,,,domain does not exist,2026-11-20
+http://www.salas-sobotistan.sk/,0,,,,domain does not exist,2026-11-20
+http://www.salascibajky.sk,0,,,,domain does not exist,2026-11-20
+http://www.salasnimnica.sk/,0,500,,,HTTP 500,2026-11-20
+http://www.salasorlove.sk/uvod.html,1,200,http://www.salasorlove.sk/uvod.html,Salaš Orlové - Úvod,,2026-11-20
+http://www.salaspodmaginhradom.sk/ubytovanie/,0,,,,Remote end closed connection without response,2026-11-20
+http://www.salasufranka.sk/,1,200,https://www.salasufranka.sk/domains/salasufranka.sk/,Vitajte v motoreste na Salaši u Franka! | Salaš u Franka,,2026-11-20
+http://www.slovenskehrady.sk/kuria-batovce,1,200,http://www.slovenskehrady.sk/kuria-batovce,K�ria v B�tovciach - Slovensk� hrady,,2026-11-20
+http://www.takacasyn.sk/,1,200,http://www.takacasyn.sk/,"Pek�re� Tak�� a syn s.r.o. - Chlieb, Pe�ivo sladk�, Pe�ivo slan�, Trvanliv� pe�ivo",,2026-11-20
+http://www.vino.tym.sk/,1,403,,,HTTP 403,2026-11-20
+http://www.vinokukumberg.sk/,1,403,,,HTTP 403,2026-11-20
+http://www.vintop-karko.sk/,1,200,http://www.vintop-karko.sk/,www.vintop-karko.sk,,2026-11-20
+https://agrodvor.sk,1,200,https://agrodvor.sk,AGRO DVOR,,2026-11-20
+https://arsbazar.sk/,1,200,https://arsbazar.sk/,"ARS bazár - nábytok, bicykle, lyže...",,2026-11-20
+https://biopotravinyraj.sk,1,200,https://biopotravinyraj.sk,"Zdravá výživa, biopotraviny | BIOpotraviny RAJ",,2026-11-20
+https://biosad.sk/,0,200,https://biosad.sk/,"Registrácia domén, hosting a servery :: Websupport.sk",parked or empty page,2026-11-20
+https://carpatediem.sk/,1,200,https://carpatediem.sk/,CARPATE DIEM - Carpate Diem,,2026-11-20
+https://chillihell.sk/,1,200,https://chillihell.sk/,,ok in curl (got more than 100 headers),2026-11-20
+https://cucoriedkovazahrada.sk,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://duroska.sk/,1,200,https://duroska.sk/,"Pekárenská a cukrárenská výroba | Pekáreň Ďuroška, s. r. o.",,2026-11-20
+https://eoswine.sk/,1,200,https://eoswine.sk/,,,2026-11-20
+https://farma-likavcan.sk/,0,,,,domain does not exist,2026-11-20
+https://farmakrnisov.sk/,1,200,https://farmakrnisov.sk/,Farma Krnišov spod Štiavnických vrchov,,2026-11-20
+https://farmamedana.sk/,1,200,https://www.farmamedana.sk/,Farma Medana,,2026-11-20
+https://farmaokoman.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://farmatuska.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://faun.sk/,1,200,https://faun.sk/,Faun &#8211; Ručná remeselná pekárenská výroba &#8211; RUČNÁ REMESELNÁ PEKÁRENSKÁ VÝROBA,,2026-11-20
+https://felixwines.sk/,1,200,https://felixwines.sk/,Kvalitné vína z celého sveta a rýchla donáška | Felix Wines,,2026-11-20
+https://framipek.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://freshsnack.sk,1,200,https://freshsnack.sk,"Catering, chlebíčky a obložené misy z Trenčína od FRESH SNACK",,2026-11-20
+https://gazdovska.sk/services/,1,200,https://gazdovska.sk/services/,Naše služby &#8211; Gazdovská &#8211; udiareň a ubytovanie,,2026-11-20
+https://gazdovskydvorbranovo.sk/,1,200,https://gazdovskydvorbranovo.sk/,"Gazdovský dvor Branovo – farma, domáce mäso a mliečne výrobky",,2026-11-20
+https://gratta.sk/,1,200,https://gratta.sk/,Upečte si s nami vydarený deň - Gratta,,2026-11-20
+https://habsburg.sk/,1,200,https://habsburg.sk/,Domov - Habsburg,,2026-11-20
+https://hiking.dennikn.sk/ar/1020/koliba_na_randavici.html,1,200,https://hiking.dennikn.sk/ar/1020/koliba_na_randavici.html,Búda: Koliba na Randavici | HIKING.SK,,2026-11-20
+https://hiking.dennikn.sk/ar/1490/zbojnicky_dvor_v_sedle_zbojska.html,1,200,https://hiking.dennikn.sk/ar/1490/zbojnicky_dvor_v_sedle_zbojska.html,Chata: Zbojnícky dvor v sedle Zbojská | HIKING.SK,,2026-11-20
+https://hiking.dennikn.sk/ar/275/utulna_krivan_nad_ludrovou.html,1,200,https://hiking.dennikn.sk/ar/275/utulna_krivan_nad_ludrovou.html,Útulňa: Útulňa Kriváň nad Ludrovou | HIKING.SK,,2026-11-20
+https://hiking.dennikn.sk/ar/309/salas_sestricky.html,1,200,https://hiking.dennikn.sk/ar/309/salas_sestricky.html,Búda: Salaš Sestričky | HIKING.SK,,2026-11-20
+https://hiking.dennikn.sk/ar/4884/salas_rovne_pod_frckovom.html,1,200,https://hiking.dennikn.sk/ar/4884/salas_rovne_pod_frckovom.html,Búda: Salaš Rovne pod Frčkovom | HIKING.SK,,2026-11-20
+https://hiking.dennikn.sk/ar/4906/salas_dlhy_grun_nad_suchou_dolinou.html,1,200,https://hiking.dennikn.sk/ar/4906/salas_dlhy_grun_nad_suchou_dolinou.html,Búda: Salaš Dlhý grúň nad Suchou dolinou | HIKING.SK,,2026-11-20
+https://hiking.dennikn.sk/ar/65/salas_pod_suchym_vrchom.html,1,200,https://hiking.dennikn.sk/ar/65/salas_pod_suchym_vrchom.html,Útulňa: Salaš pod Suchým vrchom | HIKING.SK,,2026-11-20
+https://hiking.dennikn.sk/ar/75/salas_mandolina.html,1,200,https://hiking.dennikn.sk/ar/75/salas_mandolina.html,Búda: Salaš Mandolína | HIKING.SK,,2026-11-20
+https://ilas.sk/,1,200,https://ilas.sk/,Pekáreň ILaS &#8211; Náš svet sa točí okolo pečenia &#8211; Okolo čoho sa točí ten Váš?,,2026-11-20
+https://ilas.sk/predajne-ilas/kosice/,1,200,https://ilas.sk/predajne-ilas/kosice/,Košice &#8211; Pekáreň ILaS,,2026-11-20
+https://jahody-samozber.sk/,1,200,https://jahody-samozber.sk/,Samozber jahôd Majcichov – najchutnejšie jahody,,2026-11-20
+https://jebo-chlebo.sk/,1,200,http://jebo-chlebo.sk/,,http only,2026-11-20
+https://kavickanaklasku.sk/,1,200,https://kavickanaklasku.sk/,"Pekáreň Kávička na klásku s.r.o. &#8211; Pečieme s láskou, aby Vás neboleli brušká",,2026-11-20
+https://komjathi.sk/,1,200,https://komjathi.sk/,Komjathi - Prírodné vína z Komjatíc,,2026-11-20
+https://kosickaspajza.sk/,1,403,,,HTTP 403,2026-11-20
+https://kukan.eu/,1,200,https://kukan.eu/,Kukan.eu - Svadby | Domáce dobroty | Cateringové služby | Závodné stravovanie | Kaviareň,,2026-11-20
+https://levmilk.sk/,1,200,https://levmilk.sk/,"Levmilk - Poctivé slovenské syry TEKOV®, mliečne výrobky",,2026-11-20
+https://linktr.ee/nitrapivnicka,1,200,https://linktr.ee/nitrapivnicka,nitrapivnicka | Linktree,,2026-11-20
+https://lulusbakery.sk,1,200,https://www.lulusbakery.sk/,Lulus Bakery | Torty a koláčiky na objednávku,,2026-11-20
+https://majerbara.sk/,1,200,https://majerbara.sk/,Majer Bara,,2026-11-20
+https://marhule.com/,1,200,https://pannonia.sk/,Pannonia Fruit,,2026-11-20
+https://masoodtatka.sk/,1,200,https://masoodtatka.sk/,Z našej farmy priamo na Váš stôl - Mäso od tatka - ekobitúnok,,2026-11-20
+https://miestoba.sk/,1,200,https://miestoba.sk/,Našli ste to správne miesto ~ Miesto,,2026-11-20
+https://naglreiter.sk,1,200,https://www.naglreiter.sk/,Vitajte v Naglreiter,,2026-11-20
+https://nahaji.sk/,1,200,https://www.nahaji.sk/,Farma na Háji,,2026-11-20
+https://ochypka.sk/sk/shops/shop-sandal,1,200,https://ochypka.sk/sk/shops/shop-sandal,OC HYPKA,,2026-11-20
+https://oda.sk,1,200,https://oda.sk,Pekaren ODA,,2026-11-20
+https://ondo.sk,1,200,https://ondo.sk,Pekáreň ONDO,,2026-11-20
+https://ovciafarma.sk,1,200,https://ovciafarma.sk,O nás - Ovčia farma,,2026-11-20
+https://ovciafarma.sk/,1,200,https://ovciafarma.sk/,O nás - Ovčia farma,,2026-11-20
+https://ovocinarhrehor.sk/,1,200,https://ovocinarhrehor.sk/,Ovocinár HREHOR &#8211; Vína zo skutočného ovocia,,2026-11-20
+https://panemnostrum.sk/,1,200,https://panemnostrum.sk/,Panem Nostrum - Remeselná Pekáreň a Kaviareň v Nitre na Zobore,,2026-11-20
+https://pastierskakolibka.sk/,1,200,https://pastierskakolibka.sk/,Uvod &#8902; Pastierska Kolibka Bystrá,,2026-11-20
+https://pekaren-drahovce.sk/predajna/,1,200,https://pekaren-drahovce.sk/,,"page gone, home page works: use https://pekaren-drahovce.sk/",2026-11-20
+https://pekaren-homolka.sk/,0,,,,domain does not exist,2026-11-20
+https://pekaren-imex.webnode.sk/,1,200,https://pekaren-imex.webnode.sk/,Pekaren-imex,,2026-11-20
+https://pekaren.eu/rovinka-2/,1,200,https://pekaren.eu/predajne/rovinka,Pekáreň Rovinka · OC City Park Rovinka 2295/2a · Pekáreň Kvetoslavov,,2026-11-20
+https://pekarengiraltovce.sk,1,200,https://pekarengiraltovce.sk,Pečenie podľa tradičných postupov a receptov - Pekáreň Giraltovce,,2026-11-20
+https://pekarenkubicek.webnode.sk,1,200,https://pekarenkubicek.webnode.sk,Pekáreň Ján Kubíček a synovia,,2026-11-20
+https://pekarenlea.sk,1,200,https://pekarenlea.sk,"Pekáreň Lea &#8211; ruské pirôžky, bielkovinové chipsy, večerný chlieb",,2026-11-20
+https://pekarenroh.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://pekarstvi-strelna.cz/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://poem.sk,1,200,https://poem.sk,Pekáreň POEM | Netradičná pekáreň plná výnimočných chutí,,2026-11-20
+https://potravinynieotraviny.sk/miesto/potraviny-nie-otraviny-kosice/,1,200,https://potravinynieotraviny.sk/,,"page gone, home page works: use https://potravinynieotraviny.sk/",2026-11-20
+https://promitor-vinorum.sk,1,200,https://promitor-vinorum.sk,"Víno, ktoré obveseľuje srdce človeka | Perly južného Slovenska",,2026-11-20
+https://rsfarma.sk/kontakty,1,200,https://rsfarma.sk/kontakty,RS FARMA,,2026-11-20
+https://rusina.sk,1,200,https://rusina.sk,"Pek�rne a cukr�rne Rusina, spol. s r. o. - �vod",,2026-11-20
+https://salasviglas.sk/,1,200,https://salasviglas.sk/,Salaš Vígľaš,,2026-11-20
+https://slobodapohybu.sk/salas-obrubovanec/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://specialityzfarmy.sk/,1,200,https://specialityzfarmy.sk/,Domovská stránka,,2026-11-20
+https://spustakaviaren.sk/,1,200,https://spustakaviaren.sk/,Kaviareň 🤎 Pekáreň🤎Cukráreň🤎 Catering - SPUSTA kaviareň &amp; pekáreň,,2026-11-20
+https://staratrznica.sk/,1,200,https://staratrznica.sk/,Úvod | Stará tržnica v Bratislave,,2026-11-20
+https://streetburger.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://syraren-polun.sk/,1,200,https://syraren-polun.sk/,Syráreň Polun Čremošné - ovčia farma s mliekarenskou výrobou,,2026-11-20
+https://tokaj.sk,1,200,https://tokaj.sk,"Tokaj & CO, s.r.o. | Tokajské víno | Malá Trňa",,2026-11-20
+https://trhoviskozilinska.wordpress.com,1,200,https://trhoviskozilinska.wordpress.com,Trhovisko na Žilinskej &#8211; neoddeliteľná súčasť každodenného života štvrte &#8211; stránka občianskej iniciatívy zas,,2026-11-20
+https://trnka.sk/chlieb-nas,1,200,https://trnka.sk/chlieb-nas/,Chlieb Náš Trnava - Trnka Gastronomy,,2026-11-20
+https://trznicahruska.sk/,1,200,https://trznicahruska.sk/,Tržnica Hruška,,2026-11-20
+https://ufarmara.sk/,1,200,https://ufarmara.sk/,UFARMARA.SK,,2026-11-20
+https://ustudanky.sk/,1,200,https://ustudanky.sk/,Ustudánky - Vinohradnícky dom - Ustudánky.sk,,2026-11-20
+https://vcelarstvo.sk,1,200,https://vcelarstvo.sk,Včelárstvo Dedinský,,2026-11-20
+https://vinaripukanec.sk/vinari/andrej-kurti/,1,200,https://vinaripukanec.sk/vinari/andrej-kurti/,Vinárstvo Andrej Kurti - Spolok Pukanských vinárov,,2026-11-20
+https://vinaripukanec.sk/vinari/daniel-ballon/,1,200,https://vinaripukanec.sk/vinari/daniel-ballon/,Daniel Ballon - Spolok Pukanských vinárov,,2026-11-20
+https://vinaripukanec.sk/vinari/jozef-blaho/,1,200,https://vinaripukanec.sk/vinari/jozef-blaho/,Jozef Blaho - Spolok Pukanských vinárov,,2026-11-20
+https://vinaripukanec.sk/vinari/najvacsia-vinna-pivnica/,1,200,https://vinaripukanec.sk/vinari/najvacsia-vinna-pivnica/,Najväčšia vínna pivnica v Pukanci - Ján Rosenberger - Spolok Pukanských vinárov,,2026-11-20
+https://vinaripukanec.sk/vinari/peter-klinko/,1,200,https://vinaripukanec.sk/vinari/peter-klinko/,Peter Klinko - Spolok Pukanských vinárov,,2026-11-20
+https://vinaripukanec.sk/vinari/pivnica-villa-graca/,1,200,https://vinaripukanec.sk/vinari/pivnica-villa-graca/,Pivnica Villa Graca - Ivan Foltán - Spolok Pukanských vinárov,,2026-11-20
+https://vinaripukanec.sk/vinari/stano-krizan/,1,200,https://vinaripukanec.sk/vinari/stano-krizan/,Vinárstvo Križan - Spolok Pukanských vinárov,,2026-11-20
+https://vinaripukanec.sk/vinari/vinna-pivnica-kysel,1,200,https://vinaripukanec.sk/vinari/vinna-pivnica-kysel/,Vínna pivnica Kyseľ - Spolok Pukanských vinárov,,2026-11-20
+https://vinaripukanec.sk/vinari/vino-z-vajrabu/,1,200,https://vinaripukanec.sk/vinari/vino-z-vajrabu/,Štefan Chlebo - Víno z Vajrabu - Spolok Pukanských vinárov,,2026-11-20
+https://vinarstvosadlon.sk,1,200,https://vinarstvosadlon.sk,"Vinárstvo Michal Sadloň, Limbach, Pezinok",,2026-11-20
+https://vinobartal.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://vinohradnik.sk/?page_id=370,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://vinohradnik.sk/wordpress/?page_id=326,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://vinohrady-vladar.sk/,1,200,https://vinohrady-vladar.sk/,Vinohradníctvo a vinárstvo Vladár,,2026-11-20
+https://vinolevice.sk/,1,200,https://vinolevice.sk/,Víno Levice &#8211; vinárstvo a vinohradníctvo,,2026-11-20
+https://www.agrofarma.sk/predajcovia/,1,200,https://www.agrofarma.sk/predajcovia/,Agrofarma - Predajcovia,,2026-11-20
+https://www.agrosuca.sk/,1,200,https://www.agrosuca.sk/,"Vitajte na stránke Agrosúča, a.s. | Agro Súča a.s.",,2026-11-20
+https://www.bee-shop.sk/,1,200,https://www.bee-shop.sk/,Bee shop - Vcelarske potreby Kosice,,2026-11-20
+https://www.berryfarm.sk/,1,200,https://www.berryfarm.sk/,Čučoriedková farma Bratislava - Berry Farm,,2026-11-20
+https://www.bezlepkova.sk,1,200,https://bezlepkova.sk/,Domov - Dobrá Pekáreň Bezlepková,,2026-11-20
+https://www.bio-obchodik.sk/,1,200,https://www.bio-obchodik.sk/,Prírodná kozmetika a medicína | bio-obchodik.sk,,2026-11-20
+https://www.bioderico.sk/,1,200,https://www.bioderico.sk/,BiodericO &#8211; zdravý slovenský obchod,,2026-11-20
+https://www.biofarma.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://www.biologika.sk/,1,200,https://www.biologika.sk/sk/,Úvodná stránka - Biologika,,2026-11-20
+https://www.biomajak.sk/,1,200,https://www.biomajak.sk/,Eshop,,2026-11-20
+https://www.biomania.sk/,1,200,https://www.biomania.sk/,Váš zdravý bio obchod!,,2026-11-20
+https://www.bovinel.sk/,1,200,https://www.bovinel.sk/,Bovinel - rodinné vinárstvo,,2026-11-20
+https://www.bryndziaren.sk/sk/produkty.html,1,200,https://www.bryndziaren.sk/,,"page gone, home page works: use https://www.bryndziaren.sk/",2026-11-20
+https://www.cachtickechotare.sk/,0,200,https://www.cachtickechotare.sk/,Cachticke Chotare - Coming Soon,parked or empty page,2026-11-20
+https://www.cmeliak.sk/,1,200,https://www.cmeliak.sk/,ČMELIAK – Slovenský med a včelie produkty | Obchod v Martine,,2026-11-20
+https://www.crocus.cz/,1,200,https://www.crocus.cz/,CROCUS | Brno | Pekárny a prodejny pečiva,,2026-11-20
+https://www.crosta-bakery.sk,1,200,https://www.crosta-bakery.sk,CROSTA BAKERY | Domovská stránka,,2026-11-20
+https://www.cucoriedkypanis.sk/,1,200,https://www.cucoriedkypanis.sk/,čučoriedky pánis,,2026-11-20
+https://www.danubia-as.sk/,1,200,https://www.danubia-as.sk/,DANUBIA a.s. - Oficiálna stránka DANUBIA a.s.,,2026-11-20
+https://www.dobrapekaren.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://www.dobryjezko.sk,1,200,https://www.dobryjezko.sk,Dobrý ježko - Dobrý ježko,,2026-11-20
+https://www.dobryjezko.sk/,1,200,https://www.dobryjezko.sk/,Dobrý ježko - Dobrý ježko,,2026-11-20
+https://www.donatelo.sk/,1,200,https://www.donatelo.sk/,Donatelo &#8211; Pravá chuť poctivej práce,,2026-11-20
+https://www.drinks24.sk/,1,200,https://drinks24.sk/,Zahranicne kasina pre Slovakov 2026 ✔ Najlepšie online casino,,2026-11-20
+https://www.dubovskygrancic.sk/,1,200,https://dubovskygrancic.sk/,Domov - Dubovský &amp; Grančic,,2026-11-20
+https://www.ekovps.sk/strediska/trznica,1,200,https://www.ekovps.sk/strediska/trznica,Tržnica - EKO - VPS web,,2026-11-20
+https://www.ekvia.sk/,1,200,https://www.ekvia.sk/,Ekvia s.r.o.,,2026-11-20
+https://www.emmilysbakery.sk/,1,200,https://www.emmilysbakery.sk/,Emmily´s Bakery - Domáce koláče a torty,,2026-11-20
+https://www.esterhazygalanta.sk/vinaren,1,200,https://www.esterhazygalanta.sk/vinaren,Vináreň | Esterházy Galanta,,2026-11-20
+https://www.facebook.com/Farmapvtacnikom/,1,200,https://www.facebook.com/Farmapvtacnikom/,,,2026-11-20
+https://www.facebook.com/Farmarskyobchodvrakuna,1,200,https://www.facebook.com/Farmarskyobchodvrakuna,,,2026-11-20
+https://www.facebook.com/Račanský-vinohradnícky-chodník-254161585294709,1,200,https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FRa%25c4%258dansk%25c3%25bd-vinohradn%25c3%25adcky-chodn%25c3%25adk-254161585294709,,ok in curl (ordinal not in range(128)),2026-11-20
+https://www.facebook.com/Zeleninavulicke/,1,200,https://www.facebook.com/Zeleninavulicke/,,,2026-11-20
+https://www.facebook.com/baretka.roznava/,1,200,https://www.facebook.com/baretka.roznava/,,,2026-11-20
+https://www.facebook.com/farmaoresany/,1,200,https://www.facebook.com/farmaoresany/,,,2026-11-20
+https://www.facebook.com/mestskatrznicaturzovka/,1,200,https://www.facebook.com/mestskatrznicaturzovka/,,,2026-11-20
+https://www.facebook.com/p/Pekáreň-Alea-61565104947726,1,200,https://www.facebook.com/p/Pekáreň-Alea-61565104947726,,ok in curl (ordinal not in range(128)),2026-11-20
+https://www.facebook.com/p/ÓDApekáreň-61552347658444/,1,200,https://www.facebook.com/p/ÓDApekáreň-61552347658444/,,ok in curl (ordinal not in range(128)),2026-11-20
+https://www.facebook.com/pekaren.raslavice/,1,200,https://www.facebook.com/pekaren.raslavice/,,,2026-11-20
+https://www.facebook.com/profile.php?id=100057257057429,1,200,https://www.facebook.com/profile.php?id=100057257057429,,,2026-11-20
+https://www.facebook.com/profile.php?id=100077316985538,1,200,https://www.facebook.com/people/Kajkine-pag%C3%A1%C4%8Diky/100077316985538/,,,2026-11-20
+https://www.facebook.com/sycvinarstvo,1,200,https://www.facebook.com/sycvinarstvo,,,2026-11-20
+https://www.facebook.com/syrmedcoltovo,1,200,https://www.facebook.com/syrmedcoltovo,,,2026-11-20
+https://www.facebook.com/vinoondrusek,1,200,https://www.facebook.com/vinoondrusek,,,2026-11-20
+https://www.farmababindol.sk/,1,200,https://www.farmababindol.sk/,Farma BABINDOL - tak má chutiť paradajka,,2026-11-20
+https://www.farmakamenica.sk/,1,200,https://www.farmakamenica.sk/,Farma Kamenica,,2026-11-20
+https://www.farmamedana.sk/,1,200,https://www.farmamedana.sk/,Farma Medana,,2026-11-20
+https://www.farmfoods.sk/,1,200,https://www.farmfoods.sk/,"Slovenské, prírodné, z vlastných fariem",,2026-11-20
+https://www.fcola.sk/,1,200,https://www.fcola.sk/,"Fčola - včelárske potreby, med, včelie produkty, lokálna kozmetika",,2026-11-20
+https://www.fedormalik.sk,1,200,https://www.fedormalik.sk,Vinárstvo s chuťou Modry &bull; Vinárstvo a Vinohradníctvo Fedor Malík a syn,,2026-11-20
+https://www.framipek.sk,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://www.freshmarket.sk/en/stores/siskaren-bakery,1,200,https://www.freshmarket.sk/en/stores/siskaren-bakery/,,,2026-11-20
+https://www.frtuswinery.sk/,1,200,https://www.frtuswinery.sk/,Frtus Winery - Originálne víno pre originálnych ľudí,,2026-11-20
+https://www.grandbari.sk,1,200,https://www.grandbari.sk,Vinárstvo Chateau GRAND BARI | Tokaj,,2026-11-20
+https://www.hubertsekt.sk,1,200,https://www.hubertsekt.sk/intro/,Vitajte - Hubert Sekt,,2026-11-20
+https://www.instagram.com/panpan_pekaren,1,200,https://www.instagram.com/panpan_pekaren,,,2026-11-20
+https://www.instagram.com/pekaren_pochlebe/,1,200,https://www.instagram.com/pekaren_pochlebe/,,,2026-11-20
+https://www.jurskevino.sk/,1,200,https://www.jurskevino.sk/,Rodinné vinárstvo Šmelko | Poctivé vína zo Svätého Jura,,2026-11-20
+https://www.kalt.sk/,1,200,https://www.kalt.sk/,kalt wine - kalt niepel wine,,2026-11-20
+https://www.kapustarensvedernik.sk/,1,200,https://www.kapustarensvedernik.sk/,kapustarensvedernik.sk -,,2026-11-20
+https://www.karpatskaperla.sk/,1,200,https://www.karpatskaperla.sk/,Karpatská perla - rodinné vinárstvo zo Šenkvíc,,2026-11-20
+https://www.katovavcelnica.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://www.klasy.sk/,1,200,https://www.klasy.sk/,prvá prešovská remeselná pekáreň Klasy,,2026-11-20
+https://www.kopek.sk/,1,200,https://kopek.sk/,KOPEK - Kočkovská pekáreň,,2026-11-20
+https://www.koseckydvor.sk/,1,200,https://www.koseckydvor.sk/sk/,"Košecký dvor, slovenské mäsiarstvo a regionálny chovateľ | KoseckyDvor.sk",,2026-11-20
+https://www.kosice-city.sk/trhovisko.html,1,200,http://www.kosice-city.sk/verify?redirect=/trhovisko.html,Bezpečnostné overenie - hCaptcha,,2026-11-20
+https://www.kozara.sk/,1,200,https://kozara.sk/,Kozara - z lásky k vínu | Moderné vinárstvo šenkvického regiónu,,2026-11-20
+https://www.koziafarmabecka.sk,0,,,,domain does not exist,2026-11-20
+https://www.kralovskapekaren.sk/,1,200,https://www.kralovskapekaren.sk/,Úvod - Kralovska-pekaren,,2026-11-20
+https://www.krizakovi.cz/,1,200,https://www.krizakovi.cz/,Pekařství a bistro Křižákovi &ndash; zakládáme si na poctivé práci a řemesle,,2026-11-20
+https://www.kruhpekaren.sk/,1,200,https://www.kruhpekaren.sk/,Úvod - Kruh pekáreň,,2026-11-20
+https://www.larkskalica.sk/,1,200,https://www.larkskalica.sk/,Lark Skalica - objednať s donáškou,,2026-11-20
+https://www.lokseraca.sk/,0,,,,domain does not exist,2026-11-20
+https://www.meagrati.sk/,1,200,https://www.meagrati.sk/,Vinohrady a vinárstvo MEA GRATI Ladmovce,,2026-11-20
+https://www.medaren.sk/,1,200,https://www.medaren.sk/,Slovenský med a včelie produkty | MEDÁREŇ,,2026-11-20
+https://www.medomatimrich.sk/,1,200,https://www.medomatimrich.sk/,MEDOMAT,,2026-11-20
+https://www.miluron.sk/,1,200,https://miluron.sk/,Miluron - Miluron,,2026-11-20
+https://www.mimifarma.eu/,1,200,https://www.mimifarma.eu/,MIMI farma,,2026-11-20
+https://www.mintconcept.sk/,1,200,https://www.mintconcept.sk/,MINTconcept.sk - lokálne bistrá v Bratislave,,2026-11-20
+https://www.mojvinohrad.online/,0,,,,domain does not exist,2026-11-20
+https://www.mrvastanko.sk/,1,200,https://www.mrvastanko.sk/,Víno Mrva & Stanko,,2026-11-20
+https://www.muran.sk/muranske-buchty-s-r-o.html,1,200,https://www.muran.sk/,,"page gone, home page works: use https://www.muran.sk/",2026-11-20
+https://www.novogal.sk,1,200,https://novogal.eu/,Domov - Novogal,insecure certificate,2026-11-20
+https://www.ostrozovic.sk/,1,200,https://www.ostrozovic.sk/,Ostrožovič | Ostrozovic.sk,,2026-11-20
+https://www.ovocovo.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://www.pavelkavino.sk/,1,200,https://www.pavelkavino.sk/,Rodinné vinárstvo a vinohradníctvo od roku 1995 - Pavelka®,,2026-11-20
+https://www.pdlovcicatrubin.sk/,1,200,https://www.pdlovcicatrubin.sk/,O nás,,2026-11-20
+https://www.pecivko.sk/,1,200,https://www.shoptet.sk/zmazany/?project_url=www.pecivko.sk,Obchod bol už odstránený - Shoptet.sk,insecure certificate,2026-11-20
+https://www.pekaren-crocus.sk,0,,,,domain does not exist,2026-11-20
+https://www.pekaren.sk,1,200,https://www.pekaren.sk,Home - www.pekaren.sk,,2026-11-20
+https://www.pekaren.sk/,1,200,https://www.pekaren.sk/,Home - www.pekaren.sk,,2026-11-20
+https://www.pekarenbarca.sk/,1,200,https://pekarenbarca.sk/,Barčianska Pekáreň — Remeselná pekáreň v Košiciach,,2026-11-20
+https://www.pekarenbzince.sk/,1,200,https://www.pekarenbzince.sk/,Domov - Pekáreň Bzince,,2026-11-20
+https://www.pekarenjanovce.sk/,1,200,https://www.pekarenjanovce.sk/,Pekáreň Jánovce - Tradícia chuti a kvality,,2026-11-20
+https://www.pekarenjuno.sk/,1,200,https://www.pekarenjuno.sk/,Pekáreň JUNO - Hrašovík,,2026-11-20
+https://www.pekarenkromka.sk/,1,429,,,HTTP 429,2026-11-20
+https://www.pekarenlimba.sk/,1,200,https://www.pekarenlimba.sk/,Pekáreň Limba,,2026-11-20
+https://www.pekarenskoluda.sk,1,200,https://www.pekarenskoluda.sk,Mlyn a pekáreň ŠKOLUDA — Trstín | Rodinná tradícia od roku 1882,,2026-11-20
+https://www.pekarne.sk/,1,200,https://www.pekarne.sk/,Pekáreň Bánov,,2026-11-20
+https://www.pekarstvikrizak.cz/,1,403,,,HTTP 403,2026-11-20
+https://www.penam.sk/,1,200,https://www.penam.sk/,"Úvod - PENAM, a.s.",,2026-11-20
+https://www.petrzalka.sk/trhovisko/,1,200,https://www.petrzalka.sk/trhovisko/,Trhovisko Mlynarovičova | PETRŽALKA - Petržalka,,2026-11-20
+https://www.petrzalskatrznica.sk,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://www.plodoovoc-contexo.sk/,0,200,https://www.plodoovoc-contexo.sk/,"Registrácia domén, hosting a servery :: Websupport.sk",parked or empty page,2026-11-20
+https://www.podola.sk/,1,200,https://podola.sk/,Home | Vinársky dom Petra Podolu,,2026-11-20
+https://www.pretzelmayer.sk/,1,200,https://www.pretzelmayer.sk/,Vinárstvo Pretzelmayer &#8211; Terroir &amp; Charakter,,2026-11-20
+https://www.repawinery.sk/,1,200,https://www.repawinery.sk/,REPAWINERY | Víno s dlhoročnou tradíciou,,2026-11-20
+https://www.rybarstvi-hodonin.cz/,1,200,https://www.rybarstvi-hodonin.cz/,Kvalitní ryby - poctivá práce | Rybářství Hodonín,,2026-11-20
+https://www.sadlivia.sk,1,200,https://www.sadlivia.sk,Úvod - Sad Lívia,,2026-11-20
+https://www.sajdak.sk,1,200,https://www.sajdak.sk,Syráreň Sajdak,,2026-11-20
+https://www.salas-kostrin.sk/,1,200,https://www.salas-kostrin.sk/salas-kostrin/,SALAŠ KOSTRÍN,,2026-11-20
+https://www.salas-partizanske.sk/,1,200,https://www.salas-partizanske.sk/,"Reštaurácia, ubytovanie - Salaš Partizánske",,2026-11-20
+https://www.salas.sk/sk,1,200,https://www.salas.sk/sk,Úvod | Reštaurácia Salaš Slavkov,,2026-11-20
+https://www.salasbeckov.sk,1,200,https://www.salasbeckov.sk,Domov - Salaš Beckov,,2026-11-20
+https://www.salasbeckov.sk/produkty/,1,200,https://www.salasbeckov.sk/produkty/,Produkty - Salaš Beckov,,2026-11-20
+https://www.salasdechtare.sk/,1,200,https://www.salasdechtare.sk/,Salaš Dechtáre | Originálna Slovenská Kuchyňa,,2026-11-20
+https://www.salaskrajinka.sk/sk/index.html,1,200,https://www.salaskrajinka.sk/sk/index.html,Salaš Krajinka | Úvodná stránka,,2026-11-20
+https://www.salaskrajinka.sk/sk/otvaracie-hodiny.html,1,200,https://www.salaskrajinka.sk/sk/otvaracie-hodiny.html,Salaš Krajinka | Otváracie hodiny,,2026-11-20
+https://www.skiarena-fackovskesedlo.sk/restauracia/restauracia-salas-klak/,1,200,https://skiarena-fackovskesedlo.sk/restauracia-salas-klak/,Reštaurácia Salaš Kľak &#8211; skiarena,,2026-11-20
+https://www.sollutia.sk/pekarenposen/,0,,,,domain does not exist,2026-11-20
+https://www.staryotec.sk/,1,200,https://www.staryotec.sk/,Starý otec &#8211; poctivé slovenské produkty,,2026-11-20
+https://www.sykorafinewines.sk/,1,200,https://www.sykorafinewines.sk/sk/,Adam Sýkora,,2026-11-20
+https://www.syrex.sk/koliba,1,200,https://www.syrex.sk/koliba,Ochutnajte to najlepšie zo Zázrivskej kuchyne | Syrex Zázrivá,,2026-11-20
+https://www.syromat.sk/,1,200,https://www.syromat.sk/,Syromat s.r.o. — parené syry a mliečne výrobky,,2026-11-20
+https://www.tofako.sk/,1,200,https://www.tofako.sk/,Tofako – Pekáreň,,2026-11-20
+https://www.topec.sk/,1,200,https://www.topec.sk/vasa-pekaren/,Pekáreň a cukráreň Topec,,2026-11-20
+https://www.topec.sk/predajne/,1,200,https://www.topec.sk/predajne/,Pekáreň a cukráreň Topec,,2026-11-20
+https://www.treking.cz/chaty/salas-pod-mestrovou.htm,1,200,https://www.treking.cz/chaty/salas-pod-mestrovou.htm,Koliba pod Me�trovou (777 m) v Z�padn�ch Tatr�ch | Treking.cz,,2026-11-20
+https://www.vamex.sk/,1,200,https://vamex.sk/,Tradičná slovenská pekáreň | Čerstvý chlieb a pečivo každý - Vamex,,2026-11-20
+https://www.vcelarka.sk/,1,200,https://vcelarka.sk/,"Domáci med, peľ a voskové sviečky | Vcelarka.sk",,2026-11-20
+https://www.vcelarstvoadonis.sk/,1,200,https://www.vcelarstvoadonis.sk/,Včelárstvo - vcelarstvoadonis.sk,,2026-11-20
+https://www.vcelovina.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://www.velicka.sk/,1,200,https://www.velicka.sk/,Pekáreň Velička,,2026-11-20
+https://www.vilagiwinery.sk/,1,200,https://vilagiwinery.sk/,Víno z Údolia 3 riek zrodené na vulkanickej pôde | Világi Winery,,2026-11-20
+https://www.villavinoraca.sk/,1,200,https://villavinoraca.sk/,Villa Vino Rača a Palugyay | Slovenské vína z Rače,,2026-11-20
+https://www.vinarskastodola.sk/,0,404,,,HTTP 404,2026-11-20
+https://www.vinarstvokopecek.sk/,1,200,https://www.vinarstvokopecek.sk/,Rodinné vinárstvo s dlhoročnou tradíciou zo Záhoria | Vinárstvo Kopeček,,2026-11-20
+https://www.vinarstvoukona.sk/,1,200,https://www.vinarstvoukona.sk/,Home - Vinarstvo u Kona,,2026-11-20
+https://www.vino-tokaj.sk/sk/,0,200,https://www.vino-tokaj.sk/sk/,"Registrácia domén, hosting a servery :: Websupport.sk",parked or empty page,2026-11-20
+https://www.vinohladky.sk,1,200,https://www.vinohladky.sk/sk/,Víno Hladký - Skalica,,2026-11-20
+https://www.vinohulansky.sk,1,200,https://www.vinohulansky.sk,Vítame Vás na stránkach rodinného vinárstva Hulanský - Víno Hulanský,,2026-11-20
+https://www.vinomagula.sk,1,200,https://www.vinomagula.sk,Vinarstvo Magula - Remeselné a naturálne vína zo Slovenska,,2026-11-20
+https://www.vinomatysak.sk/o-nas/matysak-shop/,1,200,https://www.vinomatysak.sk/,,"page gone, home page works: use https://www.vinomatysak.sk/",2026-11-20
+https://www.vinoodfrancuza.sk/sk/,1,200,https://www.vinoodfrancuza.sk/,,"page gone, home page works: use https://www.vinoodfrancuza.sk/",2026-11-20
+https://www.vinoruban.sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://www.vinostraka.sk,1,200,https://www.vinostraka.sk,E-shop - Víno Straka,,2026-11-20
+https://www.vinotajna.sk/,1,200,https://www.vinotajna.sk/,Rodinné vinárstvo Tajna Vineyards &amp; Winery,,2026-11-20
+https://www.vinotop.sk,1,200,https://www.vinotop.sk,"Vinárske závody Topoľčianky, s.r.o.",,2026-11-20
+https://www.vrzukac.sk/,1,200,https://www.vrzukac.sk/,Pekaren Vrzukac,,2026-11-20
+https://www.vvdpkarpaty.sk/,1,200,https://www.vvdpkarpaty.sk/,VVDP Karpaty - víno z Malých Karpát,,2026-11-20
+https://www.vzdelavacie-centrum-vcielka.sk/,1,200,https://www.vzdelavacie-centrum-vcielka.sk/,Vzdelávacie centrum Včielka,,2026-11-20
+https://www.zamockevinarstvo.sk/sk/,0,,,,[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.,2026-11-20
+https://www.zsigmond.sk/,1,200,https://www.zsigmond.sk/,Home Page,,2026-11-20
+https://zahradnictvoantal.sk/,1,200,https://zahradnictvoantal.sk/,"Záhradníctvo Antal | Kvety, samozber jahôd a služby pri Tornali",,2026-11-20
+https://zlatynektar.sk/,1,200,https://zlatynektar.sk/,Medové výrobky Zlatý nektár | 100% prírodné produkty z medu,,2026-11-20
