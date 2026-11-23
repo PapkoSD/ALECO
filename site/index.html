@@ -22,8 +22,8 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta name="theme-color" content="#17322a">
-  <!-- fonts and the map library are served from this site; the only outside requests are the map tiles (OpenFreeMap)
-       and anonymous visit counts (GoatCounter) -->
+  <!-- fonts and the map library are served from this site; the only outside requests are the map tiles (OpenFreeMap),
+       anonymous visit counts (GoatCounter) and address lookups (Photon, only for typed addresses) -->
   <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
   <link href="fonts/fonts.css" rel="stylesheet">
   <link href="vendor/maplibre-gl-4.7.1/maplibre-gl.css" rel="stylesheet">
@@ -48,7 +48,7 @@
         <div class="step">
           <label class="step-label" for="q" data-t="where">Kde hľadáte?</label>
           <div class="where">
-            <input id="q" type="search" data-t-placeholder="placeholder" placeholder="Obec alebo názov miesta" autocomplete="off" enterkeyhint="search">
+            <input id="q" type="search" data-t-placeholder="placeholder" placeholder="Obec, adresa alebo názov miesta" autocomplete="off" enterkeyhint="search">
             <button type="button" class="btn ghost" id="locate" data-t="myLocation">Moja poloha</button>
           </div>
           <div class="suggest" id="suggest" hidden></div>
@@ -119,7 +119,7 @@
     <p><strong data-t="opLabel">Prevádzkovateľ:</strong> <span class="operator"></span><a class="mail" href="#"></a>. <span data-t="opNote">ALECO je nekomerčný projekt.</span></p>
     <p data-t-html="priv1"><strong>Údaje o miestach.</strong> Zverejňujeme názov, polohu, adresu, kontakt, otváracie hodiny a ponuku miest, kde sa predáva jedlo priamo od výrobcov. Pochádzajú z verejných zdrojov: z OpenStreetMap, z registra ekologických certifikátov EÚ a z webov samotných predajcov. Ak miesto prevádzkuje fyzická osoba, ide o osobné údaje. Spracúvame ich na základe oprávneného záujmu informovať verejnosť o priamom predaji potravín (čl. 6 ods. 1 písm. f) GDPR) a len v rozsahu, v akom ich predajca sám zverejnil. Súkromne hospodáriacich roľníkov z registra certifikátov nezverejňujeme.</p>
     <p data-t-html="priv2"><strong>Vaše práva.</strong> Môžete požiadať o prístup k údajom, ich opravu alebo vymazanie a namietať proti ich zverejneniu. Stačí napísať na e-mail vyššie. Údaje bez zbytočného odkladu opravíme alebo odstránime z mapy aj z otvorených dát. Máte aj právo podať sťažnosť <a href="https://dataprotection.gov.sk/" target="_blank" rel="noopener">Úradu na ochranu osobných údajov SR</a>.</p>
-    <p data-t-html="priv3"><strong>Návštevníci.</strong> Stránka nepoužíva cookies. Návštevnosť a to, čo sa hľadá (obce, produkty, otvorené miesta), meriame anonymne cez <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>, ktorý neukladá IP adresy. Stránku hostí GitHub Pages a mapové podklady poskytuje OpenFreeMap; tieto služby pri načítaní stránky technicky spracúvajú vašu IP adresu. Vašu polohu, ak ju povolíte, používame len vo vašom prehliadači na zoradenie zoznamu.</p>
+    <p data-t-html="priv3"><strong>Návštevníci.</strong> Stránka nepoužíva cookies. Návštevnosť a to, čo sa hľadá (obce, produkty, otvorené miesta), meriame anonymne cez <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>, ktorý neukladá IP adresy. Ak do vyhľadávania napíšete adresu alebo miesto, ktoré nie je obec, text sa pošle službe <a href="https://photon.komoot.io/" target="_blank" rel="noopener">Photon</a> (komoot, Nemecko), ktorá ho vyhľadá v OpenStreetMap. Stránku hostí GitHub Pages a mapové podklady poskytuje OpenFreeMap; tieto služby pri načítaní stránky technicky spracúvajú vašu IP adresu. Vašu polohu, ak ju povolíte, používame len vo vašom prehliadači na zoradenie zoznamu.</p>
     <p data-t-html="priv4"><strong>Upozornenie.</strong> Údaje pochádzajú z verejných zdrojov a môžu byť neúplné alebo neaktuálne. Pred cestou si otváracie hodiny a ponuku overte priamo u predajcu. Pečiatka BIO znamená, že výrobca má platný certifikát v registri EÚ; ALECO nič necertifikuje.</p>
     <p data-t-html="priv5"><strong>Licencie.</strong> Kód: AGPL-3.0, <a href="https://github.com/PapkoSD/ALECO" target="_blank" rel="noopener">GitHub</a>. Údaje: ODbL (© prispievatelia OpenStreetMap), register ekologických certifikátov Európskej komisie, GeoNames (CC BY 4.0).</p>
     <form method="dialog"><button class="btn" data-t="close">Zavrieť</button></form>
@@ -128,6 +128,6 @@
   <!-- anonymous visit counts: no cookies, no IP addresses stored; localhost is not counted -->
   <script data-goatcounter="https://aleco-sk.goatcounter.com/count" async src="vendor/goatcounter/count.js"></script>
   <script src="vendor/maplibre-gl-4.7.1/maplibre-gl.js"></script>
-  <script src="app.js?v=25"></script>
+  <script src="app.js?v=27"></script>
 </body>
 </html>
