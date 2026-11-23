@@ -6,7 +6,9 @@ status values
   closed     checked: no longer operating -> taken off the map
   duplicate  same place as another entry (see note) -> taken off the map
   not_local  not local food: supplements, cosmetics, products from imported raw materials -> taken off the map
+  chain      a retail chain, franchise shop or a big food company's outlet -> taken off the map
   unclear    looked, found nothing useful -> stays, with the "please verify" note
+lat/lon/address move a pin that sits in the wrong place (take them from a source we may use: the seller, OSM).
 `how` is shown on the site in Slovak ("Predajňa na farme, e-shop"); website/phone fill gaps in the data. The product
 words in `how` ("mlieko, syry, vajcia") also decide what the place is listed under in "Čo chcete kúpiť?".
 Any place on the map can be checked, OSM shops and markets too: `set` adds the row when the id is not in the file yet.
@@ -24,8 +26,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PATH = ROOT / "data/checks/places_checks.csv"
 FIELDS = ["id", "name", "kraj", "okres", "obec", "category", "products", "status", "how", "website", "phone",
-          "source", "checked", "note"]
-STATUSES = {"sells", "wholesale", "closed", "duplicate", "not_local", "unclear", ""}
+          "source", "checked", "note", "lat", "lon", "address"]
+STATUSES = {"sells", "wholesale", "closed", "duplicate", "not_local", "chain", "unclear", ""}
 KRAJ_ORDER = ["Bratislavský", "Trnavský", "Trenčiansky", "Nitriansky", "Žilinský", "Banskobystrický", "Prešovský",
               "Košický"]
 

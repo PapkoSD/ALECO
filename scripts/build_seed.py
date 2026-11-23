@@ -148,6 +148,16 @@ def metres(a, b):
     return math.hypot((a[0] - b[0]) * 73_000, (a[1] - b[1]) * 111_000)  # good enough at Slovak latitudes
 
 
+# Not "straight from the producer" (Patrik, 2026-11-23: "remove any supply chains and corporations like COOP Jednota"):
+# retail chains and franchise shops, outlets of big food companies whose brands fill supermarkets, and bakery chains with
+# 4+ shops on the map. Matched on the normalised name, operator or brand. Farms, cooperatives and family firms that sell
+# their own food stay, even when they are companies.
+CHAIN_ANY = re.compile(r"\b(coop|jednota|moj obchod|farmfoods|penam|sarisske pekarne|pecivarne|i ?d ?c holding|milk ?agro|"
+                       r"liptovske pekarne|lippek|proovo)\b")
+CHAIN_BAKERY = re.compile(r"\b(strelna|i ?m ?d ?k|duroska|naglreiter|spusta|kremnicka pekaren|aurora|remetske hamre|juno|"
+                          r"poctiva pekaren|kromka|cachticka pekaren|crocus|violeta|vcela)\b")
+
+
 def osm_people_dates():
     """Per element, what scripts/osm_meta.py found in the OSM API: the last edit made by a person (bot runs and mass
     edits do not count, so a shop surveyed in 2015 keeps its 2015 date), and whether it was deleted or retagged since
@@ -182,6 +192,10 @@ def osm_features(stats):
         cat, label = osm_category(t)
         if not cat:
             stats["osm_skipped"][label] += 1
+            continue
+        txt = norm(" ".join([t.get("name", ""), t.get("operator", ""), t.get("brand", "")]))
+        if CHAIN_ANY.search(txt) or (cat == "bakery" and CHAIN_BAKERY.search(txt)):
+            stats["osm_skipped"][f"{cat}: chain or big company"] += 1
             continue
         m = meta.get(f"{e['type'][0]}{e['id']}", {})
         if m.get("deleted") or (m.get("v", 0) > e.get("version", 0) and not osm_category(m.get("tags", {}))[0]):
@@ -520,7 +534,7 @@ def distinctive(name):
     return {w for w in norm(name).split() if len(w) >= 4 and w not in MERGE_GENERIC}
 
 
-def apply_checks(feats, stats):
+def apply_checks(feats, stats, admin=None):
     """Hand-check results (data/checks/places_checks.csv) and the website check (data/checks/websites.csv)."""
     sys.path.insert(0, str(Path(__file__).parent))
     from check_websites import norm_url  # noqa: PLC0415
@@ -534,13 +548,23 @@ def apply_checks(feats, stats):
         c = checks.get(p["id"]) or next((checks[i] for i in p.get("_bio_ids", []) if i in checks), None)
         if c and p["source"] == "osm" and c["status"] in ("wholesale", "not_local"):
             c = None  # the certificate holder sells wholesale, but this OSM place is a shop people can visit
-        if c and c["status"] in ("wholesale", "closed", "duplicate", "not_local"):
+        if c and c["status"] in ("wholesale", "closed", "duplicate", "not_local", "chain"):
             stats["checks"][f"removed: {c['status']}"] += 1
             continue
         if c and c["status"] == "sells":
             p["checked"], p["how"] = c["checked"], c["how"]
             stats["checks"]["verified: sells directly"] += 1
-        if c and c["status"] in ("sells", "unclear"):
+        if c and c.get("lat") and c.get("lon"):
+            # the pin was in the wrong place: move it to where the seller or a newer OSM entry says it is
+            f["geometry"]["coordinates"] = [round(float(c["lon"]), 6), round(float(c["lat"]), 6)]
+            p["precision"] = "exact"
+            if c.get("address"):
+                p["address"] = c["address"]
+            if admin:
+                a = admin.lookup(*f["geometry"]["coordinates"])
+                p.update(obec=a["obec"], okres=a["okres"], kraj=a["kraj"], kraj_id=a["kraj_id"])
+            stats["checks"]["pin moved"] += 1
+        if c and c["status"] in ("sells", "unclear", ""):
             for k in ("website", "phone"):
                 if c[k] and not p.get(k):
                     p[k] = c[k]
@@ -744,7 +768,7 @@ def main():
     stats["organic"]["merged into OSM place"] = len(merged)
     feats += [b for b in bio if b["properties"]["id"] not in merged]
 
-    feats = apply_checks(feats, stats)
+    feats = apply_checks(feats, stats, admin)
     spread_stacked(feats, stats)
 
     # tidy public properties
