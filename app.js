@@ -220,7 +220,7 @@
         add3: "Do you map in OpenStreetMap? You can add the place there too; it will appear on ALECO with the next update.",
         close: "Close",
         aboutTitle: "Where the data comes from",
-        about1: "<strong>Shops, markets, vending machines, bakeries and wineries</strong> come from OpenStreetMap, the open map anyone can edit. We leave out chains and supermarkets.",
+        about1: "<strong>Shops, markets, vending machines, bakeries and wineries</strong> come from OpenStreetMap, the open map anyone can edit. We leave out supermarkets, big corporations and foreign chains; local firms and farms stay, even with several shops.",
         about2: "<strong>The BIO stamp</strong> means a valid organic certificate in the European Commission's register (TRACES). Products are listed from the certificate. We only show producers whose certificate lists food for people, such as honey, cheese, fruit or vegetables; farms that only grow grain or feed for processors are not on the map. A certificate doesn't say whether the producer also sells directly, so check before you go.",
         about3: "<strong>The location</strong> of certified producers is the address on the certificate: the premises if listed, otherwise the registered office. If the office is in a big city, we leave the producer off the map until we know where they actually farm.",
         about4: "Individual farmers (sole traders) from the certificate register are only published with their consent.",
