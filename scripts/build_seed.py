@@ -148,14 +148,16 @@ def metres(a, b):
     return math.hypot((a[0] - b[0]) * 73_000, (a[1] - b[1]) * 111_000)  # good enough at Slovak latitudes
 
 
-# Not "straight from the producer" (Patrik, 2026-11-23: "remove any supply chains and corporations like COOP Jednota"):
-# retail chains and franchise shops, outlets of big food companies whose brands fill supermarkets, and bakery chains with
-# 4+ shops on the map. Matched on the normalised name, operator or brand. Farms, cooperatives and family firms that sell
-# their own food stay, even when they are companies.
+# Not "straight from the producer" (Patrik, 2026-11-23/24: no supply chains and big corporations like COOP Jednota; big
+# farms stay; support local firms): retail chains and franchise shops, outlets of big corporations (250+ employees in
+# the Register of financial statements, or part of such a group: COOP Jednota Nitra 500-999, PENAM 500-999, I.D.C.
+# Holding 500-999, Milk-Agro 1000-1999, Topoľčianske pekárne a cukrárne 250-499) and bakery chains with 4+ shops on the
+# map. Matched on the normalised name, operator or brand. Farms, cooperatives and local firms stay, even big ones
+# (Agrofarma Červený Kameň, Levmilk, Novogal, Včela-Lippek, ProOvo).
 CHAIN_ANY = re.compile(r"\b(coop|jednota|moj obchod|farmfoods|penam|sarisske pekarne|pecivarne|i ?d ?c holding|milk ?agro|"
-                       r"liptovske pekarne|lippek|proovo)\b")
+                       r"topolcianske pekarne)\b")
 CHAIN_BAKERY = re.compile(r"\b(strelna|i ?m ?d ?k|duroska|naglreiter|spusta|kremnicka pekaren|aurora|remetske hamre|juno|"
-                          r"poctiva pekaren|kromka|cachticka pekaren|crocus|violeta|vcela)\b")
+                          r"poctiva pekaren|kromka|cachticka pekaren|crocus|violeta|topec)\b")
 
 
 def osm_people_dates():
