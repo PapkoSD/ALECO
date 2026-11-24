@@ -175,6 +175,7 @@ bio-703-0001569,"Fermentina, s. r. o.",bakery,,áno,Bratislava-Podunajské Bisku
 bio-703-0001578,JaLeKa Farma s. r. o.,farm,,áno,Harhaj,Bardejov,Prešovský,Harhaj 61,086 45,Harhaj,49.1876,21.4201,,,,,,SK-BIO-005.703-0001578.2026.001,2027-08-07,village,traces
 bio-703-0001579,Kmecik AgroFarm s.r.o.,farm,,áno,Lascov,Bardejov,Prešovský,Lascov 145,086 45,Lascov,49.1572,21.4756,,,,,,SK-BIO-005.703-0001579.2026.001,2027-08-07,village,traces
 osm-n10020399768,Mliečny automat,vending,Mliečny automat,,Martin,Martin,Žilinský,,,,49.062916,18.918404,,mlieko,24/7,,,,,exact,osm
+osm-n1002338456,Duke,bakery,,,Prievidza,Prievidza,Trenčiansky,,,,48.776076,18.607129,,pecivo,Mo-Su 07:00-21:00,,https://duke.sk/,,,exact,osm
 osm-n10025768639,Trh,market,,,Banská Bystrica,Banská Bystrica,Banskobystrický,,,,48.728424,19.130722,,,,,,,,exact,osm
 osm-n10025956943,Vinárstvo u Koňa,winery,,,Čerhov,Trebišov,Košický,,,,48.465128,21.653262,,vino,,+421 905 844 966,https://www.vinarstvoukona.sk/,,,exact,osm
 osm-n10034270474,Pekárna Bachan,bakery,,,Senica,Senica,Trnavský,,,,48.681149,17.368438,,pecivo,,,,,,exact,osm
@@ -188,6 +189,7 @@ osm-n10083993347,The Croissant,bakery,,,Žilina,Žilina,Žilinský,,,,49.222429,
 osm-n10090342737,Cukrárske potreby,bakery,,,Martin,Martin,Žilinský,,,,49.063324,18.921995,,pecivo,,,,,,exact,osm
 osm-n10094552417,Pekáreň Bzovík,bakery,,,Krupina,Krupina,Banskobystrický,,,,48.356688,19.068683,,pecivo,Mo-Fr 07:00-15:00,,,,,exact,osm
 osm-n10097392210,Predaj z dvora,farm,,,Podolie,Nové Mesto nad Váhom,Trenčiansky,,,,48.67067,17.768429,,,Mo-Sa 05:00-18:00,+421 903 473 688,,,,exact,osm
+osm-n10102793367,Pekárova žena,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.727248,21.25593,,pecivo,Mo-Fr 07:00-18:00,+421 910 126 076,https://www.pekarovazena.sk/,,,exact,osm
 osm-n1015206287,Mliekomat,vending,Mliečny automat,,Dubnica nad Váhom,Ilava,Trenčiansky,,,,48.958009,18.173431,,mlieko,,,,,,exact,osm
 osm-n10202918011,Biosad.sk,greengrocer,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.168259,17.155783,,ovocie;zelenina,Mo-Th 09:00-18:00; Fr 09:00-19:00; Sa 09:00-13:00,+421 907 456 908,,,,exact,osm
 osm-n10203606435,Zámocké vinárstvo Pezinok,winery,,,Pezinok,Pezinok,Bratislavský,,,,48.291117,17.268465,,vino,Tu-Sa 10:00-18:00,+421 337989070,,,,exact,osm
@@ -205,7 +207,10 @@ osm-n10608575464,Chlebáreň,bakery,,,Nitra,Nitra,Nitriansky,,,,48.312829,18.107
 osm-n10624110395,automat na mlieko,vending,Mliečny automat,,Banská Bystrica,Banská Bystrica,Banskobystrický,,,,48.760338,19.166316,,mlieko,,,,,,exact,osm
 osm-n10638086748,Prieskumná predajňa slovenských syrových výrobkov,dairy,,,Trenčín,Trenčín,Trenčiansky,,,,48.880779,18.029945,,mlieko;syr,Mo 08:00-17:00; Tu-Fr 08:00-17:30; Sa 08:00-12:00,,,,,exact,osm
 osm-n10650524984,Vinárstvo miluron,winery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.157936,17.173087,,vino,,,https://www.miluron.sk/,,,exact,osm
+osm-n10684060973,Ďuroška,bakery,,,Žilina,Žilina,Žilinský,,,,49.221632,18.740682,,pecivo,,,https://duroska.sk/,,,exact,osm
+osm-n10684098363,Ďuroška,bakery,,,Žilina,Žilina,Žilinský,,,,49.214617,18.76337,,pecivo,,,https://duroska.sk/,,,exact,osm
 osm-n10696546476,Kozia farma Becka,dairy,,,Šaštín-Stráže,Senica,Trnavský,,,,48.649458,17.133731,,mlieko;syr,"Mo-Su 08:30-10:00, 19:00-21:00",+421905972871,,,,exact,osm
+osm-n10705994931,Pekáreň Aurora,bakery,,,Stupava,Malacky,Bratislavský,,,,48.268763,17.031003,,pecivo,,,,,,exact,osm
 osm-n10726013851,Pekáreň Sekule,bakery,,,Sekule,Senica,Trnavský,,,,48.607061,16.997149,,pecivo,Mo-Fr 09:00-17:00; Sa 05:00-17:00,+421 905 644 718,,,,exact,osm
 osm-n10770772797,Pekáreň pod baštou,bakery,,,Prešov,Prešov,Prešovský,,,,48.991502,21.245114,,pecivo,Mo-Fr 06:00-18:00; Sa 06:00-12:00,,https://www.pekaren.sk/,,,exact,osm
 osm-n10820433422,Farmársky obchod,farm,Farmársky obchod,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.153649,17.137241,,,Tu-Fr 07:15-16:30; Sa 06:45-13:00,,,,,exact,osm
@@ -235,7 +240,9 @@ osm-n11042396934,Vinotéka a pivotéka Pivnička,winery,,,Nitra,Nitra,Nitriansky
 osm-n11052565289,Hasvársky dvor,butcher,,,Kostolná pri Dunaji,Senec,Bratislavský,,,,48.179703,17.431063,,maso,Fr 15:00-20:00; Sa 09:00-12:00,+421 903 762 986,,,,exact,osm
 osm-n11056916828,Mliečny automat,vending,Mliečny automat,,Prešov,Prešov,Prešovský,,,,48.996288,21.270289,,mlieko,,,,,,exact,osm
 osm-n11061142105,Farmársky obchod,farm,Farmársky obchod,,Prešov,Prešov,Prešovský,,,,48.988776,21.263936,,,,,,,,exact,osm
+osm-n11077623246,Pekárova žena,bakery,,,Prešov,Prešov,Prešovský,,,,49.020337,21.22464,,pecivo,Mo-Fr 06:30-17:30; Sa 07:30-11:00,+421 948 919 867,https://www.pekarovazena.sk/sidlisko-3-presov-251/,,,exact,osm
 osm-n11078141541,Balkánska pekáreň,bakery,,,Senec,Senec,Bratislavský,,,,48.217949,17.403525,,pecivo,Mo-Su 05:00-21:00,+421 917 721 053,,,,exact,osm
+osm-n1107816405,Pekáreň Ďuroška,bakery,,,Žilina,Žilina,Žilinský,,,,49.206777,18.768212,,pecivo,Mo-Fr 06:00-17:00; Sa 06:00-11:00,,,,,exact,osm
 osm-n11085889714,Veľké trhovisko,market,,,Terchová,Žilina,Žilinský,,,,49.256838,19.031618,,,"Tu,Th-Sa 06:30-16:30; Su 06:30-12:30",,,,,exact,osm
 osm-n11117139435,ovocie a zelenina u Zoliho,market,,,Zvolen,Zvolen,Banskobystrický,,,,48.576367,19.130352,,ovocie;zelenina,,,,,,exact,osm
 osm-n11132357220,Fajná rybka - lahôdky,dairy,,,Poprad,Poprad,Prešovský,,,,49.04483,20.304795,,mlieko;syr,,,,,,exact,osm
@@ -245,24 +252,29 @@ osm-n11148800411,Bioaspa,farm,Farmársky obchod,áno,Kúty,Senica,Trnavský,,,,4
 osm-n11158908052,Emmily's bakery,bakery,,,Košice-Kavečany,Košice I,Košický,,,,48.774141,21.206694,,pecivo,,+421 905 948 592,https://www.emmilysbakery.sk/,,,exact,osm
 osm-n11166988501,U Pekára,bakery,,,Poprad,Poprad,Prešovský,,,,49.046195,20.296056,,pecivo,Mo-Fr 07:00-17:00; PH closed,,,,,exact,osm
 osm-n11182755790,Mea Grati,winery,,,Ladmovce,Trebišov,Košický,,,,48.422651,21.758314,,vino,,+421 915 333 707,https://www.meagrati.sk/,,,exact,osm
+osm-n11212878388,Kočkovská pekáreň,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.899179,18.058551,,pecivo,,,,,,exact,osm
 osm-n11224967131,Pekáreň LEMI,bakery,,,Sládkovičovo,Galanta,Trnavský,,,,48.205325,17.643595,,pecivo,Mo-Sa 08:00-20:00,+421 947 951574,,,,exact,osm
 osm-n11233721210,Nénée Boulangerie,bakery,,,Košice-Juh,Košice IV,Košický,,,,48.696006,21.237045,,pecivo,Mo-Su 09:00-21:00,,,,,exact,osm
 osm-n11239644120,Syrakus,dairy,,,Trenčín,Trenčín,Trenčiansky,,,,48.894206,18.040865,,mlieko;syr,Mo-Fr 09:30-18:00; Sa 09:00-12:00,+421 910 970 249,,,,exact,osm
 osm-n11253839066,Trh,market,,,Veľký Meder,Dunajská Streda,Trnavský,,,,47.856529,17.770958,,,,,,,,exact,osm
 osm-n11254919079,Mliečny automat,vending,Mliečny automat,,Banská Bystrica,Banská Bystrica,Banskobystrický,,,,48.727502,19.119804,,mlieko,,,,,,exact,osm
+osm-n11286857110,Kočkovská pekáreň,bakery,,,Ilava,Ilava,Trenčiansky,,,,48.994216,18.229952,,pecivo,Mo-Fr 05:30-17:30; Sa 07:00-12:00; PH off,+421 424 443 081,,,,exact,osm
 osm-n11286891988,Pekáreň Klas,bakery,,,Ilava,Ilava,Trenčiansky,,,,48.996911,18.233781,,pecivo,Mo-Fr 05:00-16:00,+421 919 131 009,,,,exact,osm
 osm-n11299537380,Na Parii,bakery,,,Stará Ľubovňa,Stará Ľubovňa,Prešovský,,,,49.301088,20.690872,,pecivo,Mo-Fr 06:30-16:30,,,,,exact,osm
 osm-n11302199206,Sudové víno,winery,,,Košice-Nad jazerom,Košice IV,Košický,,,,48.689943,21.283018,,vino,Mo-Th 14:30-18:00; Fr 12:00-18:00; Sa 09:00-11:00,,,,,exact,osm
 osm-n11333565107,Bistro Háj,bakery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.162389,17.123817,,pecivo,"We-Fr 07:30-22:00; Sa,Su 08:30-22:00",,,,,exact,osm
 osm-n11341336483,Sad Lívia,farm,Farmársky obchod,áno,Kolíňany,Nitra,Nitriansky,,,,48.356048,18.216858,"Hruška obyčajná, Orech kráľovský, Vinič hroznorodý, Gaštan jedlý, Slivka domáca, JABLOŇA, zhustená bio jablková šťava, Jablčný živý ocot, Sušené jablká, Sušené hrušky, Sušené slivky a ďalšie (8)",ovocie,Mo-Fr 09:00-17:00; Sa 09:00-12:00,+421 905 829 990,https://www.sadlivia.sk,SK-BIO-003.703-0000424.2026.002,2028-07-15,exact,osm
 osm-n11341493785,Adam Sýkora,winery,,,Pezinok,Pezinok,Bratislavský,Myslenická 5356/263,,,48.268334,17.24269,,vino,Tu-Th 09:00-17:00; Fr 09:00-19:00; Sa 09:00-14:00,+421 915 222 118,https://www.sykorafinewines.sk/,,,exact,osm
+osm-n11347918767,Poctivá Pekáreň,bakery,,,Košice-Nad jazerom,Košice IV,Košický,,,,48.684536,21.290081,,pecivo,Mo-Fr 06:30-17:30; Sa 07:00-12:00,,,,,exact,osm
 osm-n11358972526,Najlepšie syry - Freshmarket,dairy,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.16754,17.153344,,mlieko;syr,,,,,,exact,osm
 osm-n11360251517,Pečivko,bakery,,,Kalná nad Hronom,Levice,Nitriansky,,,,48.208879,18.517622,,pecivo,,+421 908 891 244,https://www.pecivko.sk/,,,exact,osm
 osm-n11375793048,Salaš PD Žiar,salas,,,Žiar,Liptovský Mikuláš,Žilinský,,,,49.138293,19.689101,,syr,,,,,,exact,osm
+osm-n11413102308,Lebeco,bakery,,,Nové Zámky,Nové Zámky,Nitriansky,,,,47.992977,18.170549,,pecivo,Mo-Fr 06:00-18:00; Sa 06:00-12:00,,,,,exact,osm
+osm-n11417981956,Kočkovská pekáreň,bakery,,,Dolné Kočkovce,Púchov,Trenčiansky,,,,49.097163,18.324357,,pecivo,,,,,,exact,osm
 osm-n11453336469,Pekáreň Giraltovce,bakery,,,Giraltovce,Svidník,Prešovský,,,,49.115181,21.518344,,pecivo,Mo-Fr 06:00-19:00; Sa 06:00-11:30; Su 17:00-19:00,+421 915 384 649,https://pekarengiraltovce.sk,,,exact,osm
 osm-n11461790675,Framipek,bakery,,,Trnava,Trnava,Trnavský,,,,48.369848,17.567921,,pecivo,Mo-Fr 06:00-18:00; Sa 06:00-12:00,,,,,exact,osm
 osm-n11486581325,Pekáreň Jánovce,bakery,,,Jánovce,Galanta,Trnavský,,,,48.176359,17.530696,,pecivo,Mo-Fr 06:00-18:00; Sa 07:00-10:30,+421 31 787 8851,https://www.pekarenjanovce.sk/,,,exact,osm
-osm-n11491690546,Pek Snack,bakery,,,Trnava,Trnava,Trnavský,,,,48.370538,17.584799,,pecivo,,,,,,exact,osm
+osm-n11491690564,Školuda,bakery,,,Trnava,Trnava,Trnavský,,,,48.370469,17.584612,,pecivo,Mo-Fr 06:00-18:00; Sa-Su off,,,,,exact,osm
 osm-n11510832656,Oblátkáreň,bakery,,,Nitra,Nitra,Nitriansky,,,,48.31931,18.106992,,pecivo,Mo-Fr 08:00-17:00,+421 951 483 052,,,,exact,osm
 osm-n11530672507,Hábeš,bakery,,,Bratislava-Rača,Bratislava III,Bratislavský,,,,48.211576,17.155091,,pecivo,Tu-Fr 11:00-20:00,,,,,exact,osm
 osm-n11553289406,Danubia,bakery,,,Dunajská Streda,Dunajská Streda,Trnavský,,,,47.990071,17.604238,,pecivo,,,https://www.danubia-as.sk/,,,exact,osm
@@ -275,11 +287,14 @@ osm-n11703506416,Pekáreň ILaS,bakery,,,Bidovce,Košice-okolie,Košický,,,,48.
 osm-n1172946025,Pod kostolom,bakery,,,Malá Ida,Košice-okolie,Košický,,,,48.675258,21.168817,,pecivo,,,,,,exact,osm
 osm-n11749370967,Farma Krnišov,farm,,áno,Kráľovce-Krnišov,Krupina,Banskobystrický,,,,48.353163,18.975233,"Mlieko, Mliečne výrobky, Syry",mlieko;syr,,+421 917 163 107,https://farmakrnisov.sk/,SK-BIO-005.703-0001297.2026.001,2027-05-05,exact,osm
 osm-n11761618944,Bagetéria,bakery,,,Tornaľa,Revúca,Banskobystrický,,,,48.422915,20.322519,,pecivo,,,,,,exact,osm
+osm-n11764529147,Cisárov pekár,bakery,,,Bratislava-Petržalka,Bratislava V,Bratislavský,,,,48.097417,17.111613,domáca pekáreň,pecivo,Mo-Fr 07:00-18:00,,https://cisarovpekar.sk/,,,exact,osm
 osm-n11766738675,Pekáreň Školuda,bakery,,,Senica,Senica,Trnavský,,,,48.678429,17.367544,,pecivo,Mo-Fr 06:00-17:30; Sa 06:00-11:30; PH off,,www.pekarenskoluda.sk,,,exact,osm
 osm-n11816730087,Víno od Francúza,winery,,áno,Devičie,Krupina,Banskobystrický,66,,,48.309469,19.022855,"Hrozno Devín, Víno",vino,,+421 915 693 814,https://www.vinoodfrancuza.sk/,SK-BIO-003.703-0000210.2025.001,2027-02-28,exact,osm
 osm-n11848561350,Copaline Baguette,bakery,,,Žiar nad Hronom,Žiar nad Hronom,Banskobystrický,,,,48.592549,18.848503,,pecivo,Mo-Fr 07:30-15:00,,,,,exact,osm
 osm-n11850188092,Tokajík,winery,,,Žiar nad Hronom,Žiar nad Hronom,Banskobystrický,,,,48.594849,18.85238,,vino,,,,,,exact,osm
+osm-n1185992368,Spusta,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,Radlinského 39,,,48.154467,17.118947,,pecivo,Mo-Fr 06:30-17:30,,,,,exact,osm
 osm-n11869962276,Fedor Malík a syn,winery,,,Modra,Pezinok,Bratislavský,Štúrova 68,,,48.335962,17.310881,,vino,Mo-Fr 09:00-18:00; Sa 09:00-14:00,+421 903 587 447,https://www.fedormalik.sk,,,exact,osm
+osm-n11882993851,Faun,bakery,,,Gbely,Skalica,Trnavský,,,,48.718302,17.116037,,pecivo,"Mo-Su 05:00-11:30,12:00-14:30",+421 907 163 757,https://faun.sk/,,,exact,osm
 osm-n11885806941,AN-PEK,bakery,,,Kremnica,Žiar nad Hronom,Banskobystrický,,,,48.702151,18.916074,,pecivo,,,,,,exact,osm
 osm-n11907997966,Fajnotka,bakery,,,Spišská Nová Ves,Spišská Nová Ves,Košický,,,,48.948437,20.560262,,pecivo,,,,,,exact,osm
 osm-n11931566318,Víno Satko,winery,,,Pezinok,Pezinok,Bratislavský,,,,48.2934,17.269431,,vino,,+421 905 696 397,,,,exact,osm
@@ -294,13 +309,15 @@ osm-n12068660070,Bajkery,bakery,,,Šamorín,Dunajská Streda,Trnavský,Bratislav
 osm-n12069542760,Jebo-Chlebo,bakery,,,Rimavská Seč,Rimavská Sobota,Banskobystrický,,,,48.307531,20.231116,,pecivo,Mo-Fr 06:00-18:00; Sa 06:00-12:00; Su 08:00-10:00,+421905345317,https://jebo-chlebo.sk/,,,exact,osm
 osm-n12073095458,Eko-Produkt,butcher,,,Kremnické Bane,Žiar nad Hronom,Banskobystrický,,,,48.739239,18.906385,,maso,We-Sa 09:00-16:00,+421 905 607 090,http://ekoprodukt.sk/,,,exact,osm
 osm-n12077536115,Syry - Korbáčiky,dairy,,,Štrba,Poprad,Prešovský,,,,49.083385,20.069535,,mlieko;syr,Mo 14:00-18:00; Tu-Sa 08:00-18:00; Su 08:00-14:00,,,,,exact,osm
+osm-n12090884627,Pekárova žena,bakery,,,Vysoké Tatry,Poprad,Prešovský,,,,49.140363,20.220215,,pecivo,,,,,,exact,osm
 osm-n12098450551,Zelený domček Komjathi,winery,,,Komjatice,Nové Zámky,Nitriansky,,,,48.163036,18.15805,,vino,,+421 903 520 467,https://komjathi.sk/,,,exact,osm
+osm-n12100943977,Violeta,bakery,,,Trnava,Trnava,Trnavský,,,,48.373684,17.586919,,pecivo,05:30-20:00,+421 911 780 790,,,,exact,osm
 osm-n12112304250,Čučoriedková záhrada,farm,Farmársky obchod,,Ratkovské Bystré,Revúca,Banskobystrický,,,,48.639609,20.060212,,ovocie,,+421 907 397 661,,,,exact,osm
 osm-n12117438735,Salaš Pieniny,salas,,,Majere,Kežmarok,Prešovský,Majere,,,49.403314,20.374277,,syr,Mo-Su 10:00-20:00,+421 948 344 334,,,,exact,osm
 osm-n12141507964,Farmársky obchod Humno,dairy,,,Východná,Liptovský Mikuláš,Žilinský,,,,49.067003,19.895558,,mlieko;syr,"Mo-Fr 09:00-17:00; Sa,Su 10:00-16:00",,,,,exact,osm
 osm-n12141507975,Farma Východná,farm,Farmársky obchod,,Východná,Liptovský Mikuláš,Žilinský,,,,49.0667,19.894887,,,,,,,,exact,osm
+osm-n12154444376,Pekáreň Kvetoslavov,bakery,,,Bratislava-Petržalka,Bratislava V,Bratislavský,,,,48.092116,17.118887,,pecivo,Mo-Fr 07:00-19:00; Sa 07:00-13:00,+421 947 949 884,,,,exact,osm
 osm-n12178961261,Trdlokafe,bakery,,,Košice-Juh,Košice IV,Košický,,,,48.694523,21.237566,,pecivo,,,,,,exact,osm
-osm-n12183816954,Lipóti Bakeries,bakery,,,Bratislava-Lamač,Bratislava IV,Bratislavský,,,,48.206006,17.033693,,pecivo,,,,,,exact,osm
 osm-n12184824583,ONDO,bakery,,,Strážske,Michalovce,Košický,,,,48.873374,21.831251,,pecivo,,,,,,exact,osm
 osm-n12208983592,Boulanger & Patisserie,bakery,,,Bratislava-Karlova Ves,Bratislava IV,Bratislavský,,,,48.157034,17.048036,,pecivo,,,,,,exact,osm
 osm-n12212606935,Agro-dvor,farm,,,Žilina,Žilina,Žilinský,,,,49.181228,18.725971,Zemiaky,zelenina,"Mo-Fr 08:00-16:00; Sa 08:00-12:00; Su,PH off",,https://agrodvor.sk,,,exact,osm
@@ -321,13 +338,18 @@ osm-n12351770194,Medovinka Nika Mi,honey,,,Tvrdošín,Tvrdošín,Žilinský,,,,4
 osm-n12395559152,Velička,bakery,,,Poprad,Poprad,Prešovský,,,,49.066208,20.282025,,pecivo,,+421524260996,https://www.velicka.sk/,,,exact,osm
 osm-n12404664905,Obchod so syrmi Drietoma Liešna,dairy,,,Drietoma,Trenčín,Trenčiansky,,,,48.946975,17.912579,,mlieko;syr,,,,,,exact,osm
 osm-n12409935580,Podniková predajňa PD Bošáca,farm,Farmársky obchod,,Bošáca,Nové Mesto nad Váhom,Trenčiansky,194,,,48.821659,17.841432,,,,,,,,exact,osm
+osm-n12416176525,Duke,bakery,,,Handlová,Prievidza,Trenčiansky,,,,48.737449,18.757857,,pecivo,,+421465472497,https://duke.sk/,,,exact,osm
 osm-n12432875848,VÁŠ BIOSVET,organic_shop,Zdravá výživa,,Dubnica nad Váhom,Ilava,Trenčiansky,,,,48.958296,18.174883,,,,,,,,exact,osm
 osm-n12455434245,Pekáreň Motyčky,bakery,,,Motyčky,Banská Bystrica,Banskobystrický,,,,48.860691,19.170702,,pecivo,,,,,,exact,osm
 osm-n12455553385,Syry (automat),vending,Automat na mliečne výrobky,,Vyšný Kubín,Dolný Kubín,Žilinský,,,,49.185811,19.307555,,mlieko;syr,,,,,,exact,osm
 osm-n12460717084,Kvaskova pekaren,bakery,,,Trenčianske Stankovce,Trenčín,Trenčiansky,,,,48.842917,17.98937,,pecivo,,,,,,exact,osm
 osm-n12462705966,Poľnohospodárske družstvo,farm,,,Soblahov,Trenčín,Trenčiansky,Družstevná 389,,,48.865907,18.077953,,,,+421 32 652 87 17,,,,exact,osm
 osm-n12469589578,Salaš Revolta,salas,,,Kremnica,Žiar nad Hronom,Banskobystrický,,,,48.720661,18.91068,,syr,"Mo-Su 10:00-12:00, 13:00-17:00",+421 908 093 966,,,,exact,osm
+osm-n12506584271,Faun,bakery,,,Senica,Senica,Trnavský,,,,48.682458,17.365077,,pecivo,Mo-Fr 05:00-14:00; PH off,+421 917 160 172,https://faun.sk/,,,exact,osm
 osm-n12509660101,Bezlepková Pekáreň Hraško,bakery,,,Nitra,Nitra,Nitriansky,,,,48.317617,18.103425,,pecivo,,,,,,exact,osm
+osm-n12511973349,Faun,bakery,,,Holíč,Skalica,Trnavský,,,,48.813676,17.160668,,pecivo,Mo-Fr 05:00-14:00,,https://faun.sk/predajne/#holic,,,exact,osm
+osm-n12535689127,Duke,bakery,,,Partizánske,Partizánske,Trenčiansky,,,,48.626181,18.360883,,pecivo,,,,,,exact,osm
+osm-n12561116401,Aurora,bakery,,,Nové Zámky,Nové Zámky,Nitriansky,,,,47.987354,18.164676,,pecivo,Mo-Su 05:00-21:00,,,,,exact,osm
 osm-n1256700224,Tržnica,market,,,Levice,Levice,Nitriansky,,,,48.217256,18.603928,,,Mo-Sa 07:00-12:00,,,,,exact,osm
 osm-n1256743261,Krytá Tržnica,market,,,Levice,Levice,Nitriansky,,,,48.217089,18.605734,,,,,,,,exact,osm
 osm-n12567459583,Panadéria,bakery,,,Lučenec,Lučenec,Banskobystrický,,,,48.329707,19.661692,,pecivo,,,,,,exact,osm
@@ -336,6 +358,7 @@ osm-n12578338248,Králičia nora,winery,,,Nová Dedinka,Senec,Bratislavský,,,,4
 osm-n12578550099,Podniková predajňa na farme,dairy,,,Lovčica-Trubín,Žiar nad Hronom,Banskobystrický,,,,48.628419,18.780853,,mlieko;syr,Mo-Fr 08:00-16:00; Sa 08:00-12:00,+421 907 887 848,https://www.pdlovcicatrubin.sk/,,,exact,osm
 osm-n12593284528,Chlieb & láska,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.148865,17.133734,,pecivo,Tu-Fr 07:00-18:00; Sa 07:00-15:00; Su 08:00-15:00,,,,,exact,osm
 osm-n12606976930,Apimed,honey,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.142125,17.108527,,med,Mo-Su 10:00-18:00,+421 905 688 944,,,,exact,osm
+osm-n12610341769,Pekáreň Aurora,bakery,,,Galanta,Galanta,Trnavský,,,,48.199543,17.733403,,pecivo,,,,,,exact,osm
 osm-n12618689506,Čmeliak,honey,,,Martin,Martin,Žilinský,,,,49.078554,18.927867,,med,"Mo-Th 10:00-12:30, 13:00-17:00; Fr 09:00-12:30, 13:00-15:45",+421948303033,https://www.cmeliak.sk/,,,exact,osm
 osm-n12628026869,Mliečny automat,vending,Mliečny automat,,Plavnica,Stará Ľubovňa,Prešovský,,,,49.265369,20.805101,,mlieko,,,,,,exact,osm
 osm-n12632843545,Pekáreň Šandal,bakery,,,Bardejov,Bardejov,Prešovský,,,,49.294402,21.266432,,pecivo,Mo-Fr 06:30-17:00; Sa 07:00-13:00,+421 903 622 519,https://ochypka.sk/sk/shops/shop-sandal,,,exact,osm
@@ -353,6 +376,7 @@ osm-n12710860267,Polun,dairy,,,Čremošné,Turčianske Teplice,Žilinský,57,,,4
 osm-n12714320538,Tokaj Gold,winery,,,Viničky,Trebišov,Košický,,,,48.405909,21.749145,,vino,,+421 905 430 545,https://majerbara.sk/,,,exact,osm
 osm-n1272171587,Mestské trhovisko,market,,,Piešťany,Piešťany,Trnavský,,,,48.586632,17.833385,,,,,,,,exact,osm
 osm-n12725153401,Trh,market,,,Holíč,Skalica,Trnavský,,,,48.807119,17.162814,,,,,,,,exact,osm
+osm-n1274061295,Pekárenské výrobky,bakery,,,Nové Mesto nad Váhom,Nové Mesto nad Váhom,Trenčiansky,,,,48.751469,17.834944,,pecivo,Mo-Fr 05:15-15:30,,,,,exact,osm
 osm-n12749843639,Slobodka remeselná pekáreň,bakery,,,Bratislava-Petržalka,Bratislava V,Bratislavský,,,,48.115592,17.105075,,pecivo,"Tu-Fr 07:00-16:00; Sa 07:00-13:00; Su,Mo off",,,,,exact,osm
 osm-n12757381412,Baker House,bakery,,,Dunajská Streda,Dunajská Streda,Trnavský,,,,47.992632,17.619671,,pecivo,Mo-Su 07:00-18:00,,,,,exact,osm
 osm-n1276001070,Pekáreň na rožku,bakery,,,Piešťany,Piešťany,Trnavský,Kuzmányho 1,,,48.595368,17.832576,,pecivo,Mo-Fr 06:30-16:30; Sa 07:00-12:00,+421 905 277 191,https://pekaren-drahovce.sk/,,,exact,osm
@@ -365,11 +389,13 @@ osm-n12830170773,VinoBro & Co.,winery,,,Dunajská Streda,Dunajská Streda,Trnavs
 osm-n12841501566,Pekáreň Bzince,bakery,,,Bzince pod Javorinou,Nové Mesto nad Váhom,Trenčiansky,,,,48.787341,17.774352,,pecivo,,,https://www.pekarenbzince.sk/,,,exact,osm
 osm-n12844665003,Koštovka,winery,,,Michalovce,Michalovce,Košický,,,,48.75815,21.920545,,vino,,,,,,exact,osm
 osm-n12844665005,Čerstvé vajcia,farm,Farmársky obchod,,Michalovce,Michalovce,Košický,,,,48.75815,21.920161,,vajcia,,,,,,exact,osm
-osm-n12844665010,Kelpek - Čierne pole,bakery,,,Michalovce,Michalovce,Košický,,,,48.758026,21.920123,,pecivo,,,,,,exact,osm
+osm-n12844665009,Remetské Hámre,bakery,,,Michalovce,Michalovce,Košický,,,,48.758033,21.920346,,pecivo,,,,,,exact,osm
+osm-n12844665010,Kelpek - Čierne pole,bakery,,,Michalovce,Michalovce,Košický,,,,48.758033,21.919963,,pecivo,,,,,,exact,osm
 osm-n12852857916,Samozber jabĺk Dobrý ježko,farm,Samozber,áno,Dunajská Lužná,Senec,Bratislavský,,,,48.065572,17.281075,"Jablká, Hrušky, Čučoriedky, Čerstvé ovocie, balené ovocie",ovocie,"Mo-Fr 08:00-18:00; Sa,Su 08:00-17:00",,https://www.dobryjezko.sk/,SK-BIO-003.703-0000628.2026.001,2028-11-05,exact,osm
 osm-n12852857940,Samozber jahôd a hrachu Dobrý ježko,farm,Samozber,,Dunajská Lužná,Senec,Bratislavský,,,,48.054886,17.285604,,ovocie,,,https://www.dobryjezko.sk/,,,exact,osm
 osm-n12852857945,Samozber jabĺk Dobrý ježko,farm,Samozber,áno,Miloslavov,Senec,Bratislavský,,,,48.077984,17.32546,"Jablká, Hrušky, Čučoriedky, Čerstvé ovocie, balené ovocie",ovocie,,,https://www.dobryjezko.sk,SK-BIO-003.703-0000628.2026.001,2028-11-05,exact,osm
 osm-n12870770736,Lulus bakery,bakery,,,Trnava,Trnava,Trnavský,,,,48.38806,17.570701,,pecivo,,,https://lulusbakery.sk,,,exact,osm
+osm-n12876079002,Pekárova žena,bakery,,,Prešov,Prešov,Prešovský,,,,48.97411,21.262757,,pecivo,Mo-Fr 07:00-17:30; Sa 07:00-12:00,+421 948 021 863,https://www.pekarovazena.sk/sidlisko-svaby-presov-431/,,,exact,osm
 osm-n12901547896,Salaš Orlové,salas,,,Považská Bystrica,Považská Bystrica,Trenčiansky,,,,49.136772,18.432263,,syr,"Mo-Sa 08:00-09:00, 15:00-17:00",+421 905 512 991,http://www.salasorlove.sk/uvod.html,,,exact,osm
 osm-n12901761174,Košická špajza,farm,Farmársky obchod,,Košice-Staré Mesto,Košice I,Košický,,,,48.722473,21.253236,,,Mo-Fr 10:00-18:00; Sa 08:00-11:00,,https://kosickaspajza.sk/,,,exact,osm
 osm-n12917536322,Vécsey chateau,winery,,,Streda nad Bodrogom,Trebišov,Košický,,,,48.383995,21.76186,,vino,,,http://vecsey.eu/,,,exact,osm
@@ -397,6 +423,7 @@ osm-n1301780103,Pestovateľská predajňa,greengrocer,,,Nitra,Nitra,Nitriansky,,
 osm-n13027221133,Pekáreň Grano,bakery,,,Prešov,Prešov,Prešovský,,,,48.99984,21.239623,,pecivo,Mo-Sa 05:00-21:00; Su 06:00-21:00,,,,,exact,osm
 osm-n13028450503,Alea,bakery,,,Žilina,Žilina,Žilinský,,,,49.222213,18.740566,,pecivo,Mo-Sa 06:00-21:00; Su 07:00-21:00,,https://www.facebook.com/p/Pekáreň-Alea-61565104947726,,,exact,osm
 osm-n1304548483,Trh,market,,,Kolárovo,Komárno,Nitriansky,,,,47.916684,17.994621,,,,,,,,exact,osm
+osm-n13073860948,Pekáreň Častá,bakery,,,Pezinok,Pezinok,Bratislavský,,,,48.288685,17.268845,,pecivo,Mo-Fr 06:00-18:30; Sa 06:00-12:00,+421 33 640 5625,http://pekarencasta.sk/,,,exact,osm
 osm-n13074190603,Esterházy,winery,,,Galanta,Galanta,Trnavský,,,,48.192414,17.735968,,vino,"Mo-Th 08:00-22:00; Fr,Sa 08:00-24:00; Su 09:00-22:00",+421 904 217 217,https://www.esterhazygalanta.sk/vinaren,,,exact,osm
 osm-n1307794557,Radopeka,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.144162,17.129711,,pecivo,Mo-Fr 07:00-18:00,,,,,exact,osm
 osm-n13089512843,Pekáreň Čati,bakery,,,Zvolen,Zvolen,Banskobystrický,,,,48.57823,19.128859,,pecivo,,,,,,exact,osm
@@ -406,7 +433,10 @@ osm-n13149688612,Potraviny pri pekárni,bakery,,,Liptovský Mikuláš,Liptovský
 osm-n13152356687,Pekáreň Poľana,bakery,,,Zvolen,Zvolen,Banskobystrický,,,,48.57615,19.125603,,pecivo,,,,,,exact,osm
 osm-n13164931475,Farma Okomáň,farm,,,Šurany,Nové Zámky,Nitriansky,,,,48.085658,18.132122,,,,+421 919 217 329,,,,exact,osm
 osm-n13175703609,Farma Olešná,farm,,,Kysucké Nové Mesto,Kysucké Nové Mesto,Žilinský,,,,49.305893,18.793032,,,,,,,,exact,osm
+osm-n13176446657,Pekáreň Kvetoslavov,bakery,,,Ivanka pri Dunaji,Senec,Bratislavský,,,,48.189152,17.258763,,pecivo,Mo-Fr 07:00-19:00; Sa 07:00-13:00,,,,,exact,osm
+osm-n13179080981,Kromka,bakery,,,Prešov,Prešov,Prešovský,,,,48.997821,21.270998,,pecivo,Mo-Sa 07:00-21:00,,https://www.pekarenkromka.sk/,,,exact,osm
 osm-n13185558208,KNIP,dairy,,,Bratislava-Lamač,Bratislava IV,Bratislavský,,,,48.205392,17.034346,,mlieko;syr,,,,,,exact,osm
+osm-n13204658560,I.M.D.K.,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.874202,18.04705,,pecivo,,,,,,exact,osm
 osm-n13238855174,Vinárstvo Peter Klinko,winery,,,Pukanec,Levice,Nitriansky,,,,48.34361,18.711408,,vino,,,https://vinaripukanec.sk/vinari/peter-klinko/,,,exact,osm
 osm-n13238855178,"Najväčšia vínna pivnica v Pukanci, Ján Rosenberger",winery,,,Pukanec,Levice,Nitriansky,,,,48.348768,18.712778,,vino,,+421 903 419 770,https://vinaripukanec.sk/vinari/najvacsia-vinna-pivnica/,,,exact,osm
 osm-n13238855191,Vinárstvo Križan,winery,,,Pukanec,Levice,Nitriansky,,,,48.346134,18.708146,,vino,,+421905632750,https://vinaripukanec.sk/vinari/stano-krizan/,,,exact,osm
@@ -428,7 +458,10 @@ osm-n1334004755,Trh,market,,,Stará Ľubovňa,Stará Ľubovňa,Prešovský,,,,49
 osm-n13358041438,Golden Backery predajňa,bakery,,,Moldava nad Bodvou,Košice-okolie,Košický,Československej armády,,,48.613211,20.995494,,pecivo,,,,,,exact,osm
 osm-n13358071733,Trh,market,,,Moldava nad Bodvou,Košice-okolie,Košický,,,,48.617746,20.997764,,,,,,,,exact,osm
 osm-n13363449510,Zpc,bakery,,,Malacky,Malacky,Bratislavský,,,,48.437805,17.008682,,pecivo,Mo-Fr 06:00-18:00; Sa 06:00-15:00; Su 08:00-15:00,,,,,exact,osm
+osm-n13368134080,Aurora,bakery,,,Šaľa,Šaľa,Nitriansky,Dolná 524/1,,,48.150636,17.876317,,pecivo,05:00-21:00,+421 910 577 440,,,,exact,osm
 osm-n13368912169,Chlieb náš,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.890137,18.036234,,pecivo,,,,,,exact,osm
+osm-n13383817691,Pekáreň Kvetoslavov,bakery,,,Šamorín,Dunajská Streda,Trnavský,,,,48.030118,17.305399,,pecivo,,,,,,exact,osm
+osm-n13383826007,Pekáreň Kvetoslavov,bakery,,,Šamorín,Dunajská Streda,Trnavský,,,,48.027497,17.309137,,pecivo,Mo-Fr 06:00-18:00; Sa 06:00-12:00,+421 911 443 623,https://pekaren.eu/samorinhlavna/,,,exact,osm
 osm-n13386282572,Szabó,bakery,,,Rimavská Sobota,Rimavská Sobota,Banskobystrický,,,,48.384217,20.02876,,pecivo,,,,,,exact,osm
 osm-n13386305841,Italia,bakery,,,Rimavská Sobota,Rimavská Sobota,Banskobystrický,,,,48.38404,20.028586,,pecivo,,,,,,exact,osm
 osm-n13393975410,Klass,bakery,,,Veľký Meder,Dunajská Streda,Trnavský,,,,47.855239,17.773644,,pecivo,Mo-Sa 05:00-20:00; Su 06:00-20:00,,,,,exact,osm
@@ -436,6 +469,7 @@ osm-n13395735959,Golden Backery predajňa,bakery,,,Moldava nad Bodvou,Košice-ok
 osm-n13399442076,Straff Bakery,bakery,,,Žilina,Žilina,Žilinský,,,,49.224213,18.746486,,pecivo,Mo-Fr 07:00-17:00,+421 910 952 204,,,,exact,osm
 osm-n13413154986,Farmársky obchod,farm,Farmársky obchod,,Považská Bystrica,Považská Bystrica,Trenčiansky,,,,49.102904,18.460613,,,Mo-Th 09:00-19:00; Fr 08:30-19:30; Sa 08:00-19:00; Su 09:00-19:00,,,,,exact,osm
 osm-n13417925441,Tokaj,winery,,,Žiar nad Hronom,Žiar nad Hronom,Banskobystrický,Novomeského 13,,,48.594949,18.843525,,vino,Mo-Fr 09:00-17:00; Sa 08:00-12:00,,,,,exact,osm
+osm-n13417927049,Kremnická pekáreň,bakery,,,Žiar nad Hronom,Žiar nad Hronom,Banskobystrický,Novomeského 13,,,48.594995,18.843618,,pecivo,Mo-Fr 06:00-12:00; Sa 06:00-11:00,+421907887635,,,,exact,osm
 osm-n13430546758,Koruna,bakery,,,Trnava,Trnava,Trnavský,,,,48.370433,17.584715,,pecivo,,,,,,exact,osm
 osm-n13450806838,Pékség,bakery,,,Šamorín,Dunajská Streda,Trnavský,,,,48.027,17.315423,,pecivo,,,,,,exact,osm
 osm-n1345234489,Mliečny automat,vending,Mliečny automat,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.164608,17.145614,,mlieko,,,,,,exact,osm
@@ -460,8 +494,12 @@ osm-n13660708981,LUMI,farm,Farmársky obchod,,Žilina,Žilina,Žilinský,,,,49.2
 osm-n13680379201,Pekáreň Bott,bakery,,,Dunajská Streda,Dunajská Streda,Trnavský,,,,47.996842,17.614434,,pecivo,,,,,,exact,osm
 osm-n13688635328,Karafová,bakery,,,Žilina,Žilina,Žilinský,,,,49.225932,18.747402,,pecivo,"Mo,We 05:00-12:00,13:00-18:00; Tu,Th,Fr 05:00-12:00,13:00-17:00",,,,,exact,osm
 osm-n13691700216,Crosta,bakery,,,Žilina,Žilina,Žilinský,,,,49.216744,18.740589,,pecivo,Mo-Fr 06:30-19:00; Sa 07:30-14:00,+421 911 224 559,https://www.crosta-bakery.sk,,,exact,osm
+osm-n13703787589,Crustoria,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.139927,17.125922,,pecivo,09:00-20:30,,https://crustoria.sk,,,exact,osm
+osm-n13707451884,Ďuroška,bakery,,,Žilina,Žilina,Žilinský,,,,49.202236,18.74019,,pecivo,Mo-Fr 07:00-17:00,,,,,exact,osm
 osm-n13710612135,Vulcano,farm,Farmársky obchod,,Žilina,Žilina,Žilinský,,,,49.211491,18.747656,,,Mo-Tu 08:00-15:00; We-Sa 10:30-19:00,+421 41 286 1216,,,,exact,osm
+osm-n13713959499,Školuda,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.893334,18.056326,,pecivo,,,,,,exact,osm
 osm-n13718066803,Bee shop,honey,,,Košice-Ťahanovce,Košice I,Košický,,,,48.746925,21.267677,,med,Mo-Fr 09:00-12:00; Sa-Su off,+421 902 122 422,https://www.bee-shop.sk/,,,exact,osm
+osm-n13726188304,Pekáreň Ďuroška,bakery,,,Žilina,Žilina,Žilinský,,,,49.210137,18.766069,,pecivo,Mo-Sa 06:00-17:00,,,,,exact,osm
 osm-n13727297984,Vinárstvo Pavel Kúkel,winery,,,Bratislava-Devín,Bratislava IV,Bratislavský,,,,48.176475,16.983357,,vino,,,,,,exact,osm
 osm-n1373721134,Mliečny automat,vending,Mliečny automat,áno,Šuňava,Poprad,Prešovský,,,,49.029184,20.08781,Surové mlieko z dojníc,mlieko,Mo-Fr 07:00-18:00; Sa 07:00-13:00,,,SK-BIO-003.703-0000934.2026.001,2028-08-19,exact,osm
 osm-n13739829568,Madonan,farm,Farmársky obchod,,Bratislava-Záhorská Bystrica,Bratislava IV,Bratislavský,,,,48.208257,17.039741,,,,,,,,exact,osm
@@ -470,6 +508,8 @@ osm-n13745546332,Warung Bakery,bakery,,,Bratislava-Nové Mesto,Bratislava III,Br
 osm-n13748210921,Medomat Imrich,vending,Automat na med,,Prešov,Prešov,Prešovský,,,,49.000968,21.23479,,med,24/7,+421 915 622 341,https://www.medomatimrich.sk/,,,exact,osm
 osm-n13748660957,U Mišky,bakery,,,Gbely,Skalica,Trnavský,,,,48.715697,17.119082,,pecivo,,,,,,exact,osm
 osm-n1379859635,Trh,market,,,Valaská Belá,Prievidza,Trenčiansky,,,,48.887552,18.397064,,,,,,,,exact,osm
+osm-n13806898436,Pekáreň Juno,bakery,,,Košice-Dargovských hrdinov,Košice III,Košický,,,,48.733744,21.284649,,pecivo,Mo-Fr 06:30-18:00; Sa 07:00-12:00; Su off,+421 918 262 737,https://www.pekarenjuno.sk/,,,exact,osm
+osm-n13816248514,Cisárov pekár,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.156149,17.139908,,pecivo,Mo-Fr 07:00-18:00; Sa 07:00-12:00,+421 902 463 811,https://cisarovpekar.sk/prevadzka/prevadzka-zahradnicka/,,,exact,osm
 osm-n1382139945,My Little Bakery,bakery,,,Levice,Levice,Nitriansky,,,,48.217006,18.602001,,pecivo,,,,,,exact,osm
 osm-n13837933111,Taverna,bakery,,,Lučenec,Lučenec,Banskobystrický,,,,48.327416,19.66925,,pecivo,,,,,,exact,osm
 osm-n13845620412,Pivnica Kövesd Pince,winery,,áno,Kamenica nad Hronom,Nové Zámky,Nitriansky,,,,47.83071,18.732498,"Vinič hroznorodý - hrozno, Rulandské modré, Vinič hroznorodý - hrozno, Rizling vlašský, Vinič hroznorodý - hrozno, Veltlínske zelené, Vinič hroznorodý - hrozno, Frankovka modrá, Cuketa, Black Beauty",zelenina;vino,,,,SK-BIO-002.703-0001241.2026.001,2027-12-08,exact,osm
@@ -516,9 +556,11 @@ osm-n14178350672,Drž hubu!,farm,Farmársky obchod,,Bratislava-Nové Mesto,Brati
 osm-n14178350675,Zdenkino medovníkove čaro,bakery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.157448,17.126209,Medovníky,pecivo,,,,,,exact,osm
 osm-n14188555419,ÉÓS wine Dvory,winery,,,Dvory nad Žitavou,Nové Zámky,Nitriansky,,,,48.004177,18.298097,,vino,Mo-Fr 07:00-15:00,+421 918 673 860,https://eoswine.sk/,,,exact,osm
 osm-n14206149528,Farmársky obchod,farm,Farmársky obchod,,Jasenovce,Vranov nad Topľou,Prešovský,,,,49.002437,21.749683,Zemiaky,zelenina,,,,,,exact,osm
+osm-n14224719191,Faun,bakery,,,Jablonica,Senica,Trnavský,,,,48.605151,17.421739,,pecivo,,+421 918 913 034,,,,exact,osm
 osm-n14238129999,Pan Pan,bakery,,,Bratislava-Lamač,Bratislava IV,Bratislavský,,,,48.205999,17.033335,,pecivo,,,https://www.instagram.com/panpan_pekaren,,,exact,osm
 osm-n14238130000,Pan Pan gluten free,bakery,,,Bratislava-Lamač,Bratislava IV,Bratislavský,,,,48.205999,17.032952,,pecivo,,,https://www.instagram.com/panpan_pekaren,,,exact,osm
 osm-n14242027876,Trisc - farmárske slovenské produkty,farm,,,Prešov,Prešov,Prešovský,,,,48.992759,21.242616,,,Mo-Su 09:00-21:00,+421 948 099 020,,,,exact,osm
+osm-n14242027877,Domáca pekáreň,bakery,,,Prešov,Prešov,Prešovský,,,,48.992563,21.242075,,pecivo,Mo-Su 09:00-21:00,,,,,exact,osm
 osm-n14251186835,Družba,bakery,,,Bardejov,Bardejov,Prešovský,,,,49.296798,21.282358,,pecivo,Mo-Fr 05:00-17:00,,,,,exact,osm
 osm-n14252731428,Vidlička s syn,bakery,,,Banská Bystrica,Banská Bystrica,Banskobystrický,,,,48.720638,19.132411,,pecivo,,,,,,exact,osm
 osm-n14258085426,Víno Straka,winery,,,Limbach,Pezinok,Bratislavský,Silvánska 38,,,48.294248,17.213206,,vino,,+421 911 787 154,https://www.vinostraka.sk,,,exact,osm
@@ -527,7 +569,9 @@ osm-n14287058708,Pekáreň Chlebodar,bakery,,,Prešov,Prešov,Prešovský,,,,49.
 osm-n1429374017,Messerschmidt,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.895607,18.023771,,pecivo,,,,,,exact,osm
 osm-n14297319365,Pronto Bakery,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.722914,21.257185,,pecivo,Mo-Sa 08:30-17:30; Su 09:00-17:30,,,,,exact,osm
 osm-n14297319398,Remeselná pekáreň Limba,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.719283,21.253816,,pecivo,Mo-Fr 07:00-17:00; Sa-Su off,,https://www.pekarenlimba.sk/,,,exact,osm
-osm-n1432454271,Pagáčik,bakery,,,Nové Mesto nad Váhom,Nové Mesto nad Váhom,Trenčiansky,,,,48.751623,17.834769,,pecivo,Mo-Fr 05:00-15:00,+421 905 579 006; +421 32 776045,,,,exact,osm
+osm-n14297372776,Kromka,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.72633,21.249332,,pecivo,Mo-Fr 07:00-18:00; Sa 08:00-15:00; Su off,+421 907 993 881,https://www.pekarenkromka.sk/,,,exact,osm
+osm-n1432454271,Pagáčik,bakery,,,Nové Mesto nad Váhom,Nové Mesto nad Váhom,Trenčiansky,,,,48.751644,17.834971,,pecivo,Mo-Fr 05:00-15:00,+421 905 579 006; +421 32 776045,,,,exact,osm
+osm-n1432454276,Čachtická pekáreň,bakery,,,Nové Mesto nad Váhom,Nové Mesto nad Váhom,Trenčiansky,,,,48.751644,17.834587,,pecivo,Mo-Fr 05:15-15:30,,,,,exact,osm
 osm-n14352046617,BezLepka,bakery,,,Košice-Západ,Košice II,Košický,,,,48.720809,21.238538,,pecivo,,,,,,exact,osm
 osm-n14355013746,Perichta,bakery,,,Banská Bystrica,Banská Bystrica,Banskobystrický,,,,48.739155,19.154309,,pecivo,,,,,,exact,osm
 osm-n14355254001,óda,bakery,,,Žilina,Žilina,Žilinský,,,,49.214533,18.737793,,pecivo,,,https://oda.sk,,,exact,osm
@@ -537,6 +581,7 @@ osm-n14359207413,Bakery House,bakery,,,Handlová,Prievidza,Trenčiansky,,,,48.72
 osm-n14359749303,PATINO,winery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.724173,21.259016,,vino,Mo off; Tu-Fr 15:00-23:00; Fr 15:00-01:00; Sa 16:00-01:00; Su off,,,,,exact,osm
 osm-n1436229479,Salaš na Randavici,salas,,,Muráň,Revúca,Banskobystrický,,,,48.76899,19.922454,,syr,,,https://hiking.dennikn.sk/ar/1020/koliba_na_randavici.html,,,exact,osm
 osm-n14366726542,Pekáreň Lea,bakery,,,Martin,Martin,Žilinský,,,,49.10911,18.928838,,pecivo,"Mo-Th, Su 17:15-21:00",+421 940 336 609,https://pekarenlea.sk,,,exact,osm
+osm-n1497192994,Pekáreň Juno,bakery,,,Hrašovík,Košice-okolie,Košický,,,,48.747851,21.321878,,pecivo,Mo-Sa 07:00-23:00,,,,,exact,osm
 osm-n1533918908,Begey,bakery,,,Spišské Vlachy,Spišská Nová Ves,Košický,,,,48.948593,20.796323,,pecivo,,,,,,exact,osm
 osm-n1533931615,Trh,market,,,Spišské Vlachy,Spišská Nová Ves,Košický,,,,48.948149,20.794864,,,,,,,,exact,osm
 osm-n1560963928,Mliekomat,vending,Mliečny automat,,Levice,Levice,Nitriansky,,,,48.217906,18.602338,,mlieko,24/7,,,,,exact,osm
@@ -547,6 +592,7 @@ osm-n1660694188,Centrum,bakery,,,Skalica,Skalica,Trnavský,,,,48.84562,17.226647
 osm-n1675947593,Syrmix,dairy,,,Žilina,Žilina,Žilinský,,,,49.224292,18.73758,,mlieko;syr,Mo-Fr 08:00-18:00; Sa  08:00-12:00,,,,,exact,osm
 osm-n1695206282,Tržnica pri Heliose,market,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.159004,17.154939,,,,,,,,exact,osm
 osm-n1706950486,Paciga,bakery,,,Kolinovce,Spišská Nová Ves,Košický,,,,48.92681,20.856706,,pecivo,,,,,,exact,osm
+osm-n1707347128,Spusta,bakery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.16508,17.135,,pecivo,Mo-Fr 06:00-18:00; Sa 08:00-15:00,,https://spustakaviaren.sk/,,,exact,osm
 osm-n1709766522,Mestská tržnica,market,,,Zvolen,Zvolen,Banskobystrický,,,,48.577242,19.127965,,,Mo-Fr 06:00-18:00; Sa 06:00-13:00; Su off,,,,,exact,osm
 osm-n1710405944,Trh,market,,,Leopoldov,Hlohovec,Trnavský,,,,48.445686,17.764431,,,,,,,,exact,osm
 osm-n1713355682,Hurbanič,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.149147,17.167076,,pecivo,Mo-Fr 06:30-20:00; Sa 07:00-15:00,,,,,exact,osm
@@ -568,13 +614,18 @@ osm-n1869952373,Pekáreň Manna,bakery,,,Kapušany,Prešov,Prešovský,,,,49.044
 osm-n1900995929,Stanislav a syn,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.152035,17.161757,,pecivo,Mo-Fr 07:30-17:30; Sa 07:30-12:30,,,,,exact,osm
 osm-n1908223131,Mliečny automat,vending,Mliečny automat,,Dolné Vestenice,Prievidza,Trenčiansky,,,,48.704558,18.400138,,mlieko,,,,,,exact,osm
 osm-n1929011557,Pekáreň Halič,bakery,,,Halič,Lučenec,Banskobystrický,,,,48.351993,19.570834,,pecivo,,+421 474392630,http://www.pekaren-halic.sk/,,,exact,osm
+osm-n1957525215,Spusta,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.148543,17.116355,,pecivo,Mo-Fr 06:00-18:00,+421 940 948 623,https://spustakaviaren.sk/,,,exact,osm
+osm-n1965902089,Cisárov pekár,bakery,,,Bratislava-Petržalka,Bratislava V,Bratislavský,,,,48.121669,17.097921,,pecivo,Mo-Fr 07:00-19:30; Sa 07:00-18:00; Su 08:00-16:00,,https://www.cisarovpekar.sk/,,,exact,osm
+osm-n2005529094,Naglreiter,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.146687,17.108927,,pecivo,Mo-Fr 07:00-19:00; Sa 07:00-12:00,,,,,exact,osm
 osm-n2012852197,Starý Otec,bakery,,,Bratislava-Petržalka,Bratislava V,Bratislavský,,,,48.129174,17.124288,,pecivo,"Mo-Fr 06:30-12:30,13:00-18:30; Sa 07:00-12:00",,https://www.staryotec.sk/,,,exact,osm
+osm-n2052687005,Kremnická pekáreň,bakery,,,Žiar nad Hronom,Žiar nad Hronom,Banskobystrický,,,,48.590169,18.850588,,pecivo,,,,,,exact,osm
 osm-n2052687031,Mliekomat,vending,Mliečny automat,,Žiar nad Hronom,Žiar nad Hronom,Banskobystrický,,,,48.589418,18.848378,,mlieko,24/7,,,,,exact,osm
 osm-n2060727106,Pekáreň Kvások,bakery,,,Bratislava-Petržalka,Bratislava V,Bratislavský,Mlynarovičova 28,,,48.126745,17.124137,,pecivo,,,,,,exact,osm
 osm-n2078583692,Pernikárium,bakery,,,Holíč,Skalica,Trnavský,,,,48.815604,17.155378,,pecivo,Mo-Fr 07:00-14:00,,,,,exact,osm
 osm-n2085433383,Ema,bakery,,,Snina,Snina,Prešovský,,,,48.9899,22.142078,,pecivo,,,,,,exact,osm
 osm-n2104292707,Karloveská pekáreň,bakery,,,Bratislava-Karlova Ves,Bratislava IV,Bratislavský,Levárska 13,,,48.16163,17.046007,,pecivo,Mo-Fr 07:00-15:00,,,,,exact,osm
 osm-n2126060831,Bioraj,organic_shop,Zdravá výživa,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.148531,17.107516,,,Mo-Fr 08:00-18:00,+421 903 811 966,,,,exact,osm
+osm-n2129343588,Kočkovská pekáreň,bakery,,,Beluša,Púchov,Trenčiansky,,,,49.061863,18.324228,,pecivo,,,,,,exact,osm
 osm-n2175137372,ARC obchod,market,,,Nové Zámky,Nové Zámky,Nitriansky,,,,48.001065,18.16007,,,,,,,,exact,osm
 osm-n2181346923,Trh,market,,,Rimavská Sobota,Rimavská Sobota,Banskobystrický,,,,48.382211,20.01849,,,,,,,,exact,osm
 osm-n2182353224,Robert Lörincz Pekáreň,bakery,,,Rimavská Sobota,Rimavská Sobota,Banskobystrický,,,,48.383972,20.022567,,pecivo,,,,,,exact,osm
@@ -584,11 +635,14 @@ osm-n2208370925,CARPATE DIEM,winery,,áno,Šenkvice,Pezinok,Bratislavský,Nádra
 osm-n2212545017,trhovisko Stará Turá,market,,,Stará Turá,Nové Mesto nad Váhom,Trenčiansky,,,,48.779795,17.693038,,,,,,,,exact,osm
 osm-n2222256018,Pekáreň,bakery,,,Zohor,Malacky,Bratislavský,,,,48.31819,16.983444,,pecivo,,,,,,exact,osm
 osm-n2241705470,Pekáreň Raslavice,bakery,,,Raslavice,Bardejov,Prešovský,Železničná 319,,,49.150029,21.314243,"Výroba chleba, bežného pečiva, jemného pečiva z kysnutého a lístkového cesta a trvanlivého pečiva. Pekáreň funguje od roku 1991. Najstaršia firma v obci.",pecivo,Mo-Fr 08:00-22:00,+421 948 090 000,https://www.facebook.com/pekaren.raslavice/,,,exact,osm
+osm-n2242851020,Pekareň Istria,bakery,,,Nové Mesto nad Váhom,Nové Mesto nad Váhom,Trenčiansky,,,,48.752088,17.833863,,pecivo,Mo-Sa 05:00-20:00,+421 903 956 022,,,,exact,osm
+osm-n2247030053,Domáca pekáreň,bakery,,,Poprad,Poprad,Prešovský,,,,49.054588,20.298341,,pecivo,,,,,,exact,osm
 osm-n2249202624,"Pekáreň Delika, s.r.o.",bakery,,,Rišňovce,Nitra,Nitriansky,,,,48.368822,17.894719,,pecivo,,+421377828120,,,,exact,osm
 osm-n2252581257,Pekáreň Hurbanič,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.158891,17.168429,,pecivo,Mo-Fr 06:30-19:00; Sa 07:00-15:00,,,,,exact,osm
 osm-n2264137428,Mliečny automat,vending,Mliečny automat,,Velušovce,Topoľčany,Nitriansky,,,,48.626265,18.104234,,mlieko,,,,,,exact,osm
 osm-n2269109942,Trh,market,,,Trnávka,Dunajská Streda,Trnavský,,,,48.002547,17.40089,,,,,,,,exact,osm
 osm-n2270904974,"Chlieb, pečivo",bakery,,,Kežmarok,Kežmarok,Prešovský,,,,49.136359,20.428739,,pecivo,,,,,,exact,osm
+osm-n2278243522,Pekáreň Častá,bakery,,,Modra,Pezinok,Bratislavský,,,,48.334017,17.307775,,pecivo,Mo-Fr 06:00-19:00; Sa 06:00-13:00,+421 33 647 4522,,,,exact,osm
 osm-n2278459334,Trh,market,,,Šurany,Nové Zámky,Nitriansky,,,,48.088001,18.185056,,,,,,,,exact,osm
 osm-n2284380699,uni,bakery,,,Košice-Sídlisko KVP,Košice II,Košický,,,,48.714754,21.213307,,pecivo,,,,,,exact,osm
 osm-n2295080215,Pekáreň NANDY s.r.o.,bakery,,,Vranov nad Topľou,Vranov nad Topľou,Prešovský,,,,48.890982,21.684444,,pecivo,,,,,,exact,osm
@@ -614,24 +668,32 @@ osm-n2441612612,Trh,market,,,Vrbové,Piešťany,Trnavský,,,,48.621443,17.725267
 osm-n2447686907,Salaš Oravice,salas,,,Tvrdošín,Tvrdošín,Žilinský,,,,49.293244,19.761429,,syr,,,,,,exact,osm
 osm-n2473375883,Domáca predajňa,butcher,,,Nové Mesto nad Váhom,Nové Mesto nad Váhom,Trenčiansky,,,,48.760967,17.828562,,maso,"Mo 07:00-11:30; Tu-Fr 07:30-12:30, 13:00-17:30; Sa 07:00-11:30",,,,,exact,osm
 osm-n2475403935,Pekáreň Šimek,bakery,,,Kúty,Senica,Trnavský,,,,48.658512,17.020309,,pecivo,,,,,,exact,osm
+osm-n2486501289,Cisárov pekár,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,Jégého 1,,,48.159021,17.135786,,pecivo,Mo-Fr 07:00-19:00; Sa 07:00-12:00,,,,,exact,osm
 osm-n2489358204,Brojo,bakery,,,Považská Bystrica,Považská Bystrica,Trenčiansky,,,,49.117902,18.434388,,pecivo,,,,,,exact,osm
 osm-n2489358252,Tržnica,market,,,Martin,Martin,Žilinský,,,,49.06098,18.920242,,,,,,,,exact,osm
 osm-n2493802011,Mliečny automat,vending,Mliečny automat,,Vrbové,Piešťany,Trnavský,,,,48.6192,17.727079,,mlieko,,,,,,exact,osm
 osm-n2506967549,Tržnica,farm,Farmársky obchod,,Detva,Detva,Banskobystrický,,,,48.540379,19.408294,,,,,,,,exact,osm
 osm-n2507258817,Staromestský trh,market,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.149032,17.120662,,,,,,,,exact,osm
+osm-n2536576721,Lebeco,bakery,,,Veľký Meder,Dunajská Streda,Trnavský,,,,47.856587,17.770818,,pecivo,,,,,,exact,osm
 osm-n2536857586,Istria,bakery,,,Piešťany,Piešťany,Trnavský,,,,48.590608,17.834571,,pecivo,,,,,,exact,osm
 osm-n2551541572,U Farmára,deli,,,Bratislava-Petržalka,Bratislava V,Bratislavský,Strečnianska 2975/13,,,48.105069,17.106382,,mlieko;syr;vajcia;maso;med;pecivo,Mo 10:00-18:00; Tu-Fr 08:00-18:00,,https://ufarmara.sk/,,,exact,osm
 osm-n2571798938,Stará pekáreň,bakery,,,Stupava,Malacky,Bratislavský,,,,48.305785,17.04443,,pecivo,,,,,,exact,osm
+osm-n2595788276,ILaS,bakery,,,Rokycany,Prešov,Prešovský,,,,48.960497,21.145104,,pecivo,,,,,,exact,osm
 osm-n259949282,Pekáreň ART,bakery,,,Nitra,Nitra,Nitriansky,,,,48.308269,18.086185,,pecivo,,,,,,exact,osm
+osm-n2608383701,Kremnická pekáreň,bakery,,,Kremnica,Žiar nad Hronom,Banskobystrický,,,,48.702278,18.915903,,pecivo,,,,,,exact,osm
 osm-n2630827038,Trhovisko Hradbová,market,,,Košice-Staré Mesto,Košice I,Košický,,,,48.721804,21.253604,,,,,,,,exact,osm
 osm-n2685158095,Trh,market,,,Pružina,Považská Bystrica,Trenčiansky,,,,49.017016,18.475075,,,,,,,,exact,osm
 osm-n2685158201,Trh,market,,,Beluša,Púchov,Trenčiansky,,,,49.063636,18.32731,,,,,,,,exact,osm
 osm-n2688608939,Farmársky obchod,farm,Farmársky obchod,,Mestečko,Púchov,Trenčiansky,,,,49.169303,18.264553,,,,,,,,exact,osm
 osm-n2690023590,Pekáreň u Pepina,bakery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.157665,17.121364,,pecivo,Mo-Fr 06:00-16:30,,,,,exact,osm
 osm-n2705619594,Pekárstvo Messerschmidt,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.888155,18.031676,,pecivo,,,,,,exact,osm
+osm-n2705631737,IMDK,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.874694,18.045301,,pecivo,,,,,,exact,osm
 osm-n2706936077,Trh,market,,,Trenčín,Trenčín,Trenčiansky,,,,48.89873,18.060321,,,,,,,,exact,osm
+osm-n2711328702,Spusta,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.151768,17.1194,,pecivo,Mo-Sa 07:00-19:00; Su 08:00-18:00,,https://spustakaviaren.sk/,,,exact,osm
 osm-n2717331044,Bageteria,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.896199,18.02552,,pecivo,,,,,,exact,osm
 osm-n2717794865,Fleur,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.142835,17.113712,,pecivo,"Tu 08:00-16:30; We-Fr 07:30-16:30; Sa,Su 08:30-16:30",+421 918 887 959,,,,exact,osm
+osm-n2720018002,Kremnická pekáreň,bakery,,,Žarnovica,Žarnovica,Banskobystrický,,,,48.478032,18.720712,,pecivo,,,,,,exact,osm
+osm-n2742464105,Kočkovská pekáreň,bakery,,,Púchov,Púchov,Trenčiansky,,,,49.122121,18.325382,,pecivo,,,,,,exact,osm
 osm-n2832650833,Mliečny automat,vending,Mliečny automat,,Žarnovica,Žarnovica,Banskobystrický,,,,48.481878,18.720356,,mlieko,,,,,,exact,osm
 osm-n2843072919,Salaš Sklabiná,salas,,,Sklabiná,Veľký Krtíš,Banskobystrický,,,,48.165569,19.357502,,syr,,,,,,exact,osm
 osm-n2852741982,Vrzukáč,bakery,,,Trnava,Trnava,Trnavský,,,,48.379973,17.584527,,pecivo,Mo-Fr 07:00-18:00; Sa 07:00-13:00,+421 910 545 289,https://www.vrzukac.sk/,,,exact,osm
@@ -639,22 +701,28 @@ osm-n2852742414,Chlieb Náš,bakery,,,Trnava,Trnava,Trnavský,,,,48.378282,17.58
 osm-n286397193,Pekáreň Allakaj,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.1516,17.120219,,pecivo,Mo-Sa 06:30-20:00; Su 07:30-19:00,,,,,exact,osm
 osm-n287424581,Kolo Kolo Mlynské,bakery,,,Bratislava-Karlova Ves,Bratislava IV,Bratislavský,Borská 5297/1A,,,48.162396,17.049908,,pecivo,,,,,,exact,osm
 osm-n2891539250,Pekáreň pod Baštou,bakery,,,Sabinov,Sabinov,Prešovský,,,,49.101867,21.099253,,pecivo,Mo-Fr 06:00-18:00; Sa 06:00-12:00,+421950532330,https://www.pekaren.sk,,,exact,osm
+osm-n2893525131,IMDK,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.896402,18.05075,,pecivo,,,,,,exact,osm
 osm-n2899326777,Gazdovský trh,farm,Farmársky obchod,,Bratislava-Dúbravka,Bratislava IV,Bratislavský,Saratovská 3424/6D,,,48.188122,17.037743,,,,+421238105483,,,,exact,osm
 osm-n2907801643,Šandal,bakery,,,Bardejov,Bardejov,Prešovský,,,,49.292732,21.273996,,pecivo,,,,,,exact,osm
 osm-n2918955804,Bioderico,organic_shop,Zdravá výživa,,Poprad,Poprad,Prešovský,,,,49.056457,20.294547,,,Mo-Fr 06:30-17:30,+421 905 350 885,https://www.bioderico.sk/,,,exact,osm
 osm-n2931350284,Pekárenské výrobky,bakery,,,Piešťany,Piešťany,Trnavský,,,,48.602258,17.831405,,pecivo,,,,,,exact,osm
+osm-n2936055406,Čachtická pekáreň,bakery,,,Nové Mesto nad Váhom,Nové Mesto nad Váhom,Trenčiansky,,,,48.762617,17.827056,,pecivo,06:00-17:00; Sa 06:00-11:30,,,,,exact,osm
 osm-n2965651968,Pekáren Sklabiná,bakery,,,Lučenec,Lučenec,Banskobystrický,,,,48.326191,19.668829,,pecivo,,,,,,exact,osm
 osm-n2971966203,Tržnica,market,,,Gbely,Skalica,Trnavský,,,,48.719044,17.118025,,,,,,,,exact,osm
+osm-n2992089185,Vamex,bakery,,,Košice-Západ,Košice II,Košický,,,,48.715214,21.23726,,pecivo,Mo-Sa 09:00-21:00,+421 911 871 045,https://www.vamex.sk/,,,exact,osm
 osm-n3022502769,Salaš pod Maginhradom,salas,,,Veľké Teriakovce,Rimavská Sobota,Banskobystrický,,,,48.440433,19.962094,,syr,Mo-Sa 11:00-21:00; Su 11:00-20:00,+421903346733,http://www.salaspodmaginhradom.sk/,,,exact,osm
 osm-n3054400735,Podsuchá,dairy,,,Ružomberok,Ružomberok,Žilinský,,,,48.98972,19.281455,,mlieko;syr,,,,,,exact,osm
 osm-n3086237561,Bánovecká mliekareň,dairy,,,Trenčín,Trenčín,Trenčiansky,,,,48.895657,18.043281,,mlieko;syr,06:00-17:00,,,,,exact,osm
+osm-n3113635817,Pekáreň Violeta,bakery,,,Bratislava-Petržalka,Bratislava V,Bratislavský,,,,48.117408,17.103277,,pecivo,Mo-Fr 07:00-20:00; Sa-Su 08:00-19:00,+421 918 456 246,,,,exact,osm
 osm-n3116459626,miesto,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.149768,17.114342,,pecivo,Mo-Fr 08:00-18:30; Sa 09:00-17:00,,https://miestoba.sk/,,,exact,osm
 osm-n3126413582,Luspek,bakery,,,Stará Ľubovňa,Stará Ľubovňa,Prešovský,,,,49.29864,20.684543,,pecivo,Mo-Fr 06:30-16:00,+421 52 432 4687,,,,exact,osm
 osm-n3129181856,HONEYSHOP,honey,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.144569,17.106822,,med,,,,,,exact,osm
+osm-n3139592864,Crocus,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.152056,17.158043,,pecivo,Mo-Fr 07:00-19:00; Sa 07:30-13:00,,,,,exact,osm
 osm-n3151373162,Včelárstvo Irha,honey,,,Gajary,Malacky,Bratislavský,,,,48.468581,16.923161,,med,,,,,,exact,osm
 osm-n3160269085,Trh,market,,,Revúca,Revúca,Banskobystrický,,,,48.683639,20.114756,,,,,,,,exact,osm
 osm-n3177913118,AkreD,dairy,,,Nitra,Nitra,Nitriansky,,,,48.302898,18.083859,,mlieko;syr,"Mo-Fr 08:00-11:00,11:45-17:00",,,,,exact,osm
 osm-n3205101254,Ľubeľa,bakery,,,Liptovský Mikuláš,Liptovský Mikuláš,Žilinský,,,,49.086453,19.610293,,pecivo,,,,,,exact,osm
+osm-n3208929914,I.M.D.K.,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.8888,18.035934,,pecivo,,,,,,exact,osm
 osm-n3208929918,Pekáreň Dalmacija,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.891035,18.037715,,pecivo,,,,,,exact,osm
 osm-n3221820602,Pekáreň Jozef Vabec,bakery,,,Nitrica,Prievidza,Trenčiansky,,,,48.70669,18.451648,,pecivo,Fr 16:00-19:00,+421 907 197 543,,,,exact,osm
 osm-n3237856905,Mliečny automat,vending,Mliečny automat,,Veľké Uherce,Partizánske,Trenčiansky,,,,48.614564,18.433902,,mlieko,,,,,,exact,osm
@@ -667,12 +735,14 @@ osm-n33023447,Salaš Detvan,salas,,,Detva,Detva,Banskobystrický,,,,48.53491,19.
 osm-n3317639513,BOVINEL s.r.o.,winery,,,Šenkvice,Pezinok,Bratislavský,,,,48.301162,17.343533,,vino,,,https://www.bovinel.sk/,,,exact,osm
 osm-n3322180741,Vinárstvo Kukumberg,winery,,,Šenkvice,Pezinok,Bratislavský,,,,48.306571,17.337144,,vino,Mo-Fr 09:00-17:00; Sa 09:00-12:00,,http://www.vinokukumberg.sk/,,,exact,osm
 osm-n3370670320,BudBakery,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.152202,17.117357,,pecivo,Mo-Fr 07:30-17:00,,,,,exact,osm
+osm-n3401956866,Pekáreň Častá,bakery,,,Pezinok,Pezinok,Bratislavský,,,,48.299569,17.268499,,pecivo,Mo-Fr 06:00-19:00; Sa 06:00-12:00,+421 917 247 532,http://pekarencasta.sk/,,,exact,osm
 osm-n3413873196,Ventos,bakery,,,Piešťany,Piešťany,Trnavský,,,,48.594828,17.830085,,pecivo,,,,,,exact,osm
 osm-n3415130906,Pekáreň Premium,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,Obchodná 523/38,,,48.147558,17.110641,,pecivo,Mo-Sa 07:00-22:00; Su 07:00-18:00,+421 950 489 704,,,,exact,osm
 osm-n3436569351,Pekáreň Dalmacija,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.884406,18.032938,,pecivo,Mo-Fr 06:00-18:00; Sa 07:00-13:00,,,,,exact,osm
 osm-n3484700476,automat na mlieko,vending,Mliečny automat,,Banská Bystrica,Banská Bystrica,Banskobystrický,,,,48.737872,19.1619,,mlieko,,,,,,exact,osm
 osm-n3577590486,Bio-obchodik,organic_shop,Zdravá výživa,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.154576,17.123196,,mlieko;med;pecivo,Mo-Fr 10:00-18:00,,https://www.bio-obchodik.sk/,,,exact,osm
 osm-n3612196948,Vermex Lokal,bakery,,,Svidník,Svidník,Prešovský,,,,49.308181,21.57013,,pecivo,,,,,,exact,osm
+osm-n36154953,Pekáreň Častá,bakery,,,Častá,Pezinok,Bratislavský,,,,48.401364,17.36477,,pecivo,Mo-Fr 00:00-24:00; Sa 00:00-13:00; Su 16:00-24:00,,,,,exact,osm
 osm-n3627063848,Mliekomat,vending,Mliečny automat,,Námestovo,Námestovo,Žilinský,,,,49.403198,19.480399,,mlieko,,,,,,exact,osm
 osm-n3627090336,Mliekomat,vending,Mliečny automat,,Bratislava-Dúbravka,Bratislava IV,Bratislavský,,,,48.194129,17.028094,,mlieko,,,,,,exact,osm
 osm-n3627343793,Mliekomat,vending,Mliečny automat,,Hlohovec,Hlohovec,Trnavský,,,,48.428187,17.79843,,mlieko,,,,,,exact,osm
@@ -681,38 +751,49 @@ osm-n3680978812,Trh,market,,,Veľký Krtíš,Veľký Krtíš,Banskobystrický,,,
 osm-n3681319829,Agro - Movino,winery,,,Veľký Krtíš,Veľký Krtíš,Banskobystrický,,,,48.200629,19.349611,,vino,,,,,,exact,osm
 osm-n3684063498,Pekáreň Marienka,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.897569,18.049677,,pecivo,closed,+421 32 7430404,,,,exact,osm
 osm-n3688345921,Tržnica,market,,,Rajecké Teplice,Žilina,Žilinský,,,,49.127228,18.683839,,,,,,,,exact,osm
+osm-n371208092,Duke,bakery,,,Prievidza,Prievidza,Trenčiansky,,,,48.772631,18.603979,,pecivo,Sa 06:00-12:00; Mo-Fr 06:00-18:00,,https://duke.sk/,,,exact,osm
 osm-n3731061139,Kávička na klásku,bakery,,,Bratislava-Lamač,Bratislava IV,Bratislavský,,,,48.194535,17.051757,,pecivo,Mo-Th 13:00-18:00; Fr 13:00-19:00,,https://kavickanaklasku.sk/,,,exact,osm
 osm-n3732901888,Farmarynk Lozorno,farm,Farmársky obchod,,Lozorno,Malacky,Bratislavský,,,,48.331674,17.040238,,,Mo-Fr 07:30-19:30; Sa 07:30-16:00; Su 07:30-14:00,+421 917 545 454,,,,exact,osm
 osm-n3755435938,BFZ TRIO,bakery,,,Rožňava,Rožňava,Košický,,,,48.658656,20.535404,,pecivo,Mo-Fr 06:00-17:00; Sa 06:30-12:00; PH off,,http://bfztrio.sk/,,,exact,osm
 osm-n3772152685,Kvetinová Pekáreň,bakery,,,Bratislava-Karlova Ves,Bratislava IV,Bratislavský,Ľudovíta Fullu 62,,,48.15694,17.04812,,pecivo,Mo-Fr 12:00-20:00,,,,,exact,osm
 osm-n3796142096,Trh,market,,,Krompachy,Spišská Nová Ves,Košický,,,,48.911006,20.873054,,,,,,,,exact,osm
 osm-n3801040725,BIOMAJAK,deli,,,Bratislava-Petržalka,Bratislava V,Bratislavský,,,,48.125646,17.100049,,,"Mo-Fr 10:00-12:00,13:00-18:00; Jul-Aug Mo-Th 10:00-12:00,13:00-18:00",,https://www.biomajak.sk/,,,exact,osm
+osm-n3822405410,Pekáreň Ďuroška,bakery,,,Rosina,Žilina,Žilinský,,,,49.181899,18.770681,,pecivo,,,,,,exact,osm
 osm-n3848576841,Bajusz,bakery,,,Čadca,Čadca,Žilinský,,,,49.44223,18.789054,,pecivo,Mo-Sa 07:00-19:00; Su 08:00-17:00; PH closed,,,,,exact,osm
 osm-n384966995,Prešporská pekáreň,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.143514,17.121011,,pecivo,Mo-Th 08:00-17:00; Fr 08:00-15:00,,,,,exact,osm
 osm-n3862675655,Farmársky obchod,farm,Farmársky obchod,,Belá nad Cirochou,Snina,Prešovský,,,,48.980122,22.111034,Med,med,,,,,,exact,osm
+osm-n387402901,Duke,bakery,,,Prievidza,Prievidza,Trenčiansky,,,,48.765523,18.621582,,pecivo,"Mo-Fr 06:00-10:00,10:30-13:30; Sa-Su,PH off",,,,,exact,osm
 osm-n3897891727,Pekáreň Hurbanič,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.153235,17.166376,,pecivo,Mo-Fr 06:30-18:30,,,,,exact,osm
+osm-n3902934488,Kočkovská pekáreň,bakery,,,Považská Bystrica,Považská Bystrica,Trenčiansky,,,,49.107296,18.457705,,pecivo,,,,,,exact,osm
 osm-n3909083871,Bajusz,bakery,,,Čadca,Čadca,Žilinský,,,,49.439415,18.790548,,pecivo,Mo-Fr 06:30-17:00; PH closed,,,,,exact,osm
 osm-n3913498987,Mliečny automat,vending,Mliečny automat,,Ružomberok,Ružomberok,Žilinský,,,,49.081881,19.301148,,mlieko,,,,,,exact,osm
 osm-n3918735785,MMsmoothie,winery,,,Ružomberok,Ružomberok,Žilinský,,,,49.08138,19.305398,,vino,,,,,,exact,osm
 osm-n3919506058,Trhovisko,market,,,Pozba,Nové Zámky,Nitriansky,,,,48.114874,18.387981,,,,,,,,exact,osm
 osm-n3934751126,Albio,deli,,,Malacky,Malacky,Bratislavský,,,,48.435761,17.020651,,,Tu-Fr 10:00-18:00; Sa 09:00-12:00,,,,,exact,osm
+osm-n3944803803,Crocus SK,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.146801,17.10925,,pecivo,Mo-Fr 07:00-18:00,,https://www.crocus.cz/,,,exact,osm
 osm-n4016984195,Mliečny automat,vending,Mliečny automat,,Nová Baňa,Žarnovica,Banskobystrický,,,,48.421461,18.641431,,mlieko,,,,,,exact,osm
 osm-n4063697316,Vitamín bomba,farm,Farmársky obchod,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.167624,17.153285,,,,,,,,exact,osm
 osm-n4067635297,Praclík,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.145953,17.115955,,pecivo,Mo-Fr 06:00-15:00,,http://www.praclik.eu/,,,exact,osm
+osm-n4073050271,Naglreiter,bakery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.167978,17.139723,,pecivo,Mo-Sa 07:30-21:00; Su 08:00-21:00,,https://naglreiter.sk,,,exact,osm
 osm-n4075942229,Lipek,bakery,,,Ružomberok,Ružomberok,Žilinský,,,,49.071092,19.314169,,pecivo,,,,,,exact,osm
 osm-n4121736590,Trhovisko Dolný Štál,market,,,Dolný Štál,Dunajská Streda,Trnavský,,,,47.940685,17.717419,,,,,,,,exact,osm
+osm-n4121778077,Ilas,bakery,,,Lastomír,Michalovce,Košický,,,,48.703638,21.924924,,pecivo,Mo-Fr 06:00-18:00; Su 08:00-12:00; Sa 06:00-14:00,,,,,exact,osm
+osm-n4121778323,Ilas,bakery,,,Michalovce,Michalovce,Košický,,,,48.76007,21.904252,,pecivo,,,,,,exact,osm
 osm-n4161881590,Trh,market,,,Dolný Štál,Dunajská Streda,Trnavský,,,,47.947929,17.710457,,,,,,,,exact,osm
 osm-n4194125844,ApiMed - Medový obchodík - Medovinotéka,honey,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.157652,17.127832,,med,"Mo-Fr 09:00-12:30,13:00-17:30; week 01-31/2 Sa 09:00-12:30",+421 908 631 198,,,,exact,osm
 osm-n420386599,Pekáreň u Floriánka,bakery,,,Bratislava-Záhorská Bystrica,Bratislava IV,Bratislavský,,,,48.24146,17.041152,,pecivo,Mo-Su 06:00-19:00,,,,,exact,osm
 osm-n4207666911,Zpc,bakery,,,Malacky,Malacky,Bratislavský,,,,48.43461,17.022846,,pecivo,Mo-Fr 06:00-18:00; Sa 06:00-12:00,,,,,exact,osm
+osm-n4224045709,Duke,bakery,,,Kanianka,Prievidza,Trenčiansky,,,,48.812101,18.58176,,pecivo,Mo-Fr 06:00-17:00; Sa 06:00-12:00,,,,,exact,osm
 osm-n4241634138,Vinohradníctvo a vinárstvo Vladár a syn,winery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.175127,17.12052,,vino,,+421 905 529 332,https://vinohrady-vladar.sk/,,,exact,osm
 osm-n4269441891,Pekáreň Sklabina,bakery,,,Veľký Krtíš,Veľký Krtíš,Banskobystrický,,,,48.212756,19.346681,,pecivo,,,,,,exact,osm
 osm-n4287118270,Automat na mlieko,vending,Mliečny automat,,Trenčín,Trenčín,Trenčiansky,,,,48.899219,18.02827,,mlieko,,,,,,exact,osm
 osm-n4318428109,Pochlieb na Riviéru,bakery,,,Bratislava-Karlova Ves,Bratislava IV,Bratislavský,,,,48.148625,17.0632,,pecivo,Mo-Fr 07:00-18:00,,,,,exact,osm
 osm-n4318697658,Trh,market,,,Nová Lesná,Poprad,Prešovský,,,,49.122437,20.266541,,,,,,,,exact,osm
 osm-n4332559307,Pekáreň Vidlička,bakery,,,Banská Bystrica,Banská Bystrica,Banskobystrický,Rudohorská 37,,,48.756892,19.165721,,pecivo,,,,,,exact,osm
+osm-n4382674207,Pekáreň Remetske Hámre,bakery,,,Sobrance,Sobrance,Košický,Námestie slobody 582/3,,,48.74627,22.180236,,pecivo,,,,,,exact,osm
 osm-n4396688879,Mliečny automat,vending,Mliečny automat,,Plavecké Podhradie,Malacky,Bratislavský,,,,48.487997,17.257582,,mlieko,07:00-18:00,,,,,exact,osm
 osm-n4415280393,Večierka Včela,bakery,,,Likavka,Ružomberok,Žilinský,,,,49.085006,19.310262,,pecivo,,,,,,exact,osm
+osm-n4416133791,Pekáreň Kvetoslavov,bakery,,,Kvetoslavov,Dunajská Streda,Trnavský,,,,48.053163,17.350385,,pecivo,Mo-Fr 06:00-19:00; Sa 06:00-12:30,+31 562 50 86,https://pekaren.eu/,,,exact,osm
 osm-n4436915233,Salaš v Žarnovke,salas,,,Liptovská Osada,Ružomberok,Žilinský,,,,48.900111,19.254719,,syr,,,,,,exact,osm
 osm-n4439437399,Trh,market,,,Brezno,Brezno,Banskobystrický,,,,48.807291,19.637884,,,,,,,,exact,osm
 osm-n4451024978,Salaš Krajinka – predaj syrov,salas,,,Ružomberok,Ružomberok,Žilinský,,,,49.107197,19.232039,,syr,Mo-Su 08:00-21:00,,https://www.salaskrajinka.sk/sk/otvaracie-hodiny.html,,,exact,osm
@@ -728,10 +809,13 @@ osm-n4708774706,Mliečny automat,vending,Mliečny automat,,Ružomberok,Ružomber
 osm-n472397201,Salaš Čingov,salas,,,Spišské Tomášovce,Spišská Nová Ves,Košický,,,,48.947517,20.485387,,syr,Mo-Su 11:00-21:00,+421 949 640 944,,,,exact,osm
 osm-n4758547272,Salaš,salas,,,Skalica,Skalica,Trnavský,,,,48.818897,17.280974,,syr,,,,,,exact,osm
 osm-n4768165971,Trh,market,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.16086,17.164269,,,,,,,,exact,osm
+osm-n4770209913,Školuda,bakery,,,Piešťany,Piešťany,Trnavský,,,,48.588199,17.834067,,pecivo,Mo-Fr 06:30-18:00; Sa 06:30-12:00,,,,,exact,osm
 osm-n4775655786,framipek,bakery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.170093,17.129585,,pecivo,Mo-Fr 06:00-18:00; Sa 06:00-12:00,,,,,exact,osm
 osm-n4803628305,Brojo,bakery,,,Považská Bystrica,Považská Bystrica,Trenčiansky,,,,49.115985,18.446104,,pecivo,,,,,,exact,osm
+osm-n4805620564,Kočkovská pekáreň,bakery,,,Považská Bystrica,Považská Bystrica,Trenčiansky,,,,49.11733,18.440023,,pecivo,,,,,,exact,osm
 osm-n4850798150,Stánok-Toša,bakery,,,Šurany,Nové Zámky,Nitriansky,,,,48.088655,18.178324,,pecivo,Mo-Fr 06:00-15:30,,,,,exact,osm
 osm-n4859322078,Vinárstvo Ján & René Pretzelmayer,winery,,,Dubová,Pezinok,Bratislavský,,,,48.368654,17.339805,,vino,,,https://www.pretzelmayer.sk/,,,exact,osm
+osm-n4876191530,Domáca pekáreň,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.729463,21.260807,"Tvarohovník, makovník, orechovník, kakaovník, škvarkový pagáč – pečené v murovanej peci",mlieko;ovocie;pecivo,Mo-Fr 07:00-18:00,,,,,exact,osm
 osm-n4883945978,Gazdovské pochúťky,butcher,,,Galanta,Galanta,Trnavský,,,,48.193296,17.721419,,maso,Mo 08:00-12:00; Tu-Fr 08:00-17:00; Sa 06:00-12:00,,,,,exact,osm
 osm-n4892994984,Pekáreň,bakery,,,Ružomberok,Ružomberok,Žilinský,,,,49.080312,19.305331,,pecivo,,,,,,exact,osm
 osm-n4901643527,Oravské syry,dairy,,,Čadca,Čadca,Žilinský,,,,49.438946,18.79,,mlieko;syr,,,,,,exact,osm
@@ -751,8 +835,10 @@ osm-n5102029707,Balkan,bakery,,,Senica,Senica,Trnavský,,,,48.685741,17.366322,,
 osm-n5103676781,Obecná tržnica,market,,,Bzince pod Javorinou,Nové Mesto nad Váhom,Trenčiansky,,,,48.787603,17.771223,,,,,,,,exact,osm
 osm-n5129543185,Šenkvická pekáreň,bakery,,,Galanta,Galanta,Trnavský,,,,48.188639,17.726571,,pecivo,Mo-Fr 05:30-17:00; Sa 06:00-12:00,,,,,exact,osm
 osm-n5150724193,Trh,market,,,Šaľa,Šaľa,Nitriansky,,,,48.157088,17.87592,,,,,,,,exact,osm
+osm-n5151623523,Duke,bakery,,,Prievidza,Prievidza,Trenčiansky,,,,48.786309,18.635089,,pecivo,"Mo-Fr 06:00-18:00; Sa 06:00-12:00; PH,Su off",,https://duke.sk/,,,exact,osm
 osm-n5153359652,Váš domáci mäsiar,butcher,,,Rimavská Sobota,Rimavská Sobota,Banskobystrický,,,,48.381702,20.021118,,maso,Mo-Fr 07:00-17:00; Sa 07:00-12:00,,,,,exact,osm
 osm-n5159231504,Trh,market,,,Hnúšťa,Rimavská Sobota,Banskobystrický,,,,48.579824,19.953063,,,,,,,,exact,osm
+osm-n5173565296,Čachtická pekáreň,bakery,,,Piešťany,Piešťany,Trnavský,,,,48.591283,17.831771,,pecivo,Mo-Fr 06:00-17:00; Sa 06:30-11:30,,,,,exact,osm
 osm-n5200736628,Pastierska kolibka,dairy,,,Bystrá,Brezno,Banskobystrický,,,,48.841922,19.602319,,mlieko;syr,Mo-Su 10:00-20:00,+421918798933,https://pastierskakolibka.sk/,,,exact,osm
 osm-n5200932039,Pekárnička,bakery,,,Bratislava-Petržalka,Bratislava V,Bratislavský,,,,48.101237,17.117567,,pecivo,Mo-Fr 06:45-15:00,,,,,exact,osm
 osm-n5200995249,Pekáreň Majdy,bakery,,,Diakovce,Šaľa,Nitriansky,Hlavná,,,48.132551,17.848743,,pecivo,"Mo-Fr 06:00-12:00,13:00-17:00; Sa 06:00-12:00",+421 31 701 60 81,,,,exact,osm
@@ -763,7 +849,8 @@ osm-n5235483817,Dobré syry a Paleo ako životný štýl,dairy,,,Bratislava-Nov�
 osm-n5235483818,biomeat,butcher,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.167749,17.153481,,maso,,,,,,exact,osm
 osm-n5235483819,Rudla,bakery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.167635,17.153721,,pecivo,,,,,,exact,osm
 osm-n5253456165,Fertucha,bakery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.167305,17.153214,,pecivo,,,,,,exact,osm
-osm-n5253456178,Slovenský med,honey,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.167478,17.153205,,med,,,,,,exact,osm
+osm-n5253456176,Naglreiter,bakery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.167499,17.153372,,pecivo,,,,,,exact,osm
+osm-n5253456178,Slovenský med,honey,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.167499,17.152989,,med,,,,,,exact,osm
 osm-n5258643668,KLAS,bakery,,,Bratislava-Petržalka,Bratislava V,Bratislavský,,,,48.118994,17.114615,,pecivo,,,,,,exact,osm
 osm-n5266928165,Trh,market,,,Kráľová nad Váhom,Šaľa,Nitriansky,,,,48.164617,17.840627,,,,,,,,exact,osm
 osm-n5273871755,ERI,bakery,,,Skalica,Skalica,Trnavský,,,,48.84651,17.230748,,pecivo,,,,,,exact,osm
@@ -777,35 +864,54 @@ osm-n5326185532,Mliečny automat,vending,Mliečny automat,,Žilina,Žilina,Žili
 osm-n5373443712,Wikis,bakery,,,Košice-Západ,Košice II,Košický,,,,48.713927,21.235602,,pecivo,Mo-Fr 07:00-19:00,,,,,exact,osm
 osm-n5374830778,Salaš Cibajky,salas,,,Klátova Nová Ves,Partizánske,Trenčiansky,,,,48.540558,18.322527,,syr,,,,,,exact,osm
 osm-n5393222465,Koliba ZP - predaj syrov,dairy,,,Kraľovany,Dolný Kubín,Žilinský,,,,49.151883,19.097883,,mlieko;syr,,,,,,exact,osm
+osm-n5445181710,Duke,bakery,,,Bojnice,Prievidza,Trenčiansky,,,,48.785487,18.588391,,pecivo,"Mo-Fr 05:30-18:00; Sa 06:00-12:00; PH,Su off",,,,,exact,osm
 osm-n5517298813,U farmára,deli,,,Bratislava-Petržalka,Bratislava V,Bratislavský,,,,48.116836,17.102724,,mlieko;syr;vajcia;maso;med;pecivo,Mo-Fr 08:00-18:00; Sa 08:00-12:00,,https://ufarmara.sk/,,,exact,osm
 osm-n5523700461,Pekárska nora,bakery,,,Vysoké Tatry,Poprad,Prešovský,,,,49.140391,20.224636,,pecivo,,,,,,exact,osm
+osm-n5534670558,Duke,bakery,,,Prievidza,Prievidza,Trenčiansky,,,,48.782908,18.621232,,pecivo,Mo-Sa 06:00-20:00; Su 08:00-20:00,,,,,exact,osm
+osm-n5575390548,Juno Hrašovík,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.72155,21.267722,,pecivo,Mo-Fr 06:00-19:00,,https://www.pekarenjuno.sk/,,,exact,osm
 osm-n5592901127,Z farmy,dairy,,,Bratislava-Petržalka,Bratislava V,Bratislavský,,,,48.111227,17.099302,,mlieko;syr,Mo-Fr 08:00-19:00; Sa 08:00-15:00,,,,,exact,osm
 osm-n5595887839,Trh,market,,,Čadca,Čadca,Žilinský,,,,49.438245,18.785888,,,,,,,,exact,osm
 osm-n5595929955,Olej Hont,producer,Olejáreň,,Súdovce,Krupina,Banskobystrický,44,,,48.211073,18.83406,,,,+421904892278,http://www.olejhont.sk/,,,exact,osm
+osm-n5599125927,Pekáreň Ďuroška,bakery,,,Rajecké Teplice,Žilina,Žilinský,,,,49.12731,18.681963,,pecivo,Mo-Fr 07:00-17:00; Sa 07:00-11:30,,,,,exact,osm
 osm-n5647294721,Farma Seňa,butcher,,,Seňa,Košice-okolie,Košický,,,,48.56283,21.275398,,maso,,,,,,exact,osm
 osm-n5648278708,Samozber jahôd a hrachu,market,,,Trenčín,Trenčín,Trenčiansky,,,,48.869023,18.018955,,ovocie,,,,,,exact,osm
 osm-n567113259,Pivnica Tesáre,winery,,,Tesáre,Topoľčany,Nitriansky,,,,48.598036,18.078618,,vino,Mo-Fr 08:00-16:00; Sa 08:00-12:00,+421 905 560 341,http://www.vino.tym.sk/,,,exact,osm
+osm-n5690777546,I.M.D.K.,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.895969,18.02547,,pecivo,,,,,,exact,osm
 osm-n5777702953,Fructop,farm,Farmársky obchod,,Partizánske,Partizánske,Trenčiansky,,,,48.65098,18.365027,,,,,,,,exact,osm
 osm-n5786616113,Obecné trhovisko Plášťovce,market,,,Plášťovce,Levice,Nitriansky,,,,48.159722,18.978279,,,,,,,,exact,osm
 osm-n5789499856,SALAŠ SYREX,salas,,,Zázrivá,Dolný Kubín,Žilinský,,,,49.264656,19.104661,,syr,Mo-We 10:00-20:00; Fr-Sa 09:00-21:00; Su 09:00-20:00,,https://www.syrex.sk/koliba,,,exact,osm
+osm-n5792667460,Naglreiter,bakery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.162066,17.124243,,pecivo,Mo-Fr 07:00-19:00; Sa 07:00-14:00,,,,,exact,osm
+osm-n5809152431,Pekáreň Remetské Hámre,bakery,,,Michalovce,Michalovce,Košický,,,,48.751414,21.908844,,pecivo,,,,,,exact,osm
 osm-n5818198702,Pekáreň Raslavice - predajňa Kobyly,bakery,,,Kobyly,Bardejov,Prešovský,Kobyly 56,,,49.213564,21.296508,,pecivo,Mo-Fr 06:00-17:00,,,,,exact,osm
 osm-n5818827226,KRUH,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.154339,17.111391,,pecivo,Mo-Fr 07:00-19:00; Sa 07:00-15:00,,https://www.kruhpekaren.sk/,,,exact,osm
 osm-n5830341749,Anjelské koláče,bakery,,,Žilina,Žilina,Žilinský,,,,49.221853,18.739912,,pecivo,Mo-Fr 08:00-16:00; PH off,,,,,exact,osm
 osm-n5836135523,Ďuribáči,farm,Farmársky obchod,,Trenčín,Trenčín,Trenčiansky,,,,48.863351,18.020169,,,,,,,,exact,osm
+osm-n5847410744,FAUN,bakery,,,Senica,Senica,Trnavský,,,,48.68083,17.36661,,pecivo,Mo-Fr 06:00-18:00; Sa 07:00-11:00; PH off,+421 917 160 173,https://faun.sk/,,,exact,osm
+osm-n5849553614,FAUN,bakery,,,Senica,Senica,Trnavský,,,,48.677133,17.356591,,pecivo,Mo-Sa 06:00-20:00; Su 07:00-14:00,,,,,exact,osm
 osm-n5849553692,Pekáreň Školuda,bakery,,,Senica,Senica,Trnavský,,,,48.680659,17.364087,,pecivo,Mo-Fr 06:30-18:00; Sa 06:30-12:00,,,,,exact,osm
 osm-n5876717388,Mliečny automat,vending,Mliečny automat,,Poprad,Poprad,Prešovský,,,,49.085662,20.329366,,mlieko,24/7,,,,,exact,osm
 osm-n5956422976,Výroba obilninových vločiek,bakery,,,Trenčianske Jastrabie,Trenčín,Trenčiansky,,,,48.801306,18.112115,,pecivo,,,,,,exact,osm
+osm-n5980330135,Naglreiter,bakery,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,,,,48.158083,17.127616,,pecivo,Mo-Fr 07:00-19:00; Sa 07:00-12:00,,,,,exact,osm
 osm-n602964014,Salaš Veľký Slavkov,salas,,,Veľký Slavkov,Poprad,Prešovský,,,,49.09029,20.285831,,syr,11:00-22:00,+421 902 220 620,https://www.salas.sk/sk,,,exact,osm
 osm-n6041113259,Pekáreň Orion,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.874084,18.046478,,pecivo,,,,,,exact,osm
 osm-n6051104445,grain,bakery,,,Bratislava-Staré Mesto,Bratislava I,Bratislavský,,,,48.15635,17.118457,,pecivo,Mo-Fr 07:00-15:00,,,,,exact,osm
+osm-n6105700807,Pekáreň Juno,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.721627,21.26194,,pecivo,Mo-Fr 07:00-17:00,,,,,exact,osm
+osm-n6126524989,Cisárov pekár,bakery,,,Bratislava-Karlova Ves,Bratislava IV,Bratislavský,Matejkova,,,48.151105,17.049433,,pecivo,Mo-Fr 07:30-18:00; Sa 07:30-14:00,,,,,exact,osm
+osm-n6151699689,Duke,bakery,,,Prievidza,Prievidza,Trenčiansky,,,,48.783496,18.626555,,pecivo,Mo-Sa 07:00-20:00; Su 08:00-19:00,,https://duke.sk/,,,exact,osm
 osm-n6196760555,Joll,bakery,,,Banská Bystrica,Banská Bystrica,Banskobystrický,,,,48.736051,19.164957,,pecivo,,,,,,exact,osm
 osm-n6215672778,Trh,market,,,Košice-Juh,Košice IV,Košický,,,,48.70234,21.25484,,,,,,,,exact,osm
+osm-n6221131140,Duke,bakery,,,Prievidza,Prievidza,Trenčiansky,,,,48.780709,18.640886,,pecivo,"Mo-Fr 06:30-11:30,12:00-14:00; Sa 06:00-12:00; Su,PH off",,https://duke.sk/,,,exact,osm
+osm-n6263647161,Ilas,bakery,,,Košice-Nad jazerom,Košice IV,Košický,,,,48.676208,21.299899,,pecivo,,,,,,exact,osm
+osm-n6265613338,Juno,bakery,,,Košice-Západ,Košice II,Košický,,,,48.718636,21.231825,,pecivo,,,,,,exact,osm
 osm-n6313094239,Ostrožovič,winery,,,Veľká Tŕňa,Trebišov,Košický,,,,48.466192,21.676008,,vino,,+421 56 679 3322,https://www.ostrozovic.sk/,,,exact,osm
+osm-n6342030542,Spusta,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.155014,17.133692,,pecivo,"Mo-Fr 06:00-18:00; Sa,Su off",,https://spustakaviaren.sk/,,,exact,osm
+osm-n6378590828,Crocus,bakery,,,Bratislava-Karlova Ves,Bratislava IV,Bratislavský,Lamačská cesta,,,48.169458,17.074595,,pecivo,Mo-Fr 06:30-18:00,+421 948 180 656,,,,exact,osm
 osm-n6390228960,Pekáreň Inovec,bakery,,,Svinná,Trenčín,Trenčiansky,,,,48.786849,18.162478,,pecivo,,,,,,exact,osm
 osm-n6407743154,Klas,bakery,,,Dunajská Streda,Dunajská Streda,Trnavský,,,,47.993953,17.608019,,pecivo,Mo-Sa 05:00-21:00; Su 06:00-21:00,,,,,exact,osm
 osm-n6415375039,Framipek,bakery,,,Sereď,Galanta,Trnavský,,,,48.28571,17.740577,,pecivo,,,,,,exact,osm
 osm-n6437021713,Pekáreň Kučerová,bakery,,,Lučenec,Lučenec,Banskobystrický,,,,48.327426,19.665242,,pecivo,,,,,,exact,osm
 osm-n6441413367,Bachan,bakery,,,Nové Mesto nad Váhom,Nové Mesto nad Váhom,Trenčiansky,,,,48.75847,17.83136,,pecivo,Sa 07:00-11:30; Mo-Fr 07:00-16:00,+421 907 386 668,,,,exact,osm
+osm-n6465857037,LEBECO,bakery,,,Šurany,Nové Zámky,Nitriansky,,,,48.08956,18.184,,pecivo,Mo-Fr 06:00-18:00; Sa 06:30-12:00,,,,,exact,osm
 osm-n6472968816,Cukráreň a Zmrzlina,bakery,,,Banská Štiavnica,Banská Štiavnica,Banskobystrický,,,,48.456017,18.902672,,pecivo,,,,,,exact,osm
 osm-n6480179212,Pestovateľská pálenica,winery,,,Slatina nad Bebravou,Bánovce nad Bebravou,Trenčiansky,,,,48.834774,18.264103,,vino,,,,,,exact,osm
 osm-n6512950208,Výroba syrových korbáčikov a nití,dairy,,,Dvorec,Bánovce nad Bebravou,Trenčiansky,,,,48.726866,18.199408,,mlieko;syr,,,,,,exact,osm
@@ -813,6 +919,7 @@ osm-n6513020255,Trhové miesto,market,,,Trenčianske Jastrabie,Trenčín,Trenči
 osm-n6513044347,Trhové miesto,market,,,Neporadza,Trenčín,Trenčiansky,,,,48.822586,18.153231,,,,,,,,exact,osm
 osm-n6533554084,Bajusz,bakery,,,Čadca,Čadca,Žilinský,,,,49.438272,18.781994,,pecivo,Mo-Fr 07:00-17:00; PH closed,,,,,exact,osm
 osm-n6534764829,Dami,dairy,,,Čadca,Čadca,Žilinský,,,,49.438935,18.788249,,mlieko;syr,"Mo-Fr 08:00-12:00,12:30-16:00; Sa 08:00-12:00; PH closed",,,,,exact,osm
+osm-n6535353258,Kromka,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.728951,21.261272,,pecivo,Mo-Fr 07:00-18:00; Sa 08:00-15:00; Su off,+421 919 085 558,https://www.pekarenkromka.sk/,,,exact,osm
 osm-n6565064236,Potraviny nie otraviny,farm,Farmársky obchod,,Košice-Staré Mesto,Košice I,Košický,,,,48.718968,21.258454,,,Mo-Fr 12:00-19:00; Sa 08:00-12:00; Su off,+421 918 036 699,https://potravinynieotraviny.sk/,,,exact,osm
 osm-n6566279657,Mr. Burek,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.72076,21.259246,,pecivo,,,,,,exact,osm
 osm-n6566279665,Jacob's,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.72129,21.261501,,pecivo,Mo-Fr 07:30-18:00; Sa 08:30-18:00,,,,,exact,osm
@@ -830,22 +937,30 @@ osm-n6769182546,Muránske buchty,bakery,,,Muráň,Revúca,Banskobystrický,,,,48
 osm-n6801553746,Pekáreň Školuda,bakery,,,Šaštín-Stráže,Senica,Trnavský,,,,48.637309,17.154269,,pecivo,Mo-Fr 06:00-17:30; Sa 06:00-12:00,,http://www.pekarenskoluda.sk,,,exact,osm
 osm-n6817316512,Babička,bakery,,,Trnava,Trnava,Trnavský,,,,48.387378,17.601033,,pecivo,,,,,,exact,osm
 osm-n6817316518,Farmárik,dairy,,,Trnava,Trnava,Trnavský,,,,48.387379,17.600704,,mlieko;syr,,,,,,exact,osm
+osm-n6821151737,Pekáreň Aurora,bakery,,,Galanta,Galanta,Trnavský,,,,48.189894,17.7286,,pecivo,Mo-Su 05:00-20:00,,,,,exact,osm
 osm-n6835370243,Vdovjak,winery,,,Veľká Tŕňa,Trebišov,Košický,,,,48.468219,21.680658,,vino,,,,,,exact,osm
 osm-n6852634430,Tekovská kúria,bakery,,,Hronský Beňadik,Žarnovica,Banskobystrický,,,,48.363779,18.578608,,pecivo,Mo-Su 09:00-21:00,,,,,exact,osm
+osm-n6859030061,Faun,bakery,,,Šaštín-Stráže,Senica,Trnavský,,,,48.637401,17.152421,,pecivo,Mo-Fr 05:00-17:00; Sa 06:00-11:00,+421 917 274 961,https://faun.sk/,,,exact,osm
 osm-n6871277060,"Korbáčiky, syrové nite",dairy,,,Krásno nad Kysucou,Čadca,Žilinský,,,,49.399773,18.84194,,mlieko;syr,Mo-Fr 08:00-17:00; Sa 08:00-12:00; PH closed,,,,,exact,osm
+osm-n6879661949,Spusta,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.16491,17.181838,,pecivo,"Mo-Fr,Su 09:00-21:00; Sa 09:00-16:00; PH off",,,,,exact,osm
 osm-n6935927485,Včelár,honey,,,Kežmarok,Kežmarok,Prešovský,,,,49.126367,20.426261,,med,,+421903167244,https://www.vcelarka.sk/,,,exact,osm
 osm-n6937308969,Tatranský vinohrad,winery,,,Vysoké Tatry,Poprad,Prešovský,,,,49.164506,20.279557,,vino,Jul-Sep: Mo-Sa 15:00-20:00; Jul-Sep: Su 14:00-20:00,+421 907 306 069,,,,exact,osm
 osm-n6974241916,MAGULA rodinné vinárstvo,winery,,áno,Suchá nad Parnou,Trnava,Trnavský,,,,48.421832,17.504037,"Natural wine producer. Small family winery making natural wines exclusively from own, organically farmed vineyards.",vino,,+421 905 645 520,https://www.vinomagula.sk,SK-BIO-003.703-0000716.2026.001,2027-02-28,exact,osm
 osm-n6982314724,Baget,bakery,,,Partizánske,Partizánske,Trenčiansky,,,,48.626155,18.378896,,pecivo,,,,,,exact,osm
 osm-n7026155173,MIPEK Pekáreň Ľubeľa,bakery,,,Liptovský Mikuláš,Liptovský Mikuláš,Žilinský,,,,49.076636,19.619323,,pecivo,Mo-Fr 06:00-18:00; Sa 06:00-11:00,+421445593379,,,,exact,osm
 osm-n7074387333,Tradičné pekárne,bakery,,,Košice-Západ,Košice II,Košický,,,,48.699619,21.237131,,pecivo,,,,,,exact,osm
+osm-n7086744806,Poctivá pekáreň,bakery,,,Košice-Juh,Košice IV,Košický,,,,48.70868,21.248673,,pecivo,,,,,,exact,osm
 osm-n7092002250,Donatelo,bakery,,,Sereď,Galanta,Trnavský,,,,48.288665,17.730862,,pecivo,Tu-Sa 10:00-20:00,,https://www.donatelo.sk/,,,exact,osm
+osm-n7147516416,Naglreiter,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.140435,17.120523,,pecivo,,,,,,exact,osm
 osm-n7200205431,Pekáreň Búgel Ján,bakery,,,Vrútky,Martin,Žilinský,,,,49.111298,18.910816,,pecivo,,,,,,exact,osm
+osm-n7234956741,Poctivá pekáreň,bakery,,,Košice-Sever,Košice I,Košický,,,,48.734383,21.248021,,pecivo,"Mo-Fr 06:00-17:00, Sa 07:00-12:00",+421 905 343 106,https://www.tofako.sk/,,,exact,osm
 osm-n7240808747,Košecký dvor,butcher,,,Košecké Podhradie,Ilava,Trenčiansky,,,,48.977599,18.324216,,maso,Mo-Fr 08:00-16:30; Sa 08:00-11:30,,https://www.koseckydvor.sk/,,,exact,osm
+osm-n725243801,Violeta,bakery,,,Piešťany,Piešťany,Trnavský,Teplická 2196/11,,,48.588934,17.83296,,pecivo,Mo-Su 06:00-21:00,+421 910 262 790,,,,exact,osm
 osm-n731439453,Ľuba Pek,bakery,,,Prašice,Topoľčany,Nitriansky,,,,48.642996,18.107033,,pecivo,Mo-Th 05:00-20:00; Fr 05:00-14:00,,,,,exact,osm
 osm-n7348029483,Kvetoslavov,bakery,,,Rovinka,Senec,Bratislavský,,,,48.093049,17.242023,,pecivo,Mo-Fr 07:00-19:00; Sa 07:00-13:00,,https://pekaren.eu/rovinka-2/,,,exact,osm
 osm-n7366012922,Vinárstvo Habsburg,winery,,,Holíč,Skalica,Trnavský,,,,48.810052,17.166818,,vino,Mo-Th 07:00-15:00; Fr 07:00-13:00,,https://habsburg.sk/,,,exact,osm
 osm-n7399386592,Crustino,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.14538,17.143217,,pecivo,Mo-Fr 07:30-17:00,,,,,exact,osm
+osm-n7399868180,Crocus,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.145983,17.139615,,pecivo,Mo-Fr 07:00-15:00,,,,,exact,osm
 osm-n7446168710,Ovocinár Hrehor,winery,,,Skalica,Skalica,Trnavský,,,,48.826012,17.242291,,ovocie;vino,,+421 903 247 615,https://ovocinarhrehor.sk/,,,exact,osm
 osm-n7477879886,Salaš Pružina,salas,,,Pružina,Považská Bystrica,Trenčiansky,,,,49.020933,18.478822,,syr,Mo-Th 07:00-15:00; Fr 07:00-18:00,+421424358728,,,,exact,osm
 osm-n7516673600,Agropredajňa,dairy,,,Trenčín,Trenčín,Trenčiansky,,,,48.874546,18.046074,,mlieko;syr,,,,,,exact,osm
@@ -861,6 +976,7 @@ osm-n7724919931,BFZ TRIO,bakery,,,Rožňava,Rožňava,Košický,,,,48.653764,20.
 osm-n7725525978,MIMI farma,honey,,,Opátka,Košice-okolie,Košický,,,,48.786258,21.05786,,med,,,https://www.mimifarma.eu/,,,exact,osm
 osm-n7757378792,Salaš Zázrivá,salas,,,Podhájska,Nové Zámky,Nitriansky,,,,48.100343,18.337628,,syr,,,,,,exact,osm
 osm-n7757378798,Pekáreň Bánov,bakery,,,Podhájska,Nové Zámky,Nitriansky,,,,48.099124,18.338068,,pecivo,,,,,,exact,osm
+osm-n7775895849,Poctivá pekáreň,bakery,,,Košice-Západ,Košice II,Košický,,,,48.708887,21.236314,,pecivo,"Mo-Fr 06:30-16:00, Sa 06:30-11:00",+421 918 342 777,https://www.tofako.sk/,,,exact,osm
 osm-n7797597805,Liptovská ovečka,dairy,,,Rovinka,Senec,Bratislavský,,,,48.096445,17.237607,,mlieko;syr,"Mo,Tu 09:30-16:15; We-Fr 09:30-18:00; Sa 09:00-12:00",,,,,exact,osm
 osm-n7798468044,Gazdovská pivnica rodina Begalová,winery,,,Malá Tŕňa,Trebišov,Košický,,,,48.456828,21.679358,,vino,,+421905319790,,,,exact,osm
 osm-n7806820821,ONDO,bakery,,,Michalovce,Michalovce,Košický,,,,48.755049,21.913641,,pecivo,,,,,,exact,osm
@@ -876,12 +992,14 @@ osm-n7914394465,Baget,bakery,,,Partizánske,Partizánske,Trenčiansky,,,,48.6268
 osm-n7920621505,NanaCelia,bakery,,,Malacky,Malacky,Bratislavský,,,,48.439976,17.016173,,pecivo,Mo-Fr 09:00-16:30; Sa 09:00-12:00,+421 911 730 905,http://www.nanacelia.sk,,,exact,osm
 osm-n7924407752,Farma Melo,dairy,,,Diakovce,Šaľa,Nitriansky,,,,48.13453,17.84251,,mlieko;syr,,,,,,exact,osm
 osm-n7929588080,BIOMANIA,organic_shop,Zdravá výživa,,Galanta,Galanta,Trnavský,,,,48.19016,17.729155,,,,,https://www.biomania.sk/,,,exact,osm
+osm-n7963902441,Lebeco,bakery,,,Komárno,Komárno,Nitriansky,,,,47.766308,18.125765,,pecivo,,,,,,exact,osm
 osm-n8014822475,Pekáreň Bytča,bakery,,,Bytča,Bytča,Žilinský,,,,49.22287,18.558356,,pecivo,Mo-Fr 05:30-18:00; Sa 06:00-12:00,,,,,exact,osm
 osm-n804828020,Mliečny automat,vending,Mliečny automat,,Prievidza,Prievidza,Trenčiansky,,,,48.773628,18.614993,,mlieko,,,,,,exact,osm
 osm-n8107183729,Predaj ovšieho syra,dairy,,,Stráňany,Stará Ľubovňa,Prešovský,,,,49.369179,20.540607,,mlieko;syr,,,,,,exact,osm
 osm-n8171692301,Post Bakery,bakery,,,Žilina,Žilina,Žilinský,,,,49.213637,18.756487,,pecivo,,,,,,exact,osm
 osm-n8196745645,Syrový raj,dairy,,,Poprad,Poprad,Prešovský,,,,49.049258,20.291874,,mlieko;syr,,,,,,exact,osm
 osm-n8213973389,Vinársky dom Petra Podolu,winery,,,Kopčany,Skalica,Trnavský,,,,48.790787,17.123049,,vino,,+421 903 722 480,https://www.podola.sk/,,,exact,osm
+osm-n8222335416,IMDK,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.883909,18.031287,,pecivo,"Mo-Th 05:00-15:00; Fr 05:00-14:00, PH off",,,,,exact,osm
 osm-n8241060157,Trh,market,,,Poprad,Poprad,Prešovský,,,,49.056385,20.285424,,,,,,,,exact,osm
 osm-n8243075367,Pekáreň,bakery,,,Skalica,Skalica,Trnavský,,,,48.846307,17.224881,,pecivo,,,,,,exact,osm
 osm-n8243075372,Vinárstvo Kopeček,winery,,,Skalica,Skalica,Trnavský,,,,48.842943,17.238799,,vino,,,https://www.vinarstvokopecek.sk/,,,exact,osm
@@ -890,6 +1008,7 @@ osm-n8283953617,Vinárstvo Pavol Cingel,winery,,,Skalica,Skalica,Trnavský,,,,48
 osm-n8283953618,Vinárstvo František Kucharič,winery,,,Skalica,Skalica,Trnavský,,,,48.826678,17.227871,,vino,,+421 904 333 108,,,,exact,osm
 osm-n8283953619,Vinárstvo Ján Kadlec,winery,,,Skalica,Skalica,Trnavský,,,,48.825924,17.223349,,vino,,,,,,exact,osm
 osm-n8283953621,"Vinohradnícky dom ""U Studánky""",winery,,,Skalica,Skalica,Trnavský,,,,48.822544,17.220931,,vino,,+421 903 980 413,https://ustudanky.sk/,,,exact,osm
+osm-n830095443,Duke,bakery,,,Prievidza,Prievidza,Trenčiansky,,,,48.77173,18.622056,,pecivo,"Mo-Fr 06:00-18:00; Sa 06:00-12:00; PH,Su off",,https://duke.sk/,,,exact,osm
 osm-n8308765182,Vinárstvo Vladimír Grečner,winery,,,Skalica,Skalica,Trnavský,,,,48.832283,17.234322,,vino,,,,,,exact,osm
 osm-n8308765183,Vinárstvo František Okánik,winery,,,Skalica,Skalica,Trnavský,,,,48.831618,17.234381,,vino,,,,,,exact,osm
 osm-n8308765184,Vinárstvo Peter Bránecký,winery,,,Skalica,Skalica,Trnavský,,,,48.834082,17.234175,,vino,,,,,,exact,osm
@@ -916,7 +1035,6 @@ osm-n890785456,Salaš pod Ploskou,salas,,,Belá-Dulice,Martin,Žilinský,,,,48.9
 osm-n8936581417,Mafinkáreň,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.719475,21.259449,,pecivo,Mo-Su 10:00-19:00,+421 915 610 719,,,,exact,osm
 osm-n8936581427,Pekáreň pri divadle,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.721311,21.256932,,pecivo,,,,,,exact,osm
 osm-n8938634018,Kozara s.r.o.,winery,,,Šenkvice,Pezinok,Bratislavský,Glogovec 75,,,48.29074,17.35536,,vino,,+421 903 433 234,https://www.kozara.sk/,,,exact,osm
-osm-n894763853,Pek SNACK,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.146916,17.142625,,pecivo,,,,,,exact,osm
 osm-n8959472465,Mliekomat,vending,Mliečny automat,,Poprad,Poprad,Prešovský,,,,49.052293,20.30441,,mlieko,,,,,,exact,osm
 osm-n8992859314,Predaj medu,honey,,,Kopčany,Skalica,Trnavský,,,,48.786148,17.103522,,med,,,,,,exact,osm
 osm-n900820396,Mliečny automat,vending,Mliečny automat,,Partizánske,Partizánske,Trenčiansky,,,,48.626655,18.37044,,mlieko,,,,,,exact,osm
@@ -927,11 +1045,13 @@ osm-n9020250488,U pekára,bakery,,,Poprad,Poprad,Prešovský,,,,49.048468,20.300
 osm-n9020252050,"Syrové a mäsové výrobky, čapovanie vína",dairy,,,Poprad,Poprad,Prešovský,,,,49.048468,20.299966,,mlieko;syr;maso,"Mo-Fr 09:00-12:30,13:00-16:00; PH closed",,,,,exact,osm
 osm-n9026141402,Farmársky obchod,farm,Farmársky obchod,,Rožňava,Rožňava,Košický,,,,48.653971,20.538337,,,"Mo-Sa 10:00-12:00,14:00-18:00",+421 915 671 605,,,,exact,osm
 osm-n9077915248,Farmárske fajnoty,organic_shop,Zdravá výživa,,Prešov,Prešov,Prešovský,,,,48.999941,21.239624,,,Mo-Fr 06:00-17:30,,,,,exact,osm
+osm-n9081821853,KROMKA Sedemnástka,bakery,,,Prešov,Prešov,Prešovský,,,,48.989511,21.236432,,pecivo,Mo-Fr 07:00-18:00; Sa 08:00-12:00,+421 908 589 550,https://www.pekarenkromka.sk/,,,exact,osm
 osm-n9082803883,Trhovisko,market,,,Buzica,Košice-okolie,Košický,,,,48.534227,21.077428,,,,,,,,exact,osm
 osm-n9092282284,Salaš Ladce,salas,,,Ladce,Ilava,Trenčiansky,,,,49.025232,18.310247,,syr,Mo-Su 08:00-19:00,+421 908 211 506,,,,exact,osm
 osm-n9094372474,Naša špajza,farm,Farmársky obchod,,Prešov,Prešov,Prešovský,,,,49.00507,21.238269,,,Mo-Sa 06:00-20:00; Su 14:00-20:00,+421 944 087 533,,,,exact,osm
 osm-n9094376651,Pekáreň Mirkovce,bakery,,,Prešov,Prešov,Prešovský,Švábska 36A,,,48.973795,21.260963,,pecivo,,,,,,exact,osm
 osm-n9104173752,Včelárstvo,honey,,,Strekov,Nové Zámky,Nitriansky,,,,47.89764,18.414769,,med,,,,,,exact,osm
+osm-n9108331169,Kremnická pekáreň,bakery,,,Žarnovica,Žarnovica,Banskobystrický,,,,48.483182,18.718883,,pecivo,Mo-Fr 06:00-15:00,,,,,exact,osm
 osm-n9141209126,Bryndziareň a syráreň Zvolenská Slatina,dairy,,,Zvolenská Slatina,Zvolen,Banskobystrický,,,,48.56018,19.258097,,mlieko;syr,Mo-Fr 07:00-17:00; Sa 07:00-12:00; Su 09:00-17:00,+421 45 539 47 60,https://www.bryndziaren.sk/,,,exact,osm
 osm-n9142578365,Trh,market,,,Nová Baňa,Žarnovica,Banskobystrický,,,,48.424206,18.640546,,,,,,,,exact,osm
 osm-n9143838792,Gazdovské špeciality Bystriansky,butcher,,,Zvolenská Slatina,Zvolen,Banskobystrický,Slov. nár. povstania 373,,,48.560172,19.259123,,maso,Tu-Fr 08:00-17:00; Sa 07:00-12:00,+421 907 874 061,,,,exact,osm
@@ -939,11 +1059,15 @@ osm-n9158504985,Knip,dairy,,,Bratislava-Karlova Ves,Bratislava IV,Bratislavský,
 osm-n9177981773,Bioplant,farm,Farmársky obchod,,Ostratice,Partizánske,Trenčiansky,,,,48.644085,18.284306,,,,,,,,exact,osm
 osm-n9196077401,Pekáreň Šariš,bakery,,,Prešov,Prešov,Prešovský,,,,48.9916,21.271774,,pecivo,,,,,,exact,osm
 osm-n9201994160,Medáreň Kozický,honey,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.167082,17.17066,,med,,,https://www.medaren.sk/,,,exact,osm
+osm-n9205634266,Pekáreň Kvetoslavov,bakery,,,Miloslavov,Senec,Bratislavský,,,,48.09808,17.30193,,pecivo,"Mo-Fr 07:00-19:00; Sa 07:00-13:00; Su,PH off",+421 949 000 108,https://pekaren.eu,,,exact,osm
 osm-n9221677940,Šenkvická pekáreň,bakery,,,Pezinok,Pezinok,Bratislavský,,,,48.286054,17.268894,,pecivo,,,,,,exact,osm
 osm-n9251650871,Cintavý & Pisarčík,winery,,,Viničné,Pezinok,Bratislavský,,,,48.26633,17.309835,,vino,"Mo-Fr 16:00-18:00; Sa,Su 10:00-12:00",,,,,exact,osm
 osm-n9274996084,Vinárstvo Syč,winery,,,Turany,Martin,Žilinský,,,,49.114986,19.034918,,vino,,+421 940 834 452,https://www.facebook.com/sycvinarstvo,,,exact,osm
 osm-n931723358,Trh,market,,,Žiar nad Hronom,Žiar nad Hronom,Banskobystrický,,,,48.58834,18.849403,,,,,,,,exact,osm
+osm-n931726277,Duke,bakery,,,Handlová,Prievidza,Trenčiansky,,,,48.727222,18.760169,,pecivo,,,,,,exact,osm
 osm-n9409476692,MINT Concept,bakery,,,Bratislava-Ružinov,Bratislava II,Bratislavský,,,,48.158174,17.156645,,pecivo,Mo-Fr 07:30-22:00; Sa 08:00-22:00; Su 08:00-20:00,+421 910 450 339,https://www.mintconcept.sk/,,,exact,osm
+osm-n9410396526,IMDK,bakery,,,Trenčín,Trenčín,Trenčiansky,,,,48.888005,18.032214,,pecivo,,,,,,exact,osm
+osm-n9460208030,Čachtická pekáreň Gevis s. r. o.,bakery,,,Nové Mesto nad Váhom,Nové Mesto nad Váhom,Trenčiansky,,,,48.758471,17.823446,,pecivo,Mo-Fr 06:00-17:00; Sa 06:00-11:00,,,,,exact,osm
 osm-n9461203040,Nemecký Bazár,market,,,Michalovce,Michalovce,Košický,,,,48.740483,21.893375,,,,,https://arsbazar.sk/,,,exact,osm
 osm-n9472319384,LOKŠE - RAČA,bakery,,,Bratislava-Rača,Bratislava III,Bratislavský,,,,48.21131,17.155548,,pecivo,Mo-Fr 10:00-17:00; Sa 08:00-13:00,+421 949 613 319,,,,exact,osm
 osm-n9486152770,Farmárska predajňa - Orešanský statok,farm,Farmársky obchod,,Trnava,Trnava,Trnavský,,,,48.380742,17.587154,Predaj farmárskych produktov. Vlastný chov v malom množstve.,,Mo-Fr 08:00-17:30; Sa 08:00-12:00,+421 903 524 565,https://www.facebook.com/farmaoresany/,,,exact,osm
@@ -986,11 +1110,15 @@ osm-n9858021693,Chillihell,farm,Farmársky obchod,,Veľký Kýr,Nové Zámky,Nit
 osm-n9864830456,Matyšák Shop,winery,,,Prešov,Prešov,Prešovský,,,,48.992941,21.242496,,vino,Mo-Su 09:00-21:00,+421 908 383 132,https://www.vinomatysak.sk/,,,exact,osm
 osm-n9866797805,Pekáreň L' Ami,bakery,,,Nová Dubnica,Ilava,Trenčiansky,,,,48.934678,18.145965,,pecivo,Mo-Fr 07:15-16:00; Sa 06:30-11:00; PH off,+421948339122,,,,exact,osm
 osm-n9876337457,Kopek-kočkovská pekáreň,bakery,,,Nová Dubnica,Ilava,Trenčiansky,,,,48.936093,18.146489,,pecivo,Mo-Fr 06:00-18:00; Sa 07:15-12:00,+421 42 442 4331,https://www.kopek.sk/,,,exact,osm
+osm-n9899446068,Císarov pekár,bakery,,,Bratislava-Dúbravka,Bratislava IV,Bratislavský,,,,48.179995,17.044114,,pecivo,,+421907790655,,,,exact,osm
 osm-n9904197901,Kubko a Maťko brydziareň,dairy,,,Bratislava-Dúbravka,Bratislava IV,Bratislavský,,,,48.179826,17.044185,,mlieko;syr,"Mo 10:00-13:00,14:00-18:00; Tu-Fr 09:00-13:00,14:00-18:00; Sa 08:30-12:00",,,,,exact,osm
 osm-n9911649036,Pekáreň Edeny,bakery,,,Prešov,Prešov,Prešovský,,,,48.984026,21.250705,,pecivo,Mo-Fr 05:00-17:00,,,,,exact,osm
 osm-n9913491863,Dobroty z farmy,organic_shop,Zdravá výživa,,Prešov,Prešov,Prešovský,,,,48.994149,21.241317,,,Mo-Fr 08:00-17:00; Sa 08:00-12:00,+421 910 799 144,,,,exact,osm
 osm-n9919972332,"Reva Bojničky, a.s.",winery,,,Bojničky,Hlohovec,Trnavský,,,,48.383406,17.796685,,vino,,,,,,exact,osm
 osm-n9920908022,Syrmed,farm,Farmársky obchod,,Čoltovo,Rožňava,Košický,,,,48.493959,20.372656,,syr,Mo-Fr 07:30-17:00; Sa 08:00-16:00; Su 08:00-12:00,+421 902 953 177,https://www.facebook.com/syrmedcoltovo,,,exact,osm
+osm-n9921009822,Školuda,bakery,,,Trnava,Trnava,Trnavský,,,,48.385828,17.572795,,pecivo,,,,,,exact,osm
+osm-n9925128209,Remetské Hámre,bakery,,,Košice-Sever,Košice I,Košický,,,,48.739676,21.250885,,pecivo,Mo-Fr 06:00-18:00; Sa 07:00-12:00,,,,,exact,osm
+osm-n9938137501,Remetské Hámre,bakery,,,Košice-Staré Mesto,Košice I,Košický,,,,48.725669,21.246333,,pecivo,Mo-Fr 06:30-18:00; Sa 06:30-12:00; Su off,,,,,exact,osm
 osm-n9945257364,Tekovská kuchyňa a pekáreň,bakery,,,Trnava,Trnava,Trnavský,,,,48.380404,17.584037,,pecivo,,,,,,exact,osm
 osm-n9949071998,Takáč & syn,bakery,,,Trnava,Trnava,Trnavský,,,,48.379745,17.584609,,pecivo,Mo-Fr 05:30-18:00; Sa 05:30-12:00,+421 335 504 368,http://www.takacasyn.sk/,,,exact,osm
 osm-n9954389188,Mliečny automat,vending,Mliečny automat,,Prešov,Prešov,Prešovský,,,,49.016935,21.223729,,mlieko,,,,,,exact,osm
@@ -1013,6 +1141,7 @@ osm-w103549042,Gazdovský dvor Branovo,farm,,,Branovo,Nové Zámky,Nitriansky,Br
 osm-w1041198455,Berry Farm - Čučoriedková farma,farm,,,Stupava,Malacky,Bratislavský,,,,48.272759,16.96534,,ovocie,,+421 905 245 097,https://www.berryfarm.sk/,,,exact,osm
 osm-w1051656844,Včelín,honey,,,Liptovské Sliače,Ružomberok,Žilinský,,,,49.045692,19.390127,,med,,,,,,exact,osm
 osm-w1060138522,Farmfood,organic_shop,Zdravá výživa,,Michalovce,Michalovce,Košický,,,,48.74498,21.9176,,,,,,,,exact,osm
+osm-w1061404289,Domáca pekáreň,bakery,,,Prešov,Prešov,Prešovský,Jarková 14525/51,,,48.996414,21.239006,,pecivo,Mo-Fr 07:00-18:00,,,,,exact,osm
 osm-w1070618461,Gratta,bakery,,,Petrovany,Prešov,Prešovský,Vysielač 487,,,48.946871,21.266274,,pecivo,,+421947923991,https://gratta.sk/,,,exact,osm
 osm-w1075853890,Salaš pod Ostredkom,salas,,,Liptovské Revúce,Ružomberok,Žilinský,,,,48.890148,19.102942,,syr,,,https://hiking.dennikn.sk/ar/4906/salas_dlhy_grun_nad_suchou_dolinou.html,,,exact,osm
 osm-w1084252502,KPK Trstín,bakery,,,Trnava,Trnava,Trnavský,,,,48.381443,17.594295,,pecivo,,,,,,exact,osm
@@ -1039,6 +1168,7 @@ osm-w1216278749,Pekáreň u Kráľa,bakery,,,Bernolákovo,Senec,Bratislavský,,,
 osm-w1229593225,KPK,bakery,,,Trnava,Trnava,Trnavský,,,,48.365947,17.569056,,pecivo,,,,,,exact,osm
 osm-w1262146725,Agrofarma BARANEC,farm,,,Liptovský Ondrej,Liptovský Mikuláš,Žilinský,,,,49.101485,19.708254,,,,,,,,exact,osm
 osm-w1273941390,Salaš,salas,,,Liptovská Kokava,Liptovský Mikuláš,Žilinský,,,,49.120815,19.883944,,syr,,,,,,exact,osm
+osm-w1305282098,Školuda,bakery,,,Trnava,Trnava,Trnavský,,,,48.376852,17.587005,,pecivo,,,https://www.pekarenskoluda.sk/,,,exact,osm
 osm-w1321673674,Včelia farma MM Agro,honey,,,Prešov,Prešov,Prešovský,Na brehu 11,,,48.973823,21.274127,,med,,,,,,exact,osm
 osm-w1323690668,Včelárska farma Medana,honey,,,Prešov,Prešov,Prešovský,,,,48.99086,21.215091,,med,,+421919043713,https://www.farmamedana.sk/,,,exact,osm
 osm-w1335556486,Trh,market,,,Sereď,Galanta,Trnavský,,,,48.282874,17.740071,,,,,,,,exact,osm
@@ -1066,6 +1196,7 @@ osm-w1567914896,Trh,market,,,Heľpa,Brezno,Banskobystrický,,,,48.863731,19.9680
 osm-w1570281231,Trh,market,,,Lipany,Sabinov,Prešovský,,,,49.153298,20.963628,,,,,,,,exact,osm
 osm-w1571750428,Trhovisko Exnárova,market,,,Prešov,Prešov,Prešovský,,,,48.995883,21.269994,,,,,,,,exact,osm
 osm-w159860712,Salaš Kostrín,salas,,,Klátova Nová Ves,Partizánske,Trenčiansky,Janova Ves 153,,,48.555819,18.317965,,syr,Tu-Su 11:30-20:00,,https://www.salas-kostrin.sk/,,,exact,osm
+osm-w164480876,Violeta,bakery,,,Trnava,Trnava,Trnavský,,,,48.381436,17.584158,,pecivo,,,,,,exact,osm
 osm-w167448625,Vinárske závody Topoľčianky,winery,,,Topoľčianky,Zlaté Moravce,Nitriansky,Cintorínska 31,,,48.42212,18.407061,,vino,,,https://www.vinotop.sk,,,exact,osm
 osm-w167495177,Trhovisko,market,,,Košice-Nad jazerom,Košice IV,Košický,,,,48.68968,21.283909,,,,,,,,exact,osm
 osm-w169335955,Trh,market,,,Košice-Sever,Košice I,Košický,,,,48.739193,21.252294,,,,,,,,exact,osm
@@ -1130,6 +1261,7 @@ osm-w486236938,Víno Mrva&Stanko,winery,,,Trnava,Trnava,Trnavský,,,,48.389191,1
 osm-w491859266,Farma Babindol,farm,,,Babindol,Nitra,Nitriansky,Babindol 233,,,48.285727,18.216513,,,,,,,,exact,osm
 osm-w498535619,Tržnica,market,,,Ružomberok,Ružomberok,Žilinský,,,,49.080177,19.30522,,,,,,,,exact,osm
 osm-w510202211,Trhovisko Modra,market,,,Modra,Pezinok,Bratislavský,,,,48.333906,17.307713,,,Mo-Fr 06:00-18:00; Sa 06:00-14:00,,,,,exact,osm
+osm-w51721469,Duke,bakery,,,Prievidza,Prievidza,Trenčiansky,,,,48.773607,18.616061,,pecivo,"Mo-Fr 05:30-17:30; Sa 06:00-12:00; PH,Su off",,https://duke.sk/,,,exact,osm
 osm-w52035716,Mestská tržnica,market,,,Nová Dubnica,Ilava,Trenčiansky,Trenčianska 842/58A,,,48.936292,18.147,,,"Apr 01-Oct 31: Mo-Fr 06:00-18:00, Sa 06:00-12:00; Nov 01-Mar 31: Mo-Fr 07:00-17:00, Sa 07:00-12:00; PH off",,,,,exact,osm
 osm-w52058050,Korbáčik,dairy,,,Prievidza,Prievidza,Trenčiansky,Ľ. Ondrejova 1254/28A,,,48.782402,18.618882,,mlieko;syr,"Mo 10:00-15:30; Tu-We 09:30-16:30; Th-Fr 09:00-16:30; Sa 08:00-12:00; PH,Su off",+421 944 371 246,,,,exact,osm
 osm-w5215299,Tržnica,market,,,Bratislava-Nové Mesto,Bratislava III,Bratislavský,Šancová 3132/112,,,48.157416,17.126046,,,Mo-Fr 06:00-18:00; Sa 06:00-14:00,,https://www.ekovps.sk/strediska/trznica,,,exact,osm
@@ -1173,6 +1305,8 @@ osm-w700200096,Trh Ťahanovce,market,,,Košice-Sídlisko Ťahanovce,Košice I,Ko
 osm-w702079054,Pekáreň Jánovce,bakery,,,Veľký Biel,Senec,Bratislavský,Veľký Biel 741,,,48.205106,17.353792,,pecivo,,,,,,exact,osm
 osm-w708111998,Trh,market,,,Košice-Staré Mesto,Košice I,Košický,,,,48.720613,21.25534,,,Mo-Fr 06:00-16:00; Sa 06:00-14:00; Su 07:00-12:00,,https://www.kosice-city.sk/trhovisko.html,,,exact,osm
 osm-w71821627,Salaš,salas,,,Krahule,Žiar nad Hronom,Banskobystrický,,,,48.723005,18.935797,,syr,,,,,,exact,osm
+osm-w723987489,Vamex,bakery,,,Košice-Juh,Košice IV,Košický,,,,48.696843,21.251442,,pecivo,Mo-Su 08:00-20:00,+421 911 871 016,https://www.vamex.sk/,,,exact,osm
+osm-w723995779,Domáca pekáreň,bakery,,,Košice-Juh,Košice IV,Košický,,,,48.696831,21.251658,,pecivo,Mo-Su 09:00-20:00,+421 903 903 773,,,,exact,osm
 osm-w73220045,Obecná pekáreň Lysá pod Makytou,bakery,,,Lysá pod Makytou,Púchov,Trenčiansky,Lysá pod Makytou 217,,,49.19646,18.180406,,pecivo,Su-Fr 13:00-19:00,+421424680100,,,,exact,osm
 osm-w73353060,Pekáreň Marcel Rešovský - Nižná Šebastová,bakery,,,Prešov,Prešov,Prešovský,Slanská 2502/40,,,49.019243,21.283752,,pecivo,,+421517764403,,,,exact,osm
 osm-w73465667,Domáce produkty z BIO farmy,dairy,,,Proč,Prešov,Prešovský,Proč 47,,,49.098736,21.385946,,mlieko;syr,Mo-Fr 07:30-15:30,,,,,exact,osm
