@@ -149,15 +149,15 @@ def metres(a, b):
 
 
 # Not "straight from the producer" (Patrik, 2026-11-23/24: no supply chains and big corporations like COOP Jednota; big
-# farms stay; support local firms): retail chains and franchise shops, outlets of big corporations (250+ employees in
-# the Register of financial statements, or part of such a group: COOP Jednota Nitra 500-999, PENAM 500-999, I.D.C.
-# Holding 500-999, Milk-Agro 1000-1999, Topoľčianske pekárne a cukrárne 250-499) and bakery chains with 4+ shops on the
-# map. Matched on the normalised name, operator or brand. Farms, cooperatives and local firms stay, even big ones
-# (Agrofarma Červený Kameň, Levmilk, Novogal, Včela-Lippek, ProOvo).
+# farms and local firms stay, "let's support local ones"): retail chains and franchise shops, outlets of big corporations
+# (250+ employees in the Register of financial statements, or part of such a group: COOP Jednota Nitra 500-999, PENAM
+# 500-999, I.D.C. Holding 500-999, Milk-Agro 1000-1999, Topoľčianske pekárne a cukrárne 250-499, Fornetti's Ambropek
+# 500-999, DOBROTA a.s. Prievidza 250-499) and foreign bakery chains (Střelná CZ, Lipóti, Fornetti, Pek-Snack HU, Anker
+# AT), plus Minit, a 65-shop franchise of bake-off counters. Matched on the normalised name, operator or brand. Farms,
+# cooperatives and local firms stay, even big ones and local bakery chains (Ďuroška, Kočkovská pekáreň, Duke, ...).
 CHAIN_ANY = re.compile(r"\b(coop|jednota|moj obchod|farmfoods|penam|sarisske pekarne|pecivarne|i ?d ?c holding|milk ?agro|"
                        r"topolcianske pekarne)\b")
-CHAIN_BAKERY = re.compile(r"\b(strelna|i ?m ?d ?k|duroska|naglreiter|spusta|kremnicka pekaren|aurora|remetske hamre|juno|"
-                          r"poctiva pekaren|kromka|cachticka pekaren|crocus|violeta|topec)\b")
+CHAIN_BAKERY = re.compile(r"\b(strelna|lipoti|fornetti|ambropek|pek snack|anker|minit|topec)\b|^dobrota$")
 
 
 def osm_people_dates():
@@ -196,7 +196,7 @@ def osm_features(stats):
             stats["osm_skipped"][label] += 1
             continue
         txt = norm(" ".join([t.get("name", ""), t.get("operator", ""), t.get("brand", "")]))
-        if CHAIN_ANY.search(txt) or (cat == "bakery" and CHAIN_BAKERY.search(txt)):
+        if CHAIN_ANY.search(txt) or (cat == "bakery" and (CHAIN_BAKERY.search(txt) or CHAIN_BAKERY.search(norm(t.get("name", ""))))):
             stats["osm_skipped"][f"{cat}: chain or big company"] += 1
             continue
         m = meta.get(f"{e['type'][0]}{e['id']}", {})
@@ -216,8 +216,8 @@ def osm_features(stats):
             chain = True  # big wine-shop chains; a winery's own 2-3 shops stay
         if names[key] >= 5 and cat == "farm" and key not in GENERIC_NAMES:
             chain = True  # shop chains with "farm" in the name ("Farmfoods"); growers' own 2-3 stands stay
-        if chain and cat in ("bakery", "butcher", "greengrocer", "organic_shop", "dairy", "deli", "honey", "winery",
-                             "farm"):
+        # bakeries: local chains stay (Patrik, 2026-11-24); the ones that go are listed in CHAIN_ANY / CHAIN_BAKERY
+        if chain and cat in ("butcher", "greengrocer", "organic_shop", "dairy", "deli", "honey", "winery", "farm"):
             stats["osm_skipped"][f"{cat}: chain"] += 1
             continue
         if not name and cat not in ("vending", "market", "farm"):
