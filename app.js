@@ -550,7 +550,7 @@
     // "Navigovať": places from OpenStreetMap were mapped where they are, so Google gets that point. Certified producers
     // are placed from their certificate address, often only at the village centre, so Google gets the address itself
     // ("Páleničné 815/20, 976 52 Čierny Balog") and finds the house.
-    const navTo = p.source !== "osm" && p.address
+    const navTo = p.source !== "osm" && p.address && p.precision !== "exact"
       ? [p.address, [p.postcode, p.city || p.obec].filter(Boolean).join(" "), "Slovensko"].filter(Boolean).join(", ")
       : `${lat},${lon}`;
     const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(navTo)}`;
