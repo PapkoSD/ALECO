@@ -21,7 +21,7 @@ A free, open-source map of farms, salaše, bakeries, milk vending machines, mark
 
 Every place gets its kraj, okres and obec from OSM boundary polygons, offline.
 
-**Navigovať** sends Google Maps the map point for places from OpenStreetMap (mapped where they are), and the full certificate address ("Páleničné 815/20, 976 52 Čierny Balog") for certified producers, whose pins are often only the village centre. The geocoder only accepts a street hit inside the town the certificate names. Places whose website stopped working carry `web_dead` and their card warns that they may have closed.
+**Navigovať** sends Google Maps the map point for places from OpenStreetMap and for certified producers whose house is among OpenStreetMap's house numbers (`scripts/osm_addresses.py` and `scripts/address_points.py`). For the rest, whose pin is only a street or the village centre, it sends the full certificate address ("Okružná 11, 990 01 Veľký Krtíš"). A street or house only counts inside the town and region the certificate names. Places whose website stopped working carry `web_dead` and their card warns that they may have closed.
 
 ## How people search
 
@@ -66,7 +66,8 @@ python3 scripts/rpo_extract.py                       # company register (needs t
 python3 scripts/build_inventory.py                   # merge sources
 python3 scripts/build_seed.py                        # map data, private outreach list and report
 python3 scripts/osm_meta.py --notes                  # who last edited each OSM place, open "closed" notes (OSM API, cached)
-python3 scripts/build_seed.py                        # again, with those dates applied
+uv run --no-project --with osmium python scripts/osm_addresses.py   # certified producers' houses, village points (from the extract)
+python3 scripts/build_seed.py                        # again, with those dates and houses applied
 ```
 
 `build_seed.py` writes `data/out/report.md` with counts per region and category and every filtering decision.
@@ -86,7 +87,7 @@ python3 scripts/build_seed.py             # rebuild the map with everything appl
 
 Any place on the map can be checked, OSM shops and markets too: `checks.py set` adds the row when the id is not in the file yet. The product words in `how` ("mlieko, syry, vajcia") also decide what the place is listed under in "Čo chcete kúpiť?". On the map, "sells" adds a "Predaj" line with the date it was verified and an "overené" mark in the list. `wholesale`, `closed`, `duplicate` and `not_local` take the place off the map. OSM places last edited by a person five or more years ago say so in their detail card. The date ignores bots and mass edits (`scripts/osm_meta.py`): in May 2026 a bot changed every http:// website to https://, which made Farma Tuška (surveyed in 2015, closed since) look freshly checked. `osm_meta.py` also drops places deleted or retagged in OSM since the extract and lists open OSM notes that say a place closed; those notes are hints to check by hand, since many are about a neighbouring shop.
 
-Google Maps is a good place to see whether a shop has closed, but only by hand: Google's terms forbid scraping it, and its data must not be copied into this open (ODbL) data. Record what you find as `closed` with `checks.py set`.
+Google Maps is not a source here: its terms forbid automated lookups, and its content must not be copied into open (ODbL) data. A closure, move or duplicate needs another source (the business register, an OSM note or newer OSM entry, the seller's own website), named in the row's `source`.
 
 ## Publish
 
@@ -96,7 +97,11 @@ GitHub Pages serves the site from the `gh-pages` branch, which holds only the co
 sh scripts/deploy.sh
 ```
 
-The link preview image (`site/og.png`) shows every place as a dot; redraw it after a big data update.
+The link preview image (`site/og.png`) shows every place as a dot and the count; redraw it after a big data update:
+
+```bash
+uv run --no-project --with pillow --with fonttools --with brotli python scripts/og_image.py
+```
 
 ## Run locally
 

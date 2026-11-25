@@ -126,7 +126,7 @@ class Geocoder:
         if not (self.admin and town and self.gaz.is_village(town)):
             return True
         obec, t = fold(self.admin.lookup(lon, lat)["obec"] or ""), fold(town)
-        return obec == t or obec.startswith(t + "-") or t.startswith(obec + "-")
+        return obec == t or obec.startswith(t + " ") or t.startswith(obec + " ")  # fold() turns "-" into a space
 
     def locate(self, street, postal, city, kraj=""):
         """Return (lat, lon, precision) or (None, None, None). kraj (e.g. 'Prešovský') rejects wrong-region hits."""

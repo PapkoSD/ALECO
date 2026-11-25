@@ -24,6 +24,8 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from address_points import AddressPoints  # noqa: E402
+from address_points import dist as point_dist  # noqa: E402
 from admin import KRAJ_SLUG, Admin, fold  # noqa: E402
 from build_inventory import norm  # noqa: E402
 from geocode import Geocoder  # noqa: E402
@@ -38,7 +40,7 @@ COMPANY = re.compile(r"s\.\s?r\.\s?o|spol\.|a\.\s?s\.|družstvo|v\.\s?o\.\s?s|k\
                      r"\bs\.r\.o\b|\bsro\b|z\.\s?s\.|ltd|gmbh|\bs\. ?r\. ?o\b", re.I)
 
 # ---------------------------------------------------------------- OSM ----------------------------------------------
-GENERIC_NAMES = {"pekaren", "pekarstvo", "mlieko", "mliecny automat", "automat", "potraviny", "maso", "masiarstvo",
+GENERIC_NAMES = {"ovci syr", "pekaren", "pekarstvo", "mlieko", "mliecny automat", "automat", "potraviny", "maso", "masiarstvo",
                  "farmarsky obchod", "farmarska predajna", "predaj z dvora", "farmarske potraviny",
                  "ovocie zelenina", "ovocie a zelenina", "zelenina", "trh", "trhovisko", "trznica", "farma", "syry",
                  "lahodky", "zdrava vyziva", "bio", "vinarstvo", "vino", "med", "vcelar", "salas"}
@@ -149,15 +151,19 @@ def metres(a, b):
 
 
 # Not "straight from the producer" (Patrik, 2026-11-23/24: no supply chains and big corporations like COOP Jednota; big
-# farms and local firms stay, "let's support local ones"): retail chains and franchise shops, outlets of big corporations
-# (250+ employees in the Register of financial statements, or part of such a group: COOP Jednota Nitra 500-999, PENAM
-# 500-999, I.D.C. Holding 500-999, Milk-Agro 1000-1999, Topoľčianske pekárne a cukrárne 250-499, Fornetti's Ambropek
-# 500-999, DOBROTA a.s. Prievidza 250-499) and foreign bakery chains (Střelná CZ, Lipóti, Fornetti, Pek-Snack HU, Anker
-# AT), plus Minit, a 65-shop franchise of bake-off counters. Matched on the normalised name, operator or brand. Farms,
-# cooperatives and local firms stay, even big ones and local bakery chains (Ďuroška, Kočkovská pekáreň, Duke, ...).
-CHAIN_ANY = re.compile(r"\b(coop|jednota|moj obchod|farmfoods|penam|sarisske pekarne|pecivarne|i ?d ?c holding|milk ?agro|"
-                       r"topolcianske pekarne)\b")
-CHAIN_BAKERY = re.compile(r"\b(strelna|lipoti|fornetti|ambropek|pek snack|anker|minit|topec)\b|^dobrota$")
+# farms and local firms stay, "let's support local ones"). What is listed here, and why:
+#  - retail: COOP Jednota; Môj obchod, METRO's franchise of grocery shops
+#  - companies with 250+ employees in the Register of financial statements (registeruz.sk, read 2026-11): COOP Jednota
+#    Nitra, PENAM Slovakia, I.D.C. Holding (Pečivárne Sereď), MILK-AGRO, Topoľčianske pekárne a cukrárne (Topec), DOBROTA
+#    a.s. Prievidza (shops named just "Dobrota"), MINIT SLOVAKIA (until 2015 Fornetti Slovakia, so old "Fornetti" pins
+#    too). Šarišské pekárne a cukrárne has 200-249 but belongs to the AGROFERT group like PENAM (AGROFERT brochure 2019)
+#  - foreign bakeries: Střelná (its shops give pekarstvi-strelna.cz), Crocus (crocus.cz, Brno), Lipóti and Pek-Snack
+#    (Hungary), Anker (Austria)
+# Matched on the normalised name, operator or brand. Local bakery chains of any number of shops stay, and so does
+# Farmfoods: ten Slovak farm companies' own shops.
+CHAIN_ANY = re.compile(r"\b(coop|jednota|moj obchod|penam|sarisske pekarne|i ?d ?c holding|milk ?agro|topolcianske pekarne)\b")
+CHAIN_BAKERY = re.compile(r"\b(strelna|crocus|lipoti|fornetti|pek snack|anker|minit|topec)\b|^dobrota$")
+LOCAL_CHAIN = re.compile(r"\bfarmfoods\b")
 
 
 def osm_people_dates():
@@ -217,7 +223,7 @@ def osm_features(stats):
         if names[key] >= 5 and cat == "farm" and key not in GENERIC_NAMES:
             chain = True  # shop chains with "farm" in the name ("Farmfoods"); growers' own 2-3 stands stay
         # bakeries: local chains stay (Patrik, 2026-11-24); the ones that go are listed in CHAIN_ANY / CHAIN_BAKERY
-        if chain and cat in ("butcher", "greengrocer", "organic_shop", "dairy", "deli", "honey", "winery", "farm"):
+        if chain and not LOCAL_CHAIN.search(key) and cat in ("butcher", "greengrocer", "organic_shop", "dairy", "deli", "honey", "winery", "farm"):
             stats["osm_skipped"][f"{cat}: chain"] += 1
             continue
         if not name and cat not in ("vending", "market", "farm"):
@@ -435,8 +441,15 @@ def organic_features(geo, admin, outreach, review, stats, only_with_details=Fals
            if r["source"] == "organic_eu" and r["consumer_relevant"] == "True"]
     orgs = {o["certificate"]: o for o in csv.DictReader(open(ROOT / "data/out/organic_operators.csv", encoding="utf-8"))}
     feats = []
+    apath = ROOT / "data/raw/osm_addresses.json"  # scripts/osm_addresses.py
+    houses = AddressPoints(json.loads(apath.read_text()), admin) if apath.exists() else None
+    # certificates replaced by a newer one since the last TRACES download (the old PDF no longer opens)
+    cpath = ROOT / "data/checks/certificates.csv"
+    newer = {c["old"]: c for c in csv.DictReader(open(cpath, encoding="utf-8"))} if cpath.exists() else {}
     for i, r in enumerate(inv):
         o = orgs[r["source_id"]]
+        if r["source_id"] in newer:
+            o = {**o, "certificate": newer[r["source_id"]]["new"], "expires": newer[r["source_id"]]["expires"]}
         if o["expires"] and o["expires"] < TODAY:
             stats["organic"]["expired"] += 1
             continue
@@ -485,6 +498,16 @@ def organic_features(geo, admin, outreach, review, stats, only_with_details=Fals
                                premises=len(premises)))
             continue
         city_clean = re.sub(r"^District of ", "", city)
+        if houses:  # the exact house from OSM's house numbers; otherwise make sure the village centre is the right village
+            region = kraj or admin.lookup(lon, lat)["kraj"]
+            hit = houses.find(f"bio-{o['operator_id']}", street, city_clean, region, (lat, lon), precision)
+            centre = None if hit or precision == "street" else houses.village(street, city_clean, region)
+            if hit:
+                lat, lon, precision = hit[0], hit[1], "exact"
+                stats["organic"][f"house found in OSM ({hit[2]})"] += 1
+            elif centre and point_dist(centre, (lat, lon)) > 1500:
+                lat, lon, precision = centre[0], centre[1], "village"
+                stats["organic"]["village centre corrected from OSM"] += 1
         premise_text = "; ".join(f"{p['label']}, {p['street']}, {p['postal'][:3]} {p['postal'][3:]} {p['city']}".replace(", , ", ", ")
                                  for p in prod[:6]) if len(prod) > 1 else ""
         feats.append({
